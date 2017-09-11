@@ -10,6 +10,10 @@ public class Movement : MonoBehaviour {
 	private Animator anim;
 	public Rigidbody FireBall;
 	public Transform Pos;
+	public string AtkButton = "Fire1_P1";
+	public string SpButton = "Fire2_P1";
+	public string HorizontalControl = "Joystick1Horizontal";
+	public string VerticalControl = "Joystick1Vertical";
 
 	void Start() {
 		anim = GetComponent<Animator>();
@@ -17,10 +21,10 @@ public class Movement : MonoBehaviour {
 
 	void FixedUpdate () {
 		
-		if(Input.GetButtonDown("Fire1")) {
+		if(Input.GetButtonDown(AtkButton)) {
 			anim.SetTrigger("Atk");
 		}
-		if(Input.GetButtonDown("Fire2")) {
+		if(Input.GetButtonDown(SpButton)) {
 			anim.SetTrigger("Spell");
 			SpellCast();
 		}
@@ -29,8 +33,8 @@ public class Movement : MonoBehaviour {
 
 
 	void ControllPlayer() {
-		float h = Input.GetAxisRaw ("Horizontal");
-		float v = Input.GetAxisRaw ("Vertical");
+		float h = Input.GetAxisRaw (HorizontalControl);
+		float v = Input.GetAxisRaw (VerticalControl);
 
 		if(h*h+v*v<0.01){
 			anim.SetBool("IsMoving",false);
