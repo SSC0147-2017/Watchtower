@@ -1,0 +1,4 @@
+sceneSetups:
+- path: "Assets/Fabr\xEDcio/Scenes/Character Select.unity"
+  isLoaded: 1
+  isActive: 1
