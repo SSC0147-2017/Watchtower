@@ -1,4 +1,4 @@
 sceneSetups:
-- path: "Assets/Fabr\xEDcio/Scenes/Character Select.unity"
+- path: Assets/Jao/Scenes/Main Menu.unity
   isLoaded: 1
   isActive: 1
