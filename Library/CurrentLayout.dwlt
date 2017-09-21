@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 7657
+  controlID: 12470
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 7690
+  controlID: 12525
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -340,14 +340,14 @@ MonoBehaviour:
     width: 1243
     height: 926
   m_SceneLighting: 1
-  lastFramingTime: 384.3563899057075
+  lastFramingTime: 9233.998368254748
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -26.421541, y: 7.6889777, z: -1234}
+    m_Target: {x: -23.278334, y: -2.9039748, z: -1234}
     speed: 2
-    m_Value: {x: -26.421541, y: 7.6889777, z: -1234}
+    m_Value: {x: -23.278334, y: -2.9039748, z: -1234}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -374,9 +374,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 179.24905
+    m_Target: 98.460884
     speed: 2
-    m_Value: 179.24905
+    m_Value: 98.460884
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -414,10 +414,10 @@ MonoBehaviour:
     width: 369
     height: 396
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 526cfbff36f7ffff1afcffff00000000aa2f0000fe2f00000e300000
+    scrollPos: {x: 0, y: 80}
+    m_SelectedIDs: 562d0000
+    m_LastClickedID: 11606
+    m_ExpandedIDs: 04e5f8ff2820fbff402dfbff5036fbfffa4bfbff1a3cffff6c40ffff08f5ffff1afcffff000000002a2d00003a2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -478,7 +478,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Jao/UI
+    - "Assets/Fabr\xEDcio/Scripts"
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -489,7 +489,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 6c260000
     m_LastClickedID: 9836
-    m_ExpandedIDs: 000000009e2600008a27000060280000c4280000c22b0000
+    m_ExpandedIDs: 000000009e2600008a27000060280000c4280000c8280000002b0000a42b0000c22b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -517,7 +517,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009e2600008a27000060280000c4280000c22b0000
+    m_ExpandedIDs: 000000009e2600008a27000060280000c4280000c8280000002b0000a42b0000c22b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
