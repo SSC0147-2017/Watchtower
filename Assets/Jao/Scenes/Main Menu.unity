@@ -1866,7 +1866,7 @@ GameObject:
   - component: {fileID: 1486933409}
   - component: {fileID: 1486933408}
   m_Layer: 5
-  m_Name: Text
+  m_Name: VolumeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2900,6 +2900,7 @@ GameObject:
   - component: {fileID: 1801176363}
   - component: {fileID: 1801176365}
   - component: {fileID: 1801176364}
+  - component: {fileID: 1801176366}
   m_Layer: 5
   m_Name: OptionsPanel
   m_TagString: Untagged
@@ -2926,7 +2927,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -20, y: -132}
+  m_AnchoredPosition: {x: -20, y: -49}
   m_SizeDelta: {x: 300, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1801176364
@@ -2962,6 +2963,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1801176362}
+--- !u!114 &1801176366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1801176362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a011f7e6ddd8c97438d13a304ddd2b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childrenText:
+  - {fileID: 2002836652}
+  - {fileID: 1486933408}
+  - {fileID: 1430873702}
+  - {fileID: 1662771999}
+  childrenImage:
+  - {fileID: 2139054127}
+  - {fileID: 1722410896}
+  - {fileID: 422346570}
 --- !u!1 &1803770150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,6 +3606,7 @@ GameObject:
   - component: {fileID: 2121675494}
   - component: {fileID: 2121675496}
   - component: {fileID: 2121675495}
+  - component: {fileID: 2121675497}
   m_Layer: 5
   m_Name: CreditsPanel
   m_TagString: Untagged
@@ -3649,6 +3671,29 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2121675493}
+--- !u!114 &2121675497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2121675493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a011f7e6ddd8c97438d13a304ddd2b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childrenText:
+  - {fileID: 502459797}
+  - {fileID: 1549095921}
+  - {fileID: 1816287932}
+  - {fileID: 1632390814}
+  - {fileID: 2057634115}
+  - {fileID: 1601097266}
+  - {fileID: 1052769063}
+  - {fileID: 1848354438}
+  - {fileID: 1581268359}
+  - {fileID: 1479451120}
+  childrenImage: []
 --- !u!1 &2139054125
 GameObject:
   m_ObjectHideFlags: 0

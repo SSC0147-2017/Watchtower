@@ -16,13 +16,12 @@ public class MainMenuBehaviour : Utilities {
 
     public void OpenPanel(GameObject window)
     {
-        StartCoroutine(FadeIn(window, 1f));
+        StartCoroutine(FadeIn(window, 0.5f));
     }
 
     public void ClosePanel(GameObject window)
     {
-        print("banana");
-        StartCoroutine(FadeOut(window, 1f));
+        StartCoroutine(FadeOut(window, 0.5f));
     }
 
     public void ExitGame()
