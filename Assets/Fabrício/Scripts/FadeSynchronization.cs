@@ -17,7 +17,7 @@ public class FadeSynchronization : MonoBehaviour {
 		for(int i = 0; i < childrenText.Count; i++)
         {
             c = childrenText[i].GetComponent<Text>().color;
-            c.a = a;
+            c.a = a/0.4f;
             childrenText[i].GetComponent<Text>().color = c;
         }
         for (int i = 0; i < childrenImage.Count; i++)
