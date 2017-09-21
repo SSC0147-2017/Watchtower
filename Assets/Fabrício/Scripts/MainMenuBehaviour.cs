@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainMenuBehaviour : Utilities {
 
-    public GameObject Camera;
+    public List<AudioSource> audioList = new List<AudioSource>();
 
 	// Use this for initialization
 	void Start () {
@@ -18,14 +18,17 @@ public class MainMenuBehaviour : Utilities {
 
     public void MuteSound()
     {
-        AudioSource source = Camera.GetComponent<AudioSource>();
-        if(source.mute == false)
+        for (int i = 0; i < audioList.Count; i++)
         {
-            source.mute = true;
-        }
-        else
-        {
-            source.mute = false;
+            AudioSource source = audioList[i];
+            if (source.mute == false)
+            {
+                source.mute = true;
+            }
+            else
+            {
+                source.mute = false;
+            }
         }
     }
 
