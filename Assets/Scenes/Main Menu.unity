@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.353}
     m_HighlightedColor: {r: 0.33333334, g: 0.41960785, b: 0.18431373, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.43127164, g: 0.5735294, b: 0.18555364, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.353}
     m_HighlightedColor: {r: 0.33333334, g: 0.41960785, b: 0.18431373, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.43127164, g: 0.5735294, b: 0.18555364, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -910,10 +910,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b39476d8e9098409591aec278e21ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventSys: {fileID: 2001864556}
+  PanelList:
+  - {fileID: 1694844508}
+  - {fileID: 1801176362}
+  - {fileID: 2121675493}
   AudioList:
   - {fileID: 601586037}
   - {fileID: 980104458}
-  FirstButton: {fileID: 1803770152}
   BlackScreen: {fileID: 886200536}
   SwooshSound: {fileID: 731823473}
 --- !u!82 &731823473
@@ -1459,7 +1463,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1010114558}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -2370,7 +2374,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.353}
     m_HighlightedColor: {r: 0.33333334, g: 0.41960785, b: 0.18431373, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.43127164, g: 0.5735294, b: 0.18555364, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2567,7 +2571,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.353}
     m_HighlightedColor: {r: 0.33333334, g: 0.41960785, b: 0.18431373, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.43127164, g: 0.5735294, b: 0.18555364, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2768,6 +2772,7 @@ GameObject:
   - component: {fileID: 1694844509}
   - component: {fileID: 1694844511}
   - component: {fileID: 1694844510}
+  - component: {fileID: 1694844512}
   m_Layer: 5
   m_Name: ButtonsPanel
   m_TagString: Untagged
@@ -2831,6 +2836,29 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1694844508}
+--- !u!114 &1694844512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694844508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a011f7e6ddd8c97438d13a304ddd2b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventSys: {fileID: 2001864556}
+  FirstButton: {fileID: 1803770152}
+  ChildrenTexts: []
+  ChildrenImages: []
+  ChildrenButtons:
+  - {fileID: 1803770152}
+  - {fileID: 515904132}
+  - {fileID: 652581438}
+  - {fileID: 1619586780}
+  - {fileID: 1642779791}
+  Black: {r: 0, g: 0, b: 0, a: 1}
+  White: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1711669152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,6 +2944,7 @@ GameObject:
   - component: {fileID: 1716818667}
   - component: {fileID: 1716818666}
   - component: {fileID: 1716818665}
+  - component: {fileID: 1716818669}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3002,6 +3031,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &1716818669
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1716818664}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1722410894
 GameObject:
   m_ObjectHideFlags: 0
@@ -3087,7 +3127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1801176363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3122,7 +3162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3154,15 +3194,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a011f7e6ddd8c97438d13a304ddd2b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childrenText:
+  EventSys: {fileID: 2001864556}
+  FirstButton: {fileID: 1662772001}
+  ChildrenTexts:
   - {fileID: 2002836652}
-  - {fileID: 1486933408}
   - {fileID: 1430873702}
   - {fileID: 1662771999}
-  childrenImage:
+  - {fileID: 1486933408}
+  ChildrenImages:
   - {fileID: 2139054127}
   - {fileID: 1722410896}
   - {fileID: 422346570}
+  ChildrenButtons:
+  - {fileID: 1430873704}
+  - {fileID: 1662772001}
+  Black: {r: 0, g: 0, b: 0, a: 1}
+  White: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1803770150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,7 +3268,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.353}
     m_HighlightedColor: {r: 0.33333334, g: 0.41960785, b: 0.18431373, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.43127164, g: 0.5735294, b: 0.18555364, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3518,8 +3565,9 @@ GameObject:
   - component: {fileID: 1918662445}
   - component: {fileID: 1918662447}
   - component: {fileID: 1918662446}
+  - component: {fileID: 1918662448}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3540,8 +3588,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -114, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3, y: 0}
+  m_SizeDelta: {x: -208, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1918662446
 MonoBehaviour:
@@ -3576,6 +3624,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1918662444}
+--- !u!225 &1918662448
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918662444}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2001864554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,7 +3863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2121675494
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3841,7 +3900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3873,18 +3932,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a011f7e6ddd8c97438d13a304ddd2b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childrenText:
+  EventSys: {fileID: 2001864556}
+  FirstButton: {fileID: 1479451122}
+  ChildrenTexts:
   - {fileID: 502459797}
   - {fileID: 1549095921}
-  - {fileID: 1816287932}
-  - {fileID: 1632390814}
-  - {fileID: 2057634115}
   - {fileID: 1601097266}
+  - {fileID: 1816287932}
   - {fileID: 1052769063}
+  - {fileID: 1632390814}
   - {fileID: 1848354438}
+  - {fileID: 2057634115}
   - {fileID: 1581268359}
   - {fileID: 1479451120}
-  childrenImage: []
+  ChildrenImages: []
+  ChildrenButtons:
+  - {fileID: 1479451122}
+  Black: {r: 0, g: 0, b: 0, a: 1}
+  White: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2139054125
 GameObject:
   m_ObjectHideFlags: 0

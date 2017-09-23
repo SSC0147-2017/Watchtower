@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuBehaviour : Utilities {
 
+    public EventSystem EventSys;
+
+    public List<GameObject> PanelList = new List<GameObject>();
+    private int ActivePanel = 0;
+
     public List<AudioSource> AudioList = new List<AudioSource>();
-    public Button FirstButton;
 
     public GameObject BlackScreen;
     public AudioSource SwooshSound;
@@ -19,9 +24,9 @@ public class MainMenuBehaviour : Utilities {
 
         StartCoroutine(FadeOut(BlackScreen, 2f, 1f));
 
-		if(FirstButton != null)
+        for(int i = 1; i < PanelList.Count; i++)
         {
-            FirstButton.Select();
+            PanelList[i].gameObject.SetActive(false);
         }
 	}
 	
@@ -54,11 +59,31 @@ public class MainMenuBehaviour : Utilities {
 
     public void OpenPanel(GameObject window)
     {
+        for(int i = 0; i < PanelList.Count; i++)
+        {
+            if(window.name == PanelList[i].name)
+            {
+                PanelList[i].GetComponent<PanelBehaviour>().ActivateButtons();
+                ActivePanel = i;
+            }
+            else
+            {
+                PanelList[i].GetComponent<PanelBehaviour>().DeactivateButtons();
+            }
+        }
+
         StartCoroutine(FadeIn(window, 0.5f, 0.4f));
     }
 
     public void ClosePanel(GameObject window)
     {
+        ActivePanel = 0;
+        PanelList[0].GetComponent<PanelBehaviour>().ActivateButtons();
+        for (int i = 1; i < PanelList.Count; i++)
+        {
+            PanelList[i].GetComponent<PanelBehaviour>().DeactivateButtons();
+        }
+
         StartCoroutine(FadeOut(window, 0.5f, 0.4f));
     }
 
