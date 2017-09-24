@@ -14,24 +14,31 @@ public class CharacterSelect : MonoBehaviour {
     [Header("Game Manager")]
     public GameManager GM;
 
-    [Header("Sprites")]
-    public GameObject PreviewSprite;
-    public GameObject SelectedSprite;
+    public Camera PlayerCamera;
+    public List<Vector3> CameraPositions = new List<Vector3>();
 
     private int PlayerNumber;
     private int CurrentIndex;
 
+    public float CameraMoveSpeed;
+    float Speed;
+    
+    [HideInInspector]
+    public bool Moving = false;
+
     // Use this for initialization
     void Start () {
+        Speed = CameraMoveSpeed;
+
         //defines PlayerNumber and CurrentIndex as this objects corresponding player
         PlayerNumber = GetComponent<SelectScreenBehaviour>().PlayerNumber;
         CurrentIndex = PlayerNumber - 1;
 
         //set initial sprite as the first in the list
         //also set all positions in available as true
-        if (GM.Sprites.Count > 0)
+        if (GM.Models.Count > 0)
         {
-            PreviewSprite.GetComponent<Image>().sprite = GM.Sprites[PlayerNumber-1];
+            PlayerCamera.transform.position = CameraPositions[PlayerNumber - 1];
         }
 	}
 
@@ -41,6 +48,13 @@ public class CharacterSelect : MonoBehaviour {
         if (GM.Available[CurrentIndex] == false) {
             NextCharacter();
         }
+        PlayerCamera.transform.position = Vector3.MoveTowards(PlayerCamera.transform.position, CameraPositions[CurrentIndex], Speed * Time.deltaTime);
+
+        if(PlayerCamera.transform.position == CameraPositions[CurrentIndex])
+        {
+            Moving = false;
+            Speed = CameraMoveSpeed;
+        }
     }
 
     //selects next character in cycle
@@ -48,16 +62,18 @@ public class CharacterSelect : MonoBehaviour {
     //also skips any character that is not available (i.e. already chosen)
     public void NextCharacter()
     {
-        if (CurrentIndex == GM.Sprites.Count - 1)
+        if (CurrentIndex == GM.Models.Count - 1)
         {
+            Speed *= 2;
             CurrentIndex = 0;
         }
         else {
+            Speed = CameraMoveSpeed;
             CurrentIndex++;
         }
         while (GM.Available[CurrentIndex] == false)
         {
-            if (CurrentIndex == GM.Sprites.Count - 1)
+            if (CurrentIndex == GM.Models.Count - 1)
             {
                 CurrentIndex = 0;
             }
@@ -66,7 +82,7 @@ public class CharacterSelect : MonoBehaviour {
                 CurrentIndex++;
             }
         }
-        PreviewSprite.GetComponent<Image>().sprite = GM.Sprites[CurrentIndex];
+        Moving = true;
     }
 
     //selects previous character in cycle
@@ -76,33 +92,35 @@ public class CharacterSelect : MonoBehaviour {
     {
         if (CurrentIndex == 0)
         {
-            CurrentIndex = GM.Sprites.Count - 1;
+            Speed *= 2;
+            CurrentIndex = GM.Models.Count - 1;
         }
         else
         {
+            Speed = CameraMoveSpeed;
             CurrentIndex--;
         }
         while (GM.Available[CurrentIndex] == false)
         {
             if (CurrentIndex == 0)
             {
-                CurrentIndex = GM.Sprites.Count - 1;
+                CurrentIndex = GM.Models.Count - 1;
             }
             else
             {
                 CurrentIndex--;
             }
         }
-        PreviewSprite.GetComponent<Image>().sprite = GM.Sprites[CurrentIndex];
+        Moving = true;
     }
 
     //updates GameManager lists accordingly by setting this character to "not available"
     //also returns the selected Character
     //used primarily by SelectScreenBehaviour
-    public Sprite SelectCharacter()
+    public GameObject SelectCharacter()
     {
         GM.Available[CurrentIndex] = false;
-        SelectedSprite.GetComponent<Image>().sprite = GM.Sprites[CurrentIndex];
-        return GM.Sprites[CurrentIndex];
+        //SelectedSprite.GetComponent<Image>().sprite = GM.Models[CurrentIndex];
+        return GM.Models[CurrentIndex];
     }
 }

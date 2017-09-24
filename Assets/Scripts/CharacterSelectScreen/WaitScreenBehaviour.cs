@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaitScreenBehaviour : MonoBehaviour {
 
@@ -62,8 +63,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
         //if P1 presses B, goes back to menu
         if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Alpha1))
         {
-            //pressbutton
-            //backtomenu
+            SceneManager.LoadScene("Main Menu");
         }
     }
 
