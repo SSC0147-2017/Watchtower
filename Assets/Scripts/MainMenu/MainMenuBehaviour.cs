@@ -1,26 +1,51 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuBehaviour : Utilities {
 
-    public List<AudioSource> audioList = new List<AudioSource>();
+    public EventSystem EventSys;
+
+    public List<GameObject> PanelList = new List<GameObject>();
+    private int ActivePanel = 0;
+
+    public List<AudioSource> AudioList = new List<AudioSource>();
+
+    public GameObject BlackScreen;
+    public AudioSource SwooshSound;
 
 	// Use this for initialization
 	void Start () {
-		
+
+        SwooshSound = GetComponent<AudioSource>();
+
+        StartCoroutine(FadeOut(BlackScreen, 2f, 1f));
+
+        for(int i = 1; i < PanelList.Count; i++)
+        {
+            PanelList[i].gameObject.SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+    }
+
+    public void NewGame()
+    {
+        SwooshSound.Play();
+        StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
+        StartCoroutine(ChangeScene(2f));
+    }
 
     public void MuteSound()
     {
-        for (int i = 0; i < audioList.Count; i++)
+        for (int i = 0; i < AudioList.Count; i++)
         {
-            AudioSource source = audioList[i];
+            AudioSource source = AudioList[i];
             if (source.mute == false)
             {
                 source.mute = true;
@@ -34,16 +59,42 @@ public class MainMenuBehaviour : Utilities {
 
     public void OpenPanel(GameObject window)
     {
+        for(int i = 0; i < PanelList.Count; i++)
+        {
+            if(window.name == PanelList[i].name)
+            {
+                PanelList[i].GetComponent<PanelBehaviour>().ActivateButtons();
+                ActivePanel = i;
+            }
+            else
+            {
+                PanelList[i].GetComponent<PanelBehaviour>().DeactivateButtons();
+            }
+        }
+
         StartCoroutine(FadeIn(window, 0.5f, 0.4f));
     }
 
     public void ClosePanel(GameObject window)
     {
+        ActivePanel = 0;
+        PanelList[0].GetComponent<PanelBehaviour>().ActivateButtons();
+        for (int i = 1; i < PanelList.Count; i++)
+        {
+            PanelList[i].GetComponent<PanelBehaviour>().DeactivateButtons();
+        }
+
         StartCoroutine(FadeOut(window, 0.5f, 0.4f));
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public IEnumerator ChangeScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene("Character Select");
     }
 }
