@@ -20,6 +20,8 @@ public class SelectScreenBehaviour : MonoBehaviour {
     public GameObject InfoScreen;
     public GameObject SelectedScreen;
 
+    bool AnalogInUse = false;
+
     // Update is called once per frame
     void Update () {
 
@@ -41,7 +43,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
             default:
                 print("Player number has not been set");
                 break;
-        }
+        }  
     }
 
     /// <summary>
@@ -54,7 +56,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
 
         //if P1 presses A, updates the SelectedCharacters list in GameManager with the selected character. also updates the ReadyPlayers list
         //next, changes the screen to ready screen
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             GM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
             GM.ReadyPlayers[PlayerNumber - 1] = true;
@@ -62,18 +64,45 @@ public class SelectScreenBehaviour : MonoBehaviour {
             gameObject.SetActive(false);
         }
         //if P1 presses B, goes back to the wait screen (Press A to Play)
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Backspace))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
-
+            GM.ReadyPlayers.RemoveAt(PlayerNumber - 1);
             WaitScreen.SetActive(true);
             gameObject.SetActive(false);
         }
         //if P1 presses X, goes to the character info screen
-        if (Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.LeftAlt))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
             InfoScreen.SetActive(true);
             gameObject.SetActive(false);
         }
+
+        if (transform.GetComponent<CharacterSelect>().Moving == false)
+        {
+
+            if (Input.GetAxisRaw("Joystick1Horizontal") == 1)
+            {
+                if (AnalogInUse == false)
+                {
+                    transform.GetComponent<CharacterSelect>().NextCharacter();
+                    AnalogInUse = true;
+                }
+            }
+            if (Input.GetAxisRaw("Joystick1Horizontal") == -1)
+            {
+                if (AnalogInUse == false)
+                {
+                    transform.GetComponent<CharacterSelect>().PreviousCharacter();
+                    AnalogInUse = true;
+                }
+            }
+        }
+
+        if(Input.GetAxisRaw("Joystick1Horizontal") == 0)
+        {
+            AnalogInUse = false;
+        }
+
     }
 
     //inputs for player 2
@@ -81,7 +110,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
     {
         //if P2 presses A, updates the SelectedCharacters list in GameManager with the selected character. also updates the ReadyPlayers list
         //next, changes the screen to ready screen
-        if (Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Joystick2Button0))
         {
             GM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
             GM.ReadyPlayers[PlayerNumber - 1] = true;
@@ -100,6 +129,31 @@ public class SelectScreenBehaviour : MonoBehaviour {
             InfoScreen.SetActive(true);
             gameObject.SetActive(false);
         }
+
+        if (transform.GetComponent<CharacterSelect>().Moving == false)
+        {
+            if (Input.GetAxisRaw("Joystick2Horizontal") == 1)
+            {
+                if (AnalogInUse == false)
+                {
+                    transform.GetComponent<CharacterSelect>().NextCharacter();
+                    AnalogInUse = true;
+                }
+            }
+            if (Input.GetAxisRaw("Joystick2Horizontal") == -1)
+            {
+                if (AnalogInUse == false)
+                {
+                    transform.GetComponent<CharacterSelect>().PreviousCharacter();
+                    AnalogInUse = true;
+                }
+            }
+        }
+
+        if (Input.GetAxisRaw("Joystick2Horizontal") == 0)
+        {
+            AnalogInUse = false;
+        }
     }
 
     //inputs for player 3
@@ -107,7 +161,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
     {
         //if P3 presses A, updates the SelectedCharacters list in GameManager with the selected character. also updates the ReadyPlayers list
         //next, changes the screen to ready screen
-        if (Input.GetKeyDown(KeyCode.Joystick3Button0) || Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Joystick3Button0))
         {
             GM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
             GM.ReadyPlayers[PlayerNumber - 1] = true;
@@ -126,6 +180,31 @@ public class SelectScreenBehaviour : MonoBehaviour {
             InfoScreen.SetActive(true);
             gameObject.SetActive(false);
         }
+
+        if (transform.GetComponent<CharacterSelect>().Moving == false)
+        {
+            if (Input.GetAxisRaw("Joystick3Horizontal") == 1)
+            {
+                if (AnalogInUse == false)
+                {
+                    transform.GetComponent<CharacterSelect>().NextCharacter();
+                    AnalogInUse = true;
+                }
+            }
+            if (Input.GetAxisRaw("Joystick3Horizontal") == -1)
+            {
+                if (AnalogInUse == false)
+                {
+                    transform.GetComponent<CharacterSelect>().PreviousCharacter();
+                    AnalogInUse = true;
+                }
+            }
+        }
+
+        if (Input.GetAxisRaw("Joystick3Horizontal") == 0)
+        {
+            AnalogInUse = false;
+        }
     }
 
     //inputs for player 4
@@ -133,7 +212,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
     {
         //if P4 presses A, updates the SelectedCharacters list in GameManager with the selected character. also updates the ReadyPlayers list
         //next, changes the screen to ready screen
-        if (Input.GetKeyDown(KeyCode.Joystick4Button0) || Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Joystick4Button0))
         {
             GM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
             GM.ReadyPlayers[PlayerNumber - 1] = true;
@@ -151,6 +230,30 @@ public class SelectScreenBehaviour : MonoBehaviour {
         {
             InfoScreen.SetActive(true);
             gameObject.SetActive(false);
+        }
+
+        if (transform.GetComponent<CharacterSelect>().Moving == false)
+        {
+            if (Input.GetAxisRaw("Joystick4Horizontal") == 1)
+            {
+                if (AnalogInUse == false)
+                {
+                    transform.GetComponent<CharacterSelect>().NextCharacter();
+                    AnalogInUse = true;
+                }
+            }
+            if (Input.GetAxisRaw("Joystick4Horizontal") == -1)
+            {
+                if (AnalogInUse == false)
+                {
+                    transform.GetComponent<CharacterSelect>().PreviousCharacter();
+                }
+            }
+        }
+
+        if (Input.GetAxisRaw("Joystick4Horizontal") == 0)
+        {
+            AnalogInUse = false;
         }
     }
 }
