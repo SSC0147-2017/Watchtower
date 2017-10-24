@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Anicon_Arwin
+  m_Controller: {fileID: 9100000, guid: 13d7c59c6419edf46859e436200c591c, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 618771605e3979842bb3eca1f7f815ad, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 618771605e3979842bb3eca1f7f815ad, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 588c3eba30db9694190a4f5c05b498d2, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: e8e9a8bba56730a4d825a68970a8ae34, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: a067ddd33a81a7541827ad2bf7874901, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: a067ddd33a81a7541827ad2bf7874901, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: c7066155e067ec34aac82941b3385f0b, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: c7066155e067ec34aac82941b3385f0b, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 7900d5a8bbf44014b8f2dc4c69801526, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 7900d5a8bbf44014b8f2dc4c69801526, type: 3}
