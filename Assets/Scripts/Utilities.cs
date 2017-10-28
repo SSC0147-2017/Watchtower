@@ -11,9 +11,11 @@ public class Utilities : MonoBehaviour {
         if (alphaMax > 1) alphaMax = 1;
         if (alphaMax < 0) alphaMax = 0;
 
-        screen.gameObject.SetActive(true);
-
         Color c = screen.GetComponent<Image>().color;
+        c.a = alphaMax;
+        screen.GetComponent<Image>().color = c;
+
+        screen.gameObject.SetActive(true);
 
         float time = 0;
 
@@ -33,9 +35,11 @@ public class Utilities : MonoBehaviour {
         if (alphaMax > 1) alphaMax = 1;
         if (alphaMax < 0) alphaMax = 0;
 
-        screen.gameObject.SetActive(true);
-
         Color c = screen.GetComponent<Image>().color;
+        c.a = 0;
+        screen.GetComponent<Image>().color = c;
+
+        screen.gameObject.SetActive(true);
 
         float time = 0;
 

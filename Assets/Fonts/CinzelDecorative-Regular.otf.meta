@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 457bd0e56db65b24c9c58ed6af9a82b2
-timeCreated: 1503804792
+guid: be496248f163fbf4b9effbba358339ba
+timeCreated: 1509226451
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -13,7 +13,7 @@ TrueTypeFontImporter:
   fontNames:
   - Cinzel Decorative
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 34203201d77f6e84da27e8baa520d476, type: 3}
+  - {fileID: 12800000, guid: a356bb44f31c2a8419ee86cf5ad19266, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

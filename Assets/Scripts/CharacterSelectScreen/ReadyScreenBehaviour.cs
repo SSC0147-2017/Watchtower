@@ -57,9 +57,9 @@ public class ReadyScreenBehaviour : MonoBehaviour {
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < GM.Sprites.Count; i++)
+            for (int i = 0; i < GM.Models.Count; i++)
             {
-                if (GM.SelectedCharacters[PlayerNumber - 1] == GM.Sprites[i])
+                if (GM.SelectedCharacters[PlayerNumber - 1] == GM.Models[i])
                 {
                     GM.Available[i] = true;
                 }
@@ -69,6 +69,22 @@ public class ReadyScreenBehaviour : MonoBehaviour {
 
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Joystick1Button7))
+        {
+            int ready = 0;
+            for (int i = 0; i < GM.ReadyPlayers.Count; i++)
+            {
+                if (GM.ReadyPlayers[i] == true)
+                {
+                    ready++;
+                }
+            }
+            if (ready == GM.ReadyPlayers.Count)
+            {
+                print("Start game");
+            }
         }
     }
 
@@ -83,9 +99,9 @@ public class ReadyScreenBehaviour : MonoBehaviour {
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < GM.Sprites.Count; i++)
+            for (int i = 0; i < GM.Models.Count; i++)
             {
-                if(GM.SelectedCharacters[PlayerNumber-1] == GM.Sprites[i])
+                if(GM.SelectedCharacters[PlayerNumber-1] == GM.Models[i])
                 {
                     GM.Available[i] = true;
                 }
@@ -109,9 +125,9 @@ public class ReadyScreenBehaviour : MonoBehaviour {
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < GM.Sprites.Count; i++)
+            for (int i = 0; i < GM.Models.Count; i++)
             {
-                if (GM.SelectedCharacters[PlayerNumber - 1] == GM.Sprites[i])
+                if (GM.SelectedCharacters[PlayerNumber - 1] == GM.Models[i])
                 {
                     GM.Available[i] = true;
                 }
@@ -135,9 +151,9 @@ public class ReadyScreenBehaviour : MonoBehaviour {
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < GM.Sprites.Count; i++)
+            for (int i = 0; i < GM.Models.Count; i++)
             {
-                if (GM.SelectedCharacters[PlayerNumber - 1] == GM.Sprites[i])
+                if (GM.SelectedCharacters[PlayerNumber - 1] == GM.Models[i])
                 {
                     GM.Available[i] = true;
                 }

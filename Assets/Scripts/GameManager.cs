@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+
+
     [Space(20)]
     [Header("Which players are ready to play")]
     public List<bool> ReadyPlayers = new List<bool>();
 
     [Space(20)]
     [Header("Which characters have been selected")]
-    public List<Sprite> SelectedCharacters = new List<Sprite>();
+    public List<GameObject> SelectedCharacters = new List<GameObject>();
 
     [Space(20)]
     [Header("List of Characters")]
-    public List<Sprite> Sprites = new List<Sprite>();
+    public List<GameObject> Models = new List<GameObject>();
 
     [Space(20)]
     [Header("Indicates Character is available to pick")]
@@ -31,7 +33,9 @@ public class GameManager : MonoBehaviour {
             SelectedCharacters.Add(null);
             Available.Add(true);
         }
-	}
-	
-	
+
+        for (int i = 0; i < Input.GetJoystickNames().Length; i++) {
+            print(Input.GetJoystickNames()[i]);
+        }
+	}	
 }

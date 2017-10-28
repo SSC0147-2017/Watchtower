@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Fire
-  - Player1
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -15,12 +13,12 @@ TagManager:
   - UI
   - 
   - 
-  - Player1
-  - Player2
-  - Player3
-  - Player4
-  - Enemy
-  - Cloth
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This script controls the Information Screen, where the player has pre-selected a character and is reading information about their moveset;
  * */
 
