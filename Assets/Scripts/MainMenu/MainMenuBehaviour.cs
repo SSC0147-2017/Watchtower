@@ -10,7 +10,6 @@ public class MainMenuBehaviour : Utilities {
     public EventSystem EventSys;
 
     public List<GameObject> PanelList = new List<GameObject>();
-    private int ActivePanel = 0;
 
     public List<AudioSource> AudioList = new List<AudioSource>();
 
@@ -66,7 +65,6 @@ public class MainMenuBehaviour : Utilities {
             if(window.name == PanelList[i].name)
             {
                 PanelList[i].GetComponent<PanelBehaviour>().ActivateButtons();
-                ActivePanel = i;
             }
             else
             {
@@ -79,7 +77,6 @@ public class MainMenuBehaviour : Utilities {
 
     public void ClosePanel(GameObject window)
     {
-        ActivePanel = 0;
         PanelList[0].GetComponent<PanelBehaviour>().ActivateButtons();
         for (int i = 1; i < PanelList.Count; i++)
         {

@@ -15,7 +15,8 @@ public class BugfolkBehaviour : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider col){
-		print ("c - " + col.gameObject);
+
+        print(col);
 
 		if (col.gameObject.tag == "Player") {
 			
@@ -34,19 +35,20 @@ public class BugfolkBehaviour : MonoBehaviour {
 
 	void OnTriggerExit(Collider col){
 		if (col.gameObject == target) {
-			print ("Exit");
 			target = null;
 		}
 	}
 
 	// Update is called once per frame
 	void Update () {
-		print ("tgt " + target);
-
-		if (target != null)
-			navAgent.SetDestination (target.transform.position);
-		else
-			navAgent.isStopped = true;
+        print("tgt " + target);
+        if (target != null)
+        {
+            navAgent.isStopped = false;
+            navAgent.SetDestination(target.transform.position);
+        }
+        else
+            navAgent.isStopped = true;
 		
 	}
 }
