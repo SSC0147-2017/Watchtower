@@ -22,6 +22,7 @@ public class EMContentPanel : MonoBehaviour {
 
 	private Text txtComp;
 	private Text titleTxtComp;
+
 	/**
 	 * Função pública para alterar o texto mostrado na tela.
 	 * @param newTextAsset novo TextAsset a ser colocado.

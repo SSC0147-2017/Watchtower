@@ -18,8 +18,6 @@ public class BugfolkBehaviour : MonoBehaviour {
 
 	void OnTriggerStay(Collider col){
 
-        print(col);
-
 		if (col.gameObject.tag == "Player") {
 			if (target == null) {
 				target = col.gameObject;	//Novo alvo
@@ -72,11 +70,22 @@ public class BugfolkBehaviour : MonoBehaviour {
 	 * Função usada para atacar um inimigo
 	 */
 	void Attack(){
-		navAgent.isStopped = true;//Para antes de atacar
-		print ("Attacking!");
+		//Para antes de atacar
+		if (!isAttacking) {
+			print ("Attacking!");
+			StartCoroutine (attackCooldown ());
+			//TODO - Animações e coisas chiques
+		}
+	}
+
+	//FUNÇÃO DE TESTE DE ATTACK COOLDOWN
+	private IEnumerator attackCooldown() {
+		navAgent.isStopped = true;
+		isAttacking = true;
 		tgtHealth.takeDamage (damage);
-		//Talvez um Yield para o ataque?
-		//TODO - Animações e coisas chiques
+		yield return new WaitForSeconds(2);
+		isAttacking = false;
 		navAgent.isStopped = false;
+
 	}
 }
