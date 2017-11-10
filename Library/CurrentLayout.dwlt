@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 711, y: 492}
   m_MaxSize: {x: 18006, y: 14042}
   vertical: 0
-  controlID: 99
+  controlID: 9
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 42
+  controlID: 10
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -402,23 +402,23 @@ MonoBehaviour:
     height: 926
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9844faff
-    m_LastClickedID: 0
-    m_ExpandedIDs: 96cbffff00000000
+    m_SelectedIDs: 18fcffff
+    m_LastClickedID: -1000
+    m_ExpandedIDs: 1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Bugfolk
-      m_OriginalName: Bugfolk
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 15510
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
@@ -454,14 +454,14 @@ MonoBehaviour:
     width: 1243
     height: 655
   m_SceneLighting: 1
-  lastFramingTime: 2919.627124814574
+  lastFramingTime: 144.6902313572031
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.2275431, y: 3.674539, z: -1.5683081}
+    m_Target: {x: -6.79, y: 1.0901239, z: -11.11}
     speed: 2
-    m_Value: {x: 1.2275431, y: 3.674539, z: -1.5683081}
+    m_Value: {x: -6.79, y: 1.0901239, z: -11.11}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -484,13 +484,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.17540237, y: 0.3558977, z: -0.06819305, w: 0.91538006}
+    m_Target: {x: 0.5398858, y: 0.006576684, z: -0.004215273, w: 0.8417019}
     speed: 2
-    m_Value: {x: 0.17540237, y: 0.3558977, z: -0.06819305, w: 0.91538006}
+    m_Value: {x: 0.5398859, y: 0.006576685, z: -0.0042152735, w: 0.84170204}
   m_Size:
-    m_Target: 4.0416584
+    m_Target: 41.37394
     speed: 2
-    m_Value: 4.0416584
+    m_Value: 41.37394
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -538,18 +538,19 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders: []
+    m_Folders:
+    - Assets/Scripts/Characters/Enemies
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: "C:\\Users\\Jo\xE3o\\Documents\\GitHub\\Grupo1"
+  m_LastProjectPath: "C:\\Users\\Fabr\xEDcio\\Documents\\UnityProjects\\Grupo1"
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 6c260000
     m_LastClickedID: 9836
-    m_ExpandedIDs: 00000000cc390000243a0000fa3a00003c3b0000ee3b0000fa3b0000203c0000
+    m_ExpandedIDs: 0000000044270000162e0000d62e0000dc2e0000fe2e0000d42f0000be3000008a31000096310000fa3100005e320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -574,24 +575,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 140}
+    scrollPos: {x: 0, y: 92}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc390000243a00008a3a00008e3a0000fa3a0000ee3b0000fa3b0000203c0000483c0000123f0000183f0000
+    m_ExpandedIDs: 0000000044270000fe2e0000d42f00001c3000003c300000be3000008a310000963100005e320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: DepthsBehaviour
+      m_OriginalName: DepthsBehaviour
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 1912
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 

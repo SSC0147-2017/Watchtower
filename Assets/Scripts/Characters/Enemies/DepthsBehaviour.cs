@@ -13,15 +13,55 @@ public class DepthsBehaviour : MonoBehaviour {
 
     NavMeshAgent navAgent;
 
+    private bool isAttacking;
+
     private void Start()
     {
         navAgent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
-    void Update () {
+    void Update()
+    {
+        //print("tgt " + target);
         CurrTarget = CalculateTarget();
-        print(CurrTarget);
+
+        //PERSEGUINDO/ATACANDO
+        if (CurrTarget != null)
+        {
+            Chase();
+            //Raio de ataque
+            if ((CurrTarget.transform.position - transform.position).magnitude <= navAgent.stoppingDistance)
+            {
+                Attack();
+            }
+        }
+        //PATRULHANDO/PARADO
+        else
+            navAgent.isStopped = true;
+
+    }
+
+    /*
+	 * Função usada para a perseguição
+	 */
+    void Chase()
+    {
+        navAgent.isStopped = false;
+        navAgent.SetDestination(CurrTarget.transform.position);
+    }
+
+    /*
+	 * Função usada para atacar um inimigo
+	 */
+    void Attack()
+    {
+        //Para antes de atacar
+        if (!isAttacking)
+        {
+            print("Attacking!");
+            StartCoroutine(attackCooldown());
+            //TODO - Animações e coisas chiques
+        }
     }
 
     GameObject CalculateTarget()
@@ -96,5 +136,17 @@ public class DepthsBehaviour : MonoBehaviour {
         {
             ClosestTarget = null;
         }
+    }
+
+    //FUNÇÃO DE TESTE DE ATTACK COOLDOWN
+    private IEnumerator attackCooldown()
+    {
+        navAgent.isStopped = true;
+        isAttacking = true;
+        //tgtHealth.takeDamage(damage);
+        yield return new WaitForSeconds(2);
+        isAttacking = false;
+        navAgent.isStopped = false;
+
     }
 }

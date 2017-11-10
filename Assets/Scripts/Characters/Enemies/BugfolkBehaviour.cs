@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class BugfolkBehaviour : MonoBehaviour {
 
-	public NavMeshAgent navAgent;
+	NavMeshAgent navAgent;
 	public GameObject target;
 	public float damage;
 
@@ -13,6 +13,7 @@ public class BugfolkBehaviour : MonoBehaviour {
 	private bool isAttacking;
 
 	void Start () {
+        navAgent = GetComponent<NavMeshAgent>();
 		target = null;
 	}
 
