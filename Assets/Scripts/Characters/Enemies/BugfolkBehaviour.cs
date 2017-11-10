@@ -9,13 +9,20 @@ public class BugfolkBehaviour : MonoBehaviour {
 	public GameObject target;
 	public float damage;
 
+	//Game Object com os colisores para ataque
+	public MeleeAttack claws;
+
 	private HealthController tgtHealth;
 	private bool isAttacking;
 
 	void Start () {
         navAgent = GetComponent<NavMeshAgent>();
 		target = null;
+		if (claws == null)
+			claws = gameObject.transform.GetChild (0).gameObject.GetComponent<MeleeAttack> ();
 	}
+
+
 
 	void OnTriggerStay(Collider col){
 
@@ -42,15 +49,21 @@ public class BugfolkBehaviour : MonoBehaviour {
 	}
 
 	void Update () {
-        //print("tgt " + target);
-
 		//PERSEGUINDO/ATACANDO
         if (target != null)
         {
+			//LookAt direto funciona mas o LookAtTarget não.... Pq?
+			/*Vector3 lookVector = target.transform.position;
+			lookVector.y = transform.position.y;
+			transform.LookAt (lookVector);*/
+		
+			//LookAtTarget ();
+
 			Chase ();
 			//Raio de ataque
-			if ( (target.transform.position - transform.position).magnitude <= navAgent.stoppingDistance) {
-				Attack ();
+			if ( (target.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {
+				LookAtTarget ();
+				claws.Attack ();
 			}
         }
         //PATRULHANDO/PARADO
@@ -63,30 +76,21 @@ public class BugfolkBehaviour : MonoBehaviour {
 	 * Função usada para a perseguição
 	 */
 	void Chase(){
+		
 		navAgent.isStopped = false;
 		navAgent.SetDestination(target.transform.position);
 	}
 
-	/*
-	 * Função usada para atacar um inimigo
+	/**
+	 * Função usada para sempre encarar o alvo.
 	 */
-	void Attack(){
-		//Para antes de atacar
-		if (!isAttacking) {
-			print ("Attacking!");
-			StartCoroutine (attackCooldown ());
-			//TODO - Animações e coisas chiques
-		}
-	}
+	void LookAtTarget(){
+		Vector3 lookVector = target.transform.position - transform.position;
+		lookVector.y = 0;
 
-	//FUNÇÃO DE TESTE DE ATTACK COOLDOWN
-	private IEnumerator attackCooldown() {
-		navAgent.isStopped = true;
-		isAttacking = true;
-		tgtHealth.takeDamage (damage);
-		yield return new WaitForSeconds(2);
-		isAttacking = false;
-		navAgent.isStopped = false;
+		Quaternion lookRotation = Quaternion.LookRotation (lookVector);//Calcula a rotação para encarar o Alvo
 
+		//Lerp faz a transição da original para a final. X graus/segundo
+		transform.rotation = Quaternion.Lerp (transform.rotation, lookRotation, Time.deltaTime * (10 / 360.0f) );
 	}
 }
