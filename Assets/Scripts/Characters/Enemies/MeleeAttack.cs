@@ -7,20 +7,22 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour {
 
-	public EnemyBehaviour behav;
-	public Collider hitbox;
-	public Animator animator;
+	public GameObject EnemyPrefab;
+	EnemyBehaviour behav;
+	Animator animator;
+
+	Collider hitbox;
 	public float damage;
 	public float cooldownTime;
 
 	// Use this for initialization
 	void Start () {
 		if (hitbox == null)
-			hitbox = GetComponent<Collider> ();
+			hitbox = GetComponent<BoxCollider> ();
 		if (animator == null)
-			animator = GetComponentInParent<Animator> ();
+			animator = EnemyPrefab.GetComponent<Animator> ();
 		if (behav == null)
-			behav = GetComponentInParent<BugfolkBehaviour> ();		
+			behav = EnemyPrefab.GetComponent<EnemyBehaviour> ();		
 	}
 
 	/**
@@ -29,6 +31,7 @@ public class MeleeAttack : MonoBehaviour {
 	public void Attack(){
 		if (!behav.getIsAttacking()) {
 			print ("Attacking!");
+			hitbox.enabled = true;
 			StartCoroutine (attackCooldown ());
 			//TODO - Animações e coisas chiques
 			animator.SetTrigger("Attack");
@@ -50,6 +53,7 @@ public class MeleeAttack : MonoBehaviour {
 	private IEnumerator attackCooldown() {
 		behav.setIsAttacking(true);
 		yield return new WaitForSeconds(cooldownTime);
+		hitbox.enabled = false;
 		behav.setIsAttacking(false);
 
 	}
