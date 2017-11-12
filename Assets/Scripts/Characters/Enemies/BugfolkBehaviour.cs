@@ -55,16 +55,17 @@ public class BugfolkBehaviour : MonoBehaviour {
 	void Update () {
 		//PERSEGUINDO/ATACANDO
 		if (target != null) {
-			//LookAt direto funciona mas o LookAtTarget não.... Pq?
-
+			
 			LookAtTarget ();
 
-			Chase ();
-			//Raio de ataque
-			if ( !isAttacking &&
-					(target.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {	
-				Stop ();
-				claws.Attack ();
+			if (!isAttacking){
+				//Raio de ataque
+				if((target.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {
+					Stop ();
+					claws.Attack ();
+				}
+				else
+					Chase ();
 			}
 		}
         //PATRULHANDO/PARADO

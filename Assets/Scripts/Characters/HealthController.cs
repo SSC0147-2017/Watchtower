@@ -72,7 +72,7 @@ public class HealthController : MonoBehaviour {
 			
             if (animator != null)
             {
-                animator.SetTrigger("Hurt");
+                animator.SetTrigger("Hit");
                 //print("Ai");
             }
 		}

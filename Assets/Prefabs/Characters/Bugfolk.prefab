@@ -504,13 +504,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4236236645403686}
-  - component: {fileID: 136747306911251930}
+  - component: {fileID: 114398100944931658}
+  - component: {fileID: 114925248218730222}
   - component: {fileID: 95892465179581780}
-  - component: {fileID: 23736506893177178}
   - component: {fileID: 54057151893907690}
+  - component: {fileID: 23736506893177178}
+  - component: {fileID: 136747306911251930}
   - component: {fileID: 195968186408721872}
   - component: {fileID: 135066189417800646}
-  - component: {fileID: 114398100944931658}
   m_Layer: 0
   m_Name: Bugfolk
   m_TagString: Enemy
@@ -1342,6 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd93ecb7e335c4441b5e689cdd972237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  behav: {fileID: 0}
   hitbox: {fileID: 65311885832130998}
   animator: {fileID: 95892465179581780}
   damage: 10
@@ -1361,6 +1363,23 @@ MonoBehaviour:
   damage: 10
   claws: {fileID: 114124175046264160}
   animator: {fileID: 95892465179581780}
+  isAttacking: 0
+--- !u!114 &114925248218730222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1732745046387244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fed6355047b704e9361e6468584507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 10
+  defense: 0
+  invicibilityTime: 0
+  entityRigidBody: {fileID: 54057151893907690}
+  animator: {fileID: 95892465179581780}
 --- !u!135 &135066189417800646
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1371,7 +1390,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 25
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!136 &136747306911251930
 CapsuleCollider:
