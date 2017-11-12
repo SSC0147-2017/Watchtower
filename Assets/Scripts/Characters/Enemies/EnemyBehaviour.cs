@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour{
 	protected GameObject CurrTarget;
 	Animator animator;
 
+	public float aggroRadius;
+
 	//Game Object com os colisores para ataque
 	[Header ("Left Arm")]
 	public MeleeAttack claws;
@@ -27,6 +29,7 @@ public class EnemyBehaviour : MonoBehaviour{
 		CurrTarget = null;
 		isAttacking = false;
 
+		GetComponent<SphereCollider> ().radius = aggroRadius;
 	}
 	#endregion 
 

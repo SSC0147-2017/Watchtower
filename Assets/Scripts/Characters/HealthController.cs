@@ -99,8 +99,8 @@ public class HealthController : MonoBehaviour {
 
 	void Update(){
 		if (this.gameObject.tag == "Player") {
-			print ("Invec? " + this.canBeHurt);
-			print ("HP: " + this.currentHp);
+			//print ("Invec? " + this.canBeHurt);
+			//print ("HP: " + this.currentHp);
 		}
 	}
 

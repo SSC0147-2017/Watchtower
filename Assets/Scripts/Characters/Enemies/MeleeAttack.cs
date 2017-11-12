@@ -30,7 +30,6 @@ public class MeleeAttack : MonoBehaviour {
 	 */
 	public void Attack(){
 		if (!behav.getIsAttacking()) {
-			print ("Attacking!");
 			hitbox.enabled = true;
 			StartCoroutine (attackCooldown ());
 			//TODO - Animações e coisas chiques

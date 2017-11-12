@@ -320,7 +320,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4042417272667102}
-  - component: {fileID: 136588972672377816}
+  - component: {fileID: 65959387762523944}
   - component: {fileID: 114230221658497944}
   m_Layer: 0
   m_Name: mixamorig:LeftArm
@@ -487,14 +487,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4236236645403686}
-  - component: {fileID: 114770174426741276}
-  - component: {fileID: 114925248218730222}
-  - component: {fileID: 95892465179581780}
-  - component: {fileID: 54057151893907690}
   - component: {fileID: 23736506893177178}
   - component: {fileID: 136747306911251930}
-  - component: {fileID: 195968186408721872}
   - component: {fileID: 135066189417800646}
+  - component: {fileID: 54057151893907690}
+  - component: {fileID: 95892465179581780}
+  - component: {fileID: 195968186408721872}
+  - component: {fileID: 114770174426741276}
+  - component: {fileID: 114925248218730222}
   m_Layer: 0
   m_Name: Bugfolk
   m_TagString: Enemy
@@ -839,7 +839,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1732745046387244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.18, y: 1.05, z: -10.65}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4699907029131042}
@@ -1233,6 +1233,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!65 &65959387762523944
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437392626704384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95892465179581780
 Animator:
   serializedVersion: 3
@@ -1275,6 +1287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c04d51886932d44ae82556027bd6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aggroRadius: 15
   claws: {fileID: 114230221658497944}
 --- !u!114 &114925248218730222
 MonoBehaviour:
@@ -1303,20 +1316,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 25
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!136 &136588972672377816
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1437392626704384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.04
-  m_Height: 1.1315545
-  m_Direction: 1
-  m_Center: {x: 0.00000006174947, y: 0.46126243, z: 0.00000010308274}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136747306911251930
 CapsuleCollider:
   m_ObjectHideFlags: 1

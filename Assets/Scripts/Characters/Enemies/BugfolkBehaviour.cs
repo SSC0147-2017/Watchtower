@@ -6,9 +6,9 @@ using UnityEngine.AI;
 public class BugfolkBehaviour : EnemyBehaviour{
 
 	#region Monobehaviour methods
-	/*void Start () {
-		//base.Start ();
-	}*/
+	void Start () {
+		base.Start ();
+	}
 
 	void Update () {
 		//PERSEGUINDO/ATACANDO
@@ -18,6 +18,7 @@ public class BugfolkBehaviour : EnemyBehaviour{
 
 			if (!isAttacking){
 				//Raio de ataque
+				//print("currtarget
 				if((CurrTarget.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {
 					Stop ();
 					claws.Attack ();

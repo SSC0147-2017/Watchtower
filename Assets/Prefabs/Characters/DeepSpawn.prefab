@@ -169,14 +169,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4283980881399764}
-  - component: {fileID: 114917011776044182}
-  - component: {fileID: 114748316740549096}
-  - component: {fileID: 95467812418571618}
-  - component: {fileID: 54620953522196698}
   - component: {fileID: 23387539801763274}
   - component: {fileID: 136335399694428520}
-  - component: {fileID: 195770816219953478}
   - component: {fileID: 135764175845658460}
+  - component: {fileID: 54620953522196698}
+  - component: {fileID: 95467812418571618}
+  - component: {fileID: 195770816219953478}
+  - component: {fileID: 114917011776044182}
+  - component: {fileID: 114748316740549096}
   m_Layer: 0
   m_Name: DeepSpawn
   m_TagString: Enemy
@@ -462,8 +462,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4333723583449380}
-  - component: {fileID: 136659944545914612}
   - component: {fileID: 114939962532919562}
+  - component: {fileID: 65683153411894482}
   m_Layer: 0
   m_Name: mixamorig:LeftArm
   m_TagString: Untagged
@@ -768,8 +768,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1258013720832092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.14, y: 1.05, z: -5.44}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.5, y: 0.52, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4867383048155428}
   - {fileID: 4819896501681280}
@@ -1233,6 +1233,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!65 &65683153411894482
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1755133631785130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95467812418571618
 Animator:
   serializedVersion: 3
@@ -1277,6 +1289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec008a1801643dc49bcc7c53ed83df57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aggroRadius: 5
   claws: {fileID: 114939962532919562}
   Targets:
   - {fileID: 0}
@@ -1305,8 +1318,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 25
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136335399694428520
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1320,19 +1333,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136659944545914612
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1755133631785130}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.04
-  m_Height: 1.1315545
-  m_Direction: 1
-  m_Center: {x: 0.00000006174947, y: 0.46126243, z: 0.00000010308274}
 --- !u!137 &137811091082224646
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
