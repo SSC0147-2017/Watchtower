@@ -11,15 +11,19 @@ public class BugfolkBehaviour : MonoBehaviour {
 
 	//Game Object com os colisores para ataque
 	public MeleeAttack claws;
+	public Animator animator;
 
 	private HealthController tgtHealth;
-	private bool isAttacking;
+	public bool isAttacking;
 
 	void Start () {
         navAgent = GetComponent<NavMeshAgent>();
 		target = null;
+		isAttacking = false;
 		if (claws == null)
 			claws = gameObject.transform.GetChild (0).gameObject.GetComponent<MeleeAttack> ();
+		if (animator == null)
+			animator = GetComponent<Animator> ();
 	}
 
 
@@ -50,33 +54,35 @@ public class BugfolkBehaviour : MonoBehaviour {
 
 	void Update () {
 		//PERSEGUINDO/ATACANDO
-        if (target != null)
-        {
+		if (target != null) {
 			//LookAt direto funciona mas o LookAtTarget não.... Pq?
 
-			/*Vector3 lookVector = target.transform.position;
-			lookVector.y = transform.position.y;
-			transform.LookAt (lookVector);*/
-		
 			LookAtTarget ();
 
 			Chase ();
 			//Raio de ataque
-			if ( (target.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {
-				//LookAtTarget ();
+			if ( !isAttacking &&
+					(target.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {	
+				Stop ();
 				claws.Attack ();
 			}
-        }
+		}
         //PATRULHANDO/PARADO
 		else
-            navAgent.isStopped = true;
-		
+			Stop ();
 	}
-		
+
+	void Stop(){
+		navAgent.isStopped = true;
+		animator.SetFloat ("Speed", 0);
+	}
+
+
 	/*
 	 * Função usada para a perseguição
 	 */
 	void Chase(){
+		animator.SetFloat ("Speed", 1);
 		navAgent.isStopped = false;
 		navAgent.SetDestination(target.transform.position);
 	}
