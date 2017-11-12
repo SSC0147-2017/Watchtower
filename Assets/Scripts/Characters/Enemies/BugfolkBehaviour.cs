@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BugfolkBehaviour : MonoBehaviour {
+public class BugfolkBehaviour : MonoBehaviour, EnemyBehaviour{
 
+	#region variables
 	NavMeshAgent navAgent;
 	public GameObject target;
 	public float damage;
@@ -14,8 +15,10 @@ public class BugfolkBehaviour : MonoBehaviour {
 	public Animator animator;
 
 	private HealthController tgtHealth;
-	public bool isAttacking;
+	private bool isAttacking;
+	#endregion
 
+	#region Monobehaviour methods
 	void Start () {
         navAgent = GetComponent<NavMeshAgent>();
 		target = null;
@@ -26,6 +29,26 @@ public class BugfolkBehaviour : MonoBehaviour {
 			animator = GetComponent<Animator> ();
 	}
 
+	void Update () {
+		//PERSEGUINDO/ATACANDO
+		if (target != null) {
+
+			LookAtTarget ();
+
+			if (!isAttacking){
+				//Raio de ataque
+				if((target.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {
+					Stop ();
+					claws.Attack ();
+				}
+				else
+					Chase ();
+			}
+		}
+		//PATRULHANDO/PARADO
+		else
+			Stop ();
+	}
 
 
 	void OnTriggerStay(Collider col){
@@ -36,7 +59,7 @@ public class BugfolkBehaviour : MonoBehaviour {
 			} else {
 				//Caso haja mais de um, escolher o alvo mais próximo
 				if (Vector3.Distance (col.gameObject.transform.position, transform.position) <
-				   Vector3.Distance (target.transform.position, transform.position)) {
+					Vector3.Distance (target.transform.position, transform.position)) {
 					target = col.gameObject;//Novo alvo
 				}
 			}
@@ -52,28 +75,20 @@ public class BugfolkBehaviour : MonoBehaviour {
 		}
 	}
 
-	void Update () {
-		//PERSEGUINDO/ATACANDO
-		if (target != null) {
-			
-			LookAtTarget ();
+	#endregion 
 
-			if (!isAttacking){
-				//Raio de ataque
-				if((target.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {
-					Stop ();
-					claws.Attack ();
-				}
-				else
-					Chase ();
-			}
-		}
-        //PATRULHANDO/PARADO
-		else
-			Stop ();
+
+	#region EnemyBehaviour methods
+
+	public bool getIsAttacking(){
+		return isAttacking;
 	}
 
-	void Stop(){
+	public void setIsAttacking(bool newAttacking){
+		isAttacking = newAttacking;
+	}
+
+	public void Stop(){
 		navAgent.isStopped = true;
 		animator.SetFloat ("Speed", 0);
 	}
@@ -82,7 +97,7 @@ public class BugfolkBehaviour : MonoBehaviour {
 	/*
 	 * Função usada para a perseguição
 	 */
-	void Chase(){
+	public void Chase(){
 		animator.SetFloat ("Speed", 1);
 		navAgent.isStopped = false;
 		navAgent.SetDestination(target.transform.position);
@@ -100,4 +115,6 @@ public class BugfolkBehaviour : MonoBehaviour {
 		//Lerp faz a transição da original para a final.
 		transform.rotation = Quaternion.Lerp (transform.rotation, lookRotation, Time.deltaTime * 3 );
 	}
+
+	#endregion
 }

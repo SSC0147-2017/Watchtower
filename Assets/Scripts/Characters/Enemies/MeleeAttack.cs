@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour {
 
-	public BugfolkBehaviour behav;
+	public EnemyBehaviour behav;
 	public Collider hitbox;
 	public Animator animator;
 	public float damage;
@@ -27,7 +27,7 @@ public class MeleeAttack : MonoBehaviour {
 	 * Método principal do script. Inicia o ataque
 	 */
 	public void Attack(){
-		if (!behav.isAttacking) {
+		if (!behav.getIsAttacking()) {
 			print ("Attacking!");
 			StartCoroutine (attackCooldown ());
 			//TODO - Animações e coisas chiques
@@ -37,7 +37,7 @@ public class MeleeAttack : MonoBehaviour {
 
 	void OnTriggerStay (Collider col){
 
-		if (behav.isAttacking) {//Só da dano se ele estiver atacando.
+		if (behav.getIsAttacking() && col.gameObject.tag == "Player") {//Só da dano se ele estiver atacando.
 			HealthController tgtHealth = col.gameObject.GetComponent<HealthController> ();
 			if (tgtHealth != null) {
 				tgtHealth.takeDamage (damage);
@@ -48,9 +48,9 @@ public class MeleeAttack : MonoBehaviour {
 
 	//FUNÇÃO DE TESTE DE ATTACK COOLDOWN
 	private IEnumerator attackCooldown() {
-		behav.isAttacking = true;
+		behav.setIsAttacking(true);
 		yield return new WaitForSeconds(cooldownTime);
-		behav.isAttacking = false;
+		behav.setIsAttacking(false);
 
 	}
 }

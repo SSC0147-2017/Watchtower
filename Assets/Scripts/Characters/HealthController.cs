@@ -97,6 +97,13 @@ public class HealthController : MonoBehaviour {
 		Destroy(this.gameObject);
 	}
 
+	void Update(){
+		if (this.gameObject.tag == "Player") {
+			print ("Invec? " + this.canBeHurt);
+			print ("HP: " + this.currentHp);
+		}
+	}
+
     private IEnumerator waitInvinciTime() {
         canBeHurt = false;
         yield return new WaitForSeconds(invicibilityTime);
