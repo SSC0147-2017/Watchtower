@@ -462,8 +462,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4333723583449380}
-  - component: {fileID: 114939962532919562}
-  - component: {fileID: 65683153411894482}
   m_Layer: 0
   m_Name: mixamorig:LeftArm
   m_TagString: Untagged
@@ -494,6 +492,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4444970210185580}
+  - component: {fileID: 65670211938333706}
+  - component: {fileID: 114396162962356860}
   m_Layer: 0
   m_Name: mixamorig:LeftForeArm
   m_TagString: Untagged
@@ -1233,18 +1233,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &65683153411894482
+--- !u!65 &65670211938333706
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1755133631785130}
+  m_GameObject: {fileID: 1789245692814690}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.35, y: 1, z: 0.28}
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!95 &95467812418571618
 Animator:
   serializedVersion: 3
@@ -1262,6 +1262,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114396162962356860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1789245692814690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd93ecb7e335c4441b5e689cdd972237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyPrefab: {fileID: 1258013720832092}
+  damage: 10
+  cooldownTime: 1
 --- !u!114 &114748316740549096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1290,24 +1304,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggroRadius: 5
-  claws: {fileID: 114939962532919562}
+  claws: {fileID: 114396162962356860}
   Targets:
   - {fileID: 0}
   Multiplier: 5
---- !u!114 &114939962532919562
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1755133631785130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd93ecb7e335c4441b5e689cdd972237, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 1258013720832092}
-  damage: 10
-  cooldownTime: 1
 --- !u!135 &135764175845658460
 SphereCollider:
   m_ObjectHideFlags: 1

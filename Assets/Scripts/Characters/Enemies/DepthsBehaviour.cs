@@ -31,7 +31,7 @@ public class DepthsBehaviour : EnemyBehaviour {
 
 			if (!isAttacking){
 				//Raio de ataque
-				if((CurrTarget.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {
+				if((CurrTarget.transform.position - transform.position).magnitude <= navAgent.stoppingDistance) {
 					Stop ();
 					claws.Attack ();
 				}

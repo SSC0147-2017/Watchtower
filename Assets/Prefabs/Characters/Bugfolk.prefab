@@ -155,6 +155,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4744015264932494}
+  - component: {fileID: 65104054547757996}
+  - component: {fileID: 114251239249365152}
   m_Layer: 0
   m_Name: mixamorig:LeftForeArm
   m_TagString: Untagged
@@ -320,8 +322,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4042417272667102}
-  - component: {fileID: 65959387762523944}
-  - component: {fileID: 114230221658497944}
   m_Layer: 0
   m_Name: mixamorig:LeftArm
   m_TagString: Untagged
@@ -1233,18 +1233,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &65959387762523944
+--- !u!65 &65104054547757996
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1437392626704384}
+  m_GameObject: {fileID: 1190601527317618}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.43, y: 0.92, z: 0.33}
+  m_Center: {x: 0.01, y: 0.44, z: 0}
 --- !u!95 &95892465179581780
 Animator:
   serializedVersion: 3
@@ -1262,12 +1262,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114230221658497944
+--- !u!114 &114251239249365152
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1437392626704384}
+  m_GameObject: {fileID: 1190601527317618}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd93ecb7e335c4441b5e689cdd972237, type: 3}
@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggroRadius: 15
-  claws: {fileID: 114230221658497944}
+  claws: {fileID: 114251239249365152}
 --- !u!114 &114925248218730222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1418,7 +1418,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.75
+  m_StoppingDistance: 2.25
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

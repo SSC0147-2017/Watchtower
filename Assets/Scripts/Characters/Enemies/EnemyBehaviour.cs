@@ -13,7 +13,7 @@ public class EnemyBehaviour : MonoBehaviour{
 	public float aggroRadius;
 
 	//Game Object com os colisores para ataque
-	[Header ("Left Arm")]
+	[Header ("Left Forearm")]
 	public MeleeAttack claws;
 
 	protected bool isAttacking;

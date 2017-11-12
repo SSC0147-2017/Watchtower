@@ -18,8 +18,8 @@ public class BugfolkBehaviour : EnemyBehaviour{
 
 			if (!isAttacking){
 				//Raio de ataque
-				//print("currtarget
-				if((CurrTarget.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {
+				//print("dist " + (CurrTarget.transform.position - claws.transform.position).magnitude);
+				if((CurrTarget.transform.position - transform.position).magnitude <= navAgent.stoppingDistance) {
 					Stop ();
 					claws.Attack ();
 				}
