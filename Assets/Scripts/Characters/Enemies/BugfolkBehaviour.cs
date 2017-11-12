@@ -53,16 +53,17 @@ public class BugfolkBehaviour : MonoBehaviour {
         if (target != null)
         {
 			//LookAt direto funciona mas o LookAtTarget não.... Pq?
+
 			/*Vector3 lookVector = target.transform.position;
 			lookVector.y = transform.position.y;
 			transform.LookAt (lookVector);*/
 		
-			//LookAtTarget ();
+			LookAtTarget ();
 
 			Chase ();
 			//Raio de ataque
 			if ( (target.transform.position - claws.transform.position).magnitude <= navAgent.stoppingDistance) {
-				LookAtTarget ();
+				//LookAtTarget ();
 				claws.Attack ();
 			}
         }
@@ -76,7 +77,6 @@ public class BugfolkBehaviour : MonoBehaviour {
 	 * Função usada para a perseguição
 	 */
 	void Chase(){
-		
 		navAgent.isStopped = false;
 		navAgent.SetDestination(target.transform.position);
 	}
@@ -90,7 +90,7 @@ public class BugfolkBehaviour : MonoBehaviour {
 
 		Quaternion lookRotation = Quaternion.LookRotation (lookVector);//Calcula a rotação para encarar o Alvo
 
-		//Lerp faz a transição da original para a final. X graus/segundo
-		transform.rotation = Quaternion.Lerp (transform.rotation, lookRotation, Time.deltaTime * (10 / 360.0f) );
+		//Lerp faz a transição da original para a final.
+		transform.rotation = Quaternion.Lerp (transform.rotation, lookRotation, Time.deltaTime * 3 );
 	}
 }
