@@ -22,6 +22,8 @@ public class HealthController : MonoBehaviour {
 	public float defense;
     //Tempo de invencibilidade
     public float invicibilityTime;
+
+	public bool LevandoDano;
     //Medida de equilíbrio em que 0 é pouco equilibrado e 1 muito equilibrado
 
 	[Space(20)]
@@ -54,12 +56,13 @@ public class HealthController : MonoBehaviour {
 	 */
 	public void takeDamage(float damage){
 
-        if (canBeHurt)
-        {
-            float netDamage = damage - this.defense;
-            if (netDamage > 0)
+        if (canBeHurt) {
+            float netDamage = damage * this.defense;
+			if (netDamage > 0) {
                 this.currentHp -= netDamage;
-            StartCoroutine(waitInvinciTime());
+				StartCoroutine(waitInvinciTime());
+			}
+            
         }
         else
             return;
@@ -72,7 +75,7 @@ public class HealthController : MonoBehaviour {
 			
             if (animator != null)
             {
-                animator.SetTrigger("Hit");
+                //animator.SetTrigger("Hit");
                 //print("Ai");
             }
 		}
@@ -106,8 +109,10 @@ public class HealthController : MonoBehaviour {
 
     private IEnumerator waitInvinciTime() {
         canBeHurt = false;
+		LevandoDano = true;
         yield return new WaitForSeconds(invicibilityTime);
         canBeHurt = true;
+		LevandoDano = false;
     }
 
 }

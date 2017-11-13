@@ -5,56 +5,182 @@ using UnityEngine.Events;
 
 public class Movement : MonoBehaviour {
 
-	public float movementSpeed;
+
+	public int MaxHP;
+	private bool canBeHurt;
+	private int CurrentHP;
+	public float defense;
+	public bool isDead;
+	public float invicibilityTime;
+	public float RevivalTime;
+	//HP
+
+	private bool isMovable;
+	public float Speed;
+	private float ActualSpeed;
 	public float turnSpeed;
-	private Animator anim;
-	public Rigidbody FireBall;
+	//Movement
+
+	public Rigidbody Projectile;
 	public Transform Pos;
-	public string AtkButton = "Fire1_P1";
-	public string SpButton = "Fire2_P1";
-	public string HorizontalControl = "Joystick1Horizontal";
-	public string VerticalControl = "Joystick1Vertical";
+	public float spread;
+	public float ProjSpd;
+	public int ColLayer;
+	public float SpecialTime;
+	//Special
+
+	public float rollTime;
+	public float rollSpeed;
+	public float rollDmgRed;
+	//Dodge
+
+	public float AttackTime;
+	//Attack
+
+	private string Controller;
+	private Animator anim;
 
 	void Start() {
 		anim = GetComponent<Animator>();
+		Physics.IgnoreLayerCollision(ColLayer,ColLayer,true);
+		isMovable=true;
+		canBeHurt=true;
+		CurrentHP=MaxHP;
+		isDead=false;
 	}
+
+	public void Initiate(string Con){
+		Controller=Con;
+	}
+
 
 	void FixedUpdate () {
 		
-		if(Input.GetButtonDown(AtkButton)) {
-			anim.SetTrigger("Atk");
+		if(Input.GetButtonDown(Controller+"Fire1")) {
+			StartCoroutine(waitAttackTime());
+			anim.SetFloat("Speed",0.0f);
+			anim.SetTrigger("Attack");
 		}
-		if(Input.GetButtonDown(SpButton)) {
-			anim.SetTrigger("Spell");
-			SpellCast();
+		if(Input.GetButtonDown(Controller+"Fire2")) {
+			StartCoroutine(waitSpecialTime());
+			anim.SetFloat("Speed",0.0f);
+			anim.SetTrigger("Special");
+			Special();
 		}
-		ControllPlayer();
+		if(Input.GetButtonDown(Controller+"Fire3")) {
+			anim.SetTrigger("Dodge");
+			StartCoroutine(RollTime());
+		}
+		ControlPlayer();
 	}
 
+	private IEnumerator waitAttackTime() {
+		isMovable=false;
+		yield return new WaitForSeconds(AttackTime);
+		isMovable=true;
+	}
 
-	void ControllPlayer() {
-		float h = Input.GetAxisRaw (HorizontalControl);
-		float v = Input.GetAxisRaw (VerticalControl);
+	private IEnumerator waitSpecialTime() {
+		isMovable=false;
+		yield return new WaitForSeconds(SpecialTime);
+		isMovable=true;
+	}
 
-		if(h*h+v*v<0.01){
-			anim.SetBool("IsMoving",false);
+	public void takeDamage(float damage){
+
+		if (canBeHurt) {
+			float netDamage = damage * defense;
+			if (netDamage > 0) {
+				CurrentHP -= (int)netDamage;
+				StartCoroutine(waitInvinciTime());
+				anim.SetFloat("Speed",0.0f);
+				anim.SetTrigger("Hit");
+			}
+		}
+		else
+			return;
+
+		if (this.CurrentHP <= 0) {
+			anim.SetTrigger("Dying");
+			isDead = true;
+			anim.SetBool("CanAttack",false);
+			//this.die ();
+		}
+
+	}
+
+	private IEnumerator waitInvinciTime() {
+		canBeHurt = false;
+		isMovable=false;
+		anim.SetBool("CanAttack",false);
+		yield return new WaitForSeconds(invicibilityTime);
+		canBeHurt = true;
+		isMovable=true;
+		anim.SetBool("CanAttack",true);
+	}
+
+	private IEnumerator waitReviveTime() {
+		canBeHurt = false;
+		isMovable=false;
+		anim.SetBool("CanAttack",false);
+		yield return new WaitForSeconds(RevivalTime);
+		canBeHurt = true;
+		isMovable=true;
+		anim.SetBool("CanAttack",true);
+	}
+
+	public void GainHP(int gain){
+		CurrentHP+=gain;
+		if (CurrentHP>MaxHP)
+			CurrentHP=MaxHP;
+	}
+
+	public void Revive(){
+		if(isDead){
+			anim.SetTrigger("Revive");
+			StartCoroutine(waitReviveTime());
+			CurrentHP=MaxHP/2;
+		}
+	}
+
+	private IEnumerator RollTime(){
+		ActualSpeed = rollSpeed;
+		defense = rollDmgRed;
+		anim.SetBool("CanAttack",false);
+		yield return new WaitForSeconds (rollTime);
+		ActualSpeed = Speed;
+		defense = 1.0f;
+		anim.SetBool("CanAttack",true);
+	}
+
+	void ControlPlayer() {
+		float h = Input.GetAxisRaw (Controller+"Horizontal");
+		float v = Input.GetAxisRaw (Controller+"Vertical");
+
+		if(!isMovable){
+			//anim.SetBool("IsMoving",false);
+			anim.SetFloat("Speed",0.0f);
 			return;
 		}
-		anim.SetBool("IsMoving",true);
+		//anim.SetBool("IsMoving",true);
 
 		Vector3 movement = new Vector3(h, 0.0f, v);
 
 		transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), turnSpeed);
-
-
-		transform.Translate (movement * movementSpeed * Time.deltaTime, Space.World);
-
+		transform.Translate (movement * ActualSpeed * Time.deltaTime, Space.World);
+		anim.SetFloat("Speed", AnimSpeed(h,v));
 
 	}
 
-	void SpellCast() {
-		Rigidbody Clone = (Rigidbody) Instantiate(FireBall, Pos.position, Pos.rotation);
-		Physics.IgnoreLayerCollision(8,8,true); 
-		Clone.velocity = Pos.TransformDirection(Vector3.forward * 10.0f);
+	float AnimSpeed(float sideALength, float sideBLength) {
+		if(Mathf.Sqrt(sideALength * sideALength + sideBLength * sideBLength)>1.0f)
+			return 1.0f;
+		return Mathf.Sqrt(sideALength * sideALength + sideBLength * sideBLength);
+	}
+
+	void Special() {
+		Rigidbody Clone = (Rigidbody) Instantiate(Projectile, Pos.position, Pos.rotation);
+		Clone.transform.Rotate(Random.Range(0.0f,spread), Random.Range(0.0f,spread), Random.Range(0.0f,spread));
+		Clone.velocity = Pos.TransformDirection(Vector3.forward * ProjSpd);
 	}
 }
