@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a68bb2b8f4c59c43857e1dc2b44e86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerCamera: {fileID: 1126028050}
   CameraPositions:
   - {x: 2505, y: 0, z: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8189f4be116e9734c986c239d5cc75c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 4
   WaitScreen: {fileID: 645685028}
   InfoScreen: {fileID: 1938516665}
@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3438614bc3ad9624c81bff00745b841a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 2
   SelectScreen: {fileID: 916565429}
 --- !u!114 &593738281
@@ -2015,7 +2015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3438614bc3ad9624c81bff00745b841a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 4
   SelectScreen: {fileID: 68336456}
 --- !u!114 &645685030
@@ -2565,7 +2565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3438614bc3ad9624c81bff00745b841a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 1
   SelectScreen: {fileID: 1878035740}
 --- !u!1 &826419353
@@ -2821,7 +2821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a68bb2b8f4c59c43857e1dc2b44e86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerCamera: {fileID: 239776351}
   CameraPositions:
   - {x: 2505, y: 0, z: 0}
@@ -2841,7 +2841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8189f4be116e9734c986c239d5cc75c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 0}
   PlayerNumber: 2
   WaitScreen: {fileID: 593738279}
   InfoScreen: {fileID: 1174299321}
@@ -3046,7 +3046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a68bb2b8f4c59c43857e1dc2b44e86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerCamera: {fileID: 1126028050}
   CameraPositions:
   - {x: 2505, y: 0, z: 0}
@@ -3066,7 +3066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8189f4be116e9734c986c239d5cc75c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 3
   WaitScreen: {fileID: 1566529170}
   InfoScreen: {fileID: 1350867804}
@@ -4539,7 +4539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3438614bc3ad9624c81bff00745b841a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 3
   SelectScreen: {fileID: 1044709266}
 --- !u!114 &1566529172
@@ -5053,7 +5053,7 @@ GameObject:
   - component: {fileID: 1755127231}
   - component: {fileID: 1755127230}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: CharacterSelectManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5299,7 +5299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a68bb2b8f4c59c43857e1dc2b44e86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerCamera: {fileID: 1126028050}
   CameraPositions:
   - {x: 2505, y: 0, z: 0}
@@ -5319,7 +5319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8189f4be116e9734c986c239d5cc75c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 1
   WaitScreen: {fileID: 808150820}
   InfoScreen: {fileID: 2108362666}
