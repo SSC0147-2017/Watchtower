@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class DepthsBehaviour : EnemyBehaviour {
 
 	#region variables
-	public List<GameObject> Targets = new List<GameObject>();
+	List<GameObject> Targets = new List<GameObject>();
 
 	GameObject ClosestTarget;
 
@@ -14,10 +14,13 @@ public class DepthsBehaviour : EnemyBehaviour {
 	#endregion
 
 	#region Monobehaviour Methods
-	/*void Start()
+	void Start()
 	{
 		base.Start ();
-	}*/
+		for(int i = 0; i < GameManager.GM.Players.Count; i++){
+			Targets.Add(GameManager.GM.Players[i]);
+		}
+	}
 		
 	void Update()
 	{

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This script controls the Waiting Screen, where the CharacterSelection Scene has just started and players have to press a button to join the party and play;
  * */
 
@@ -9,8 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class WaitScreenBehaviour : MonoBehaviour {
 
-    [Header("Game Manager")]
-    public GameManager GM;
+    [Header("Character Select Manager")]
+    public CharacterSelectManager CSM;
 
     [Space(20)]
     public int PlayerNumber;
@@ -55,7 +55,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
         //if P1 presses A, goes to character selection screen and signals the GameManager that this player is active
         if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Alpha1))
         {
-            GM.ReadyPlayers.Add(false);
+            CSM.ReadyPlayers.Add(false);
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
         }
@@ -73,7 +73,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
         //if P2 presses A, goes to character selection screen and signals the GameManager that this player is active
         if (Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKeyDown(KeyCode.Alpha2))
         {
-            GM.ReadyPlayers.Add(false);
+            CSM.ReadyPlayers.Add(false);
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
         }
@@ -85,7 +85,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
         //if P3 presses A, goes to character selection screen and signals the GameManager that this player is active
         if (Input.GetKeyDown(KeyCode.Joystick3Button0) || Input.GetKeyDown(KeyCode.Alpha3))
         {
-            GM.ReadyPlayers.Add(false);
+            CSM.ReadyPlayers.Add(false);
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
         }
@@ -97,7 +97,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
         //if P4 presses A, goes to character selection screen and signals the GameManager that this player is active
         if (Input.GetKeyDown(KeyCode.Joystick4Button0) || Input.GetKeyDown(KeyCode.Alpha4))
         {
-            GM.ReadyPlayers.Add(false);
+            CSM.ReadyPlayers.Add(false);
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
         }

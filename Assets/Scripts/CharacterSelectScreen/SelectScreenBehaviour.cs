@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This script controls the Selection Screen (the main screen in the CharacterSelection Scene). The player can cycle between the available characters (not chosen) and can select one or see their information;
  * */
 
@@ -8,8 +8,8 @@ using UnityEngine;
 
 public class SelectScreenBehaviour : MonoBehaviour {
 
-    [Header("Game Manager")]
-    public GameManager GM;
+    [Header("Character Select Manager")]
+    public CharacterSelectManager CSM;
 
     [Space(20)]
     public int PlayerNumber;
@@ -58,15 +58,15 @@ public class SelectScreenBehaviour : MonoBehaviour {
         //next, changes the screen to ready screen
         if (Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
-            GM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
-            GM.ReadyPlayers[PlayerNumber - 1] = true;
+            CSM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
+            CSM.ReadyPlayers[PlayerNumber - 1] = true;
             SelectedScreen.SetActive(true);
             gameObject.SetActive(false);
         }
         //if P1 presses B, goes back to the wait screen (Press A to Play)
         if (Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
-            GM.ReadyPlayers.RemoveAt(PlayerNumber - 1);
+            CSM.ReadyPlayers.RemoveAt(PlayerNumber - 1);
             WaitScreen.SetActive(true);
             gameObject.SetActive(false);
         }
@@ -112,8 +112,8 @@ public class SelectScreenBehaviour : MonoBehaviour {
         //next, changes the screen to ready screen
         if (Input.GetKeyDown(KeyCode.Joystick2Button0))
         {
-            GM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
-            GM.ReadyPlayers[PlayerNumber - 1] = true;
+            CSM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
+            CSM.ReadyPlayers[PlayerNumber - 1] = true;
             SelectedScreen.SetActive(true);
             gameObject.SetActive(false);
         }
@@ -163,8 +163,8 @@ public class SelectScreenBehaviour : MonoBehaviour {
         //next, changes the screen to ready screen
         if (Input.GetKeyDown(KeyCode.Joystick3Button0))
         {
-            GM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
-            GM.ReadyPlayers[PlayerNumber - 1] = true;
+            CSM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
+            CSM.ReadyPlayers[PlayerNumber - 1] = true;
             SelectedScreen.SetActive(true);
             gameObject.SetActive(false);
         }
@@ -214,8 +214,8 @@ public class SelectScreenBehaviour : MonoBehaviour {
         //next, changes the screen to ready screen
         if (Input.GetKeyDown(KeyCode.Joystick4Button0))
         {
-            GM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
-            GM.ReadyPlayers[PlayerNumber - 1] = true;
+            CSM.SelectedCharacters[PlayerNumber - 1] = gameObject.GetComponent<CharacterSelect>().SelectCharacter();
+            CSM.ReadyPlayers[PlayerNumber - 1] = true;
             SelectedScreen.SetActive(true);
             gameObject.SetActive(false);
         }

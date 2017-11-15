@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This script controls the Ready Screen, where the player has selected a character, but can cancel the selection and go back to choosing;
  * */
 
@@ -8,8 +8,8 @@ using UnityEngine;
 
 public class ReadyScreenBehaviour : MonoBehaviour {
 
-    [Header("Game Manager")]
-    public GameManager GM;
+    [Header("Character Select Manager")]
+    public CharacterSelectManager GM;
 
     [Space(20)]
     public int PlayerNumber;
