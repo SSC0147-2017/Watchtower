@@ -26,12 +26,18 @@ public class EMContentPanel : MonoBehaviour {
 	/**
 	 * Função pública para alterar o texto mostrado na tela.
 	 * @param newTextAsset novo TextAsset a ser colocado.
+	 * @param null para "Limpar" o text area e o titulo
 	 */
 	public void switchTextAsset(TextAsset newTextAsset){
-		this.textAsset = newTextAsset;
+		if (newTextAsset != null) {
+			this.textAsset = newTextAsset;
 
-		txtComp.text = textAsset.text;
-		titleTxtComp.text = textAsset.name;
+			txtComp.text = textAsset.text;
+			titleTxtComp.text = textAsset.name;
+		} else {//Se nulo, impla
+			txtComp.text = "";
+			titleTxtComp.text = "";
+		}
 	}
 
 	void Awake () {
@@ -43,12 +49,7 @@ public class EMContentPanel : MonoBehaviour {
 		txtComp = textArea.GetComponent<Text> ();
 		titleTxtComp = title.GetComponent<Text> ();
 
-		if (textAsset != null) {
-			txtComp.text = textAsset.text;
-			titleTxtComp.text = textAsset.name;
-		} else {
-			txtComp.text = "";
-			titleTxtComp.text = "";
-		}
+		//Carrega o textasset default
+		switchTextAsset (textAsset);
 	}
 }

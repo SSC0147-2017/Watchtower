@@ -6,6 +6,10 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+
+/***
+ * ExtrasManager implementa singleton, acessível por extrasManager
+ */
 public class ExtrasManager : MonoBehaviour {
 
 	public static ExtrasManager extrasManager;
@@ -19,16 +23,22 @@ public class ExtrasManager : MonoBehaviour {
 		if (extrasManager == null) {
 			extrasManager = this;
 
+			this.arrLore = new bool[3];
 			this.arrJournal = new bool[9];
-			this.arrLore = new bool[5];
 			this.arrBios = new bool[4];
+
+			Load ();
 		}
 		else if (extrasManager != this) {
 			Destroy (this.gameObject);
 		}
 	}
-	
-	public void Save(){
+
+	/**
+	 * Método para salvar as informações carregadas em arquivo
+	 * @return true=Salvou os dados no arquivo	false=Deu alguma merda
+	 */
+	public bool Save(){
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream file = File.Create (Application.persistentDataPath + "/UnlockedExtras.dat");
 
@@ -38,26 +48,35 @@ public class ExtrasManager : MonoBehaviour {
 		ed.arrBios = this.arrBios;
 
 		bf.Serialize (file, ed);
-		print ("Saved at: " + Application.persistentDataPath + "/UnlockedExtras.dat");
 
 		file.Close ();
+
+		print ("Saved at: " + Application.persistentDataPath + "/UnlockedExtras.dat");
+		return true;
 	}
 
-	public void Load(){
+	/**
+	 * Método para carregar quais extras já foram desbloqueados
+	 * @return true=Carregou os dados no arquivo	false=Arquivo não existente
+	 */
+	public bool Load(){
 
 		//Verifica se o arquivo existe
-		if(File.Exists(Application.persistentDataPath + "/UnlockedExtras.dat")){
+		if (File.Exists (Application.persistentDataPath + "/UnlockedExtras.dat")) {
 
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Open (Application.persistentDataPath + "/UnlockedExtras.dat", FileMode.Open);
 
-			ExtrasData ed = (ExtrasData) bf.Deserialize (file);
+			ExtrasData ed = (ExtrasData)bf.Deserialize (file);
 			file.Close ();
 
 			this.arrJournal = ed.arrJournal;
 			this.arrLore = ed.arrLore;
 			this.arrBios = ed.arrBios;
-		}
+
+			return true;
+		} else
+			return false;
 	}
 
 	void Update(){
@@ -69,7 +88,7 @@ public class ExtrasManager : MonoBehaviour {
 }
 
 /**
- * Classe container que armazena os arrays
+ * Classe container que armazena os arrays de desbloqueáveis
  */
 [Serializable]
 class ExtrasData{

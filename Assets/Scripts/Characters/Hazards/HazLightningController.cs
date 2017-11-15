@@ -14,7 +14,7 @@ public class HazLightningController : MonoBehaviour {
 		waypoints = new Vector3[path.childCount];
 
 		for (int i = 0; i < path.childCount; i++) {
-			waypoints [i] = path.GetChild (i);
+			waypoints [i] = path.GetChild (i).transform.position;
 		}
 
 	}
