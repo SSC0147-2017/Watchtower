@@ -16,8 +16,6 @@ public class Movement : MonoBehaviour {
 	//HP
 
 	private bool isMovable;
-	public float Speed;
-	private float ActualSpeed;
 	public float turnSpeed;
 	//Movement
 
@@ -30,14 +28,13 @@ public class Movement : MonoBehaviour {
 	//Special
 
 	public float rollTime;
-	public float rollSpeed;
 	public float rollDmgRed;
 	//Dodge
 
 	public float AttackTime;
 	//Attack
 
-	private string Controller;
+	public string Controller;
 	private Animator anim;
 
 	void Start() {
@@ -144,12 +141,12 @@ public class Movement : MonoBehaviour {
 	}
 
 	private IEnumerator RollTime(){
-		ActualSpeed = rollSpeed;
 		defense = rollDmgRed;
+		//isMovable=false;
 		anim.SetBool("CanAttack",false);
 		yield return new WaitForSeconds (rollTime);
-		ActualSpeed = Speed;
 		defense = 1.0f;
+		//isMovable=true;
 		anim.SetBool("CanAttack",true);
 	}
 
@@ -162,12 +159,17 @@ public class Movement : MonoBehaviour {
 			anim.SetFloat("Speed",0.0f);
 			return;
 		}
+
+		if(h*h+v*v<0.1){
+			anim.SetFloat("Speed",0.0f);
+			return;
+		}
 		//anim.SetBool("IsMoving",true);
 
 		Vector3 movement = new Vector3(h, 0.0f, v);
 
 		transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), turnSpeed);
-		transform.Translate (movement * ActualSpeed * Time.deltaTime, Space.World);
+		//transform.Translate (movement * ActualSpeed * Time.deltaTime, Space.World);
 		anim.SetFloat("Speed", AnimSpeed(h,v));
 
 	}
@@ -179,6 +181,8 @@ public class Movement : MonoBehaviour {
 	}
 
 	void Special() {
+		if(Pos==null)
+			return;
 		Rigidbody Clone = (Rigidbody) Instantiate(Projectile, Pos.position, Pos.rotation);
 		Clone.transform.Rotate(Random.Range(0.0f,spread), Random.Range(0.0f,spread), Random.Range(0.0f,spread));
 		Clone.velocity = Pos.TransformDirection(Vector3.forward * ProjSpd);
