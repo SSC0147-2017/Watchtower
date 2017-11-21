@@ -6,10 +6,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReadyScreenBehaviour : MonoBehaviour {
+public class ReadyScreenBehaviour : Utilities {
 
     [Header("Character Select Manager")]
-    public CharacterSelectManager GM;
+    public CharacterSelectManager CSM;
 
     [Space(20)]
     public int PlayerNumber;
@@ -53,38 +53,22 @@ public class ReadyScreenBehaviour : MonoBehaviour {
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
         if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Alpha1))
         {
-            GM.ReadyPlayers[PlayerNumber-1] = false;
+            CSM.ReadyPlayers[PlayerNumber-1] = false;
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < GM.Models.Count; i++)
+            for (int i = 0; i < CSM.Models.Count; i++)
             {
-                if (GM.SelectedCharacters[PlayerNumber - 1] == GM.Models[i])
+                if (CSM.SelectedCharacters[PlayerNumber - 1] == CSM.Models[i])
                 {
-                    GM.Available[i] = true;
+                    CSM.Available[i] = true;
                 }
             }
 
-            GM.SelectedCharacters[PlayerNumber - 1] = null;
+            CSM.SelectedCharacters[PlayerNumber - 1] = null;
 
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Joystick1Button7))
-        {
-            int ready = 0;
-            for (int i = 0; i < GM.ReadyPlayers.Count; i++)
-            {
-                if (GM.ReadyPlayers[i] == true)
-                {
-                    ready++;
-                }
-            }
-            if (ready == GM.ReadyPlayers.Count)
-            {
-                print("Start game");
-            }
         }
     }
 
@@ -95,19 +79,19 @@ public class ReadyScreenBehaviour : MonoBehaviour {
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
         if (Input.GetKeyDown(KeyCode.Joystick2Button1) || Input.GetKeyDown(KeyCode.Alpha2))
         {
-            GM.ReadyPlayers[PlayerNumber-1] = false;
+            CSM.ReadyPlayers[PlayerNumber-1] = false;
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < GM.Models.Count; i++)
+            for (int i = 0; i < CSM.Models.Count; i++)
             {
-                if(GM.SelectedCharacters[PlayerNumber-1] == GM.Models[i])
+                if(CSM.SelectedCharacters[PlayerNumber-1] == CSM.Models[i])
                 {
-                    GM.Available[i] = true;
+                    CSM.Available[i] = true;
                 }
             }
 
-            GM.SelectedCharacters[PlayerNumber - 1] = null;
+            CSM.SelectedCharacters[PlayerNumber - 1] = null;
 
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
@@ -121,19 +105,19 @@ public class ReadyScreenBehaviour : MonoBehaviour {
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
         if (Input.GetKeyDown(KeyCode.Joystick3Button1) || Input.GetKeyDown(KeyCode.Alpha3))
         {
-            GM.ReadyPlayers[PlayerNumber - 1] = false;
+            CSM.ReadyPlayers[PlayerNumber - 1] = false;
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < GM.Models.Count; i++)
+            for (int i = 0; i < CSM.Models.Count; i++)
             {
-                if (GM.SelectedCharacters[PlayerNumber - 1] == GM.Models[i])
+                if (CSM.SelectedCharacters[PlayerNumber - 1] == CSM.Models[i])
                 {
-                    GM.Available[i] = true;
+                    CSM.Available[i] = true;
                 }
             }
 
-            GM.SelectedCharacters[PlayerNumber - 1] = null;
+            CSM.SelectedCharacters[PlayerNumber - 1] = null;
 
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
@@ -147,19 +131,19 @@ public class ReadyScreenBehaviour : MonoBehaviour {
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
         if (Input.GetKeyDown(KeyCode.Joystick4Button1) || Input.GetKeyDown(KeyCode.Alpha4))
         {
-            GM.ReadyPlayers[PlayerNumber - 1] = false;
+            CSM.ReadyPlayers[PlayerNumber - 1] = false;
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < GM.Models.Count; i++)
+            for (int i = 0; i < CSM.Models.Count; i++)
             {
-                if (GM.SelectedCharacters[PlayerNumber - 1] == GM.Models[i])
+                if (CSM.SelectedCharacters[PlayerNumber - 1] == CSM.Models[i])
                 {
-                    GM.Available[i] = true;
+                    CSM.Available[i] = true;
                 }
             }
 
-            GM.SelectedCharacters[PlayerNumber - 1] = null;
+            CSM.SelectedCharacters[PlayerNumber - 1] = null;
 
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);

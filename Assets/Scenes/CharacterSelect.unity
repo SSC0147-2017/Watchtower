@@ -1069,6 +1069,7 @@ RectTransform:
   - {fileID: 1583927881}
   - {fileID: 1159040799}
   - {fileID: 79026815}
+  - {fileID: 826341963}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1950,7 +1951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e7e238cff8aaf478f22b0df93019a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 1
   SelectScreen: {fileID: 1878035740}
 --- !u!114 &644037461
@@ -2386,7 +2387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e7e238cff8aaf478f22b0df93019a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 4
   SelectScreen: {fileID: 68336456}
 --- !u!114 &783290851
@@ -2568,6 +2569,74 @@ MonoBehaviour:
   CSM: {fileID: 1755127230}
   PlayerNumber: 1
   SelectScreen: {fileID: 1878035740}
+--- !u!1 &826341962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 826341963}
+  - component: {fileID: 826341965}
+  - component: {fileID: 826341964}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &826341963
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 826341962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400721719}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &826341964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 826341962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &826341965
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 826341962}
 --- !u!1 &826419353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,7 +2910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8189f4be116e9734c986c239d5cc75c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CSM: {fileID: 0}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 2
   WaitScreen: {fileID: 593738279}
   InfoScreen: {fileID: 1174299321}
@@ -4172,7 +4241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e7e238cff8aaf478f22b0df93019a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 1
   SelectScreen: {fileID: 916565429}
 --- !u!114 &1474094070
@@ -4474,7 +4543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e7e238cff8aaf478f22b0df93019a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 1755127230}
+  CSM: {fileID: 1755127230}
   PlayerNumber: 3
   SelectScreen: {fileID: 1044709266}
 --- !u!114 &1557603828
@@ -5052,6 +5121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1755127231}
   - component: {fileID: 1755127230}
+  - component: {fileID: 1755127232}
   m_Layer: 0
   m_Name: CharacterSelectManager
   m_TagString: Untagged
@@ -5078,6 +5148,7 @@ MonoBehaviour:
   - {fileID: 1079363500}
   - {fileID: 424032050}
   Available: 
+  BlackScreen: {fileID: 826341962}
 --- !u!4 &1755127231
 Transform:
   m_ObjectHideFlags: 0
@@ -5091,6 +5162,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1755127232
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1755127229}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3f363f78f3e7e2846b3accb5d25f5d07, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1838842891
 GameObject:
   m_ObjectHideFlags: 0
