@@ -22,10 +22,6 @@ public class EMListPanelManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		if (txtNumUnlocked == null) {
-			txtNumUnlocked = GetComponentInChildren<Text> ();
-		}
-
 		bool[] arrUnlocked = null;
 
 		switch (type){
@@ -57,8 +53,8 @@ public class EMListPanelManager : MonoBehaviour {
 					unlockedCount--;
 				}
 			}
-				
-			txtNumUnlocked.text = unlockedCount + " of " + arrUnlocked.Length + " Discovered";
+			if(txtNumUnlocked != null)
+				txtNumUnlocked.text = unlockedCount + " of " + arrUnlocked.Length + " Discovered";
 		}
 		catch(IndexOutOfRangeException e){
 			print ("Arrays de tamanho incompatível");

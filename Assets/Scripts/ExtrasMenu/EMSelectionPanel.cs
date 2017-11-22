@@ -14,6 +14,8 @@ public class EMSelectionPanel : MonoBehaviour {
 	public GameObject listPanelJournal;
 	public GameObject listPanelBios;
 
+	public ScrollRect scrollView;
+
 	public EMContentPanel contentPanelScript;
 
 	/***
@@ -31,6 +33,8 @@ public class EMSelectionPanel : MonoBehaviour {
 				listPanelBios.SetActive (false);
 				listPanelJournal.SetActive (false);
 
+				scrollView.content = listPanelLore.GetComponent<RectTransform>();
+
 				//Limpa o texto e o titulo 
 				contentPanelScript.switchTextAsset (null);
 			}
@@ -42,6 +46,8 @@ public class EMSelectionPanel : MonoBehaviour {
 				listPanelBios.SetActive (false);
 				listPanelJournal.SetActive (true);
 
+				scrollView.content = listPanelJournal.GetComponent<RectTransform>();
+
 				//Limpa o texto e o titulo 
 				contentPanelScript.switchTextAsset (null);
 			}
@@ -52,6 +58,8 @@ public class EMSelectionPanel : MonoBehaviour {
 				listPanelLore.SetActive (false);
 				listPanelBios.SetActive (true);
 				listPanelJournal.SetActive (false);
+
+				scrollView.content = listPanelBios.GetComponent<RectTransform>();
 
 				//Limpa o texto e o titulo 
 				contentPanelScript.switchTextAsset (null);
