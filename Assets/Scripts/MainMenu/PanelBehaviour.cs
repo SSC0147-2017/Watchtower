@@ -8,7 +8,7 @@ public class PanelBehaviour : MonoBehaviour
 {
 
     public EventSystem EventSys;
-    public Button FirstButton;
+    public Selectable FirstButton;
 
     public List<Text> ChildrenTexts = new List<Text>();
     public List<Image> ChildrenImages = new List<Image>();
@@ -30,7 +30,9 @@ public class PanelBehaviour : MonoBehaviour
 
     public void SelectFirstButton()
     {
-        EventSys.SetSelectedGameObject(FirstButton.gameObject);
+        StartCoroutine(ButtonHighlightDelay());
+        //FirstButton.Select();
+        //EventSys.SetSelectedGameObject(FirstButton.gameObject);
     }
 
     // Update is called once per frame
@@ -83,5 +85,11 @@ public class PanelBehaviour : MonoBehaviour
         {
             ChildrenButtons[i].navigation = nav;
         }
+    }
+
+    IEnumerator ButtonHighlightDelay()
+    {
+        yield return new WaitForSeconds(0.3f);
+        EventSys.SetSelectedGameObject(FirstButton.gameObject);
     }
 }
