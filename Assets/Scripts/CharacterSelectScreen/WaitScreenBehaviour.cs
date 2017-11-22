@@ -63,7 +63,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
         //if P1 presses B, goes back to menu
         if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SceneManager.LoadScene("Main Menu");
+            CSM.BackToMenu();
         }
     }
 

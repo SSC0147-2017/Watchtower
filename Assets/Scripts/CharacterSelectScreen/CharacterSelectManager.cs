@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelectManager : Utilities {
 
@@ -29,7 +30,6 @@ public class CharacterSelectManager : Utilities {
         DontDestroyOnLoad(gameObject);
 
         SwooshSound = GetComponent<AudioSource>();
-        SwooshSound.PlayOneShot(SwooshSound.clip);
         StartCoroutine(FadeOut(BlackScreen, 2f, 1f));
 
         //initialize lists
@@ -65,5 +65,23 @@ public class CharacterSelectManager : Utilities {
                 print("Wait for everybody to be ready");
             }
         }
+
+    }
+
+    public void BackToMenu()
+    {
+        StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
+
+        if(GameObject.Find("Music") != null)
+            GameObject.Find("Music").name = "RealMusic";
+                
+        StartCoroutine(BackToMenuDelay(2f));
+    }
+
+    IEnumerator BackToMenuDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("MainMenu");
+        Destroy(gameObject);
     }
 }
