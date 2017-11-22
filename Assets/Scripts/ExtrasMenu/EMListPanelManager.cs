@@ -17,12 +17,18 @@ public class EMListPanelManager : MonoBehaviour {
 
 	//Número de extras desbloqueados
 	private int unlockedCount;
+	private bool[] arrUnlocked;
+
+
+	void OnEnable(){
+		this.Start ();
+	}
 
 
 	// Use this for initialization
 	void Start () {
 
-		bool[] arrUnlocked = null;
+		arrUnlocked = null;
 
 		switch (type){
 			case extrasType.lore:{
