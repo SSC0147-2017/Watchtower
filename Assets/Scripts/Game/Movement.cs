@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour {
 	public int MaxHP;
 	private bool canBeHurt;
 	private int CurrentHP;
-	public float defense;
+	private float defense;
 	public bool isDead;
 	public float invicibilityTime;
 	public float RevivalTime;
@@ -25,13 +25,16 @@ public class Movement : MonoBehaviour {
 	public float ProjSpd;
 	public int ColLayer;
 	public float SpecialTime;
+	private bool isSpe;
 	//Special
 
 	public float rollTime;
 	public float rollDmgRed;
+	private bool isDog;
 	//Dodge
 
 	public float AttackTime;
+	private bool isAtk;
 	//Attack
 
 	public string Controller;
@@ -44,6 +47,9 @@ public class Movement : MonoBehaviour {
 		canBeHurt=true;
 		CurrentHP=MaxHP;
 		isDead=false;
+		isAtk=false;
+		isDog=false;
+		isSpe=false;
 	}
 
 	public void Initiate(string Con){
@@ -54,33 +60,51 @@ public class Movement : MonoBehaviour {
 	void FixedUpdate () {
 		
 		if(Input.GetButtonDown(Controller+"Fire1")) {
-			StartCoroutine(waitAttackTime());
-			anim.SetFloat("Speed",0.0f);
-			anim.SetTrigger("Attack");
+			if(!isAtk){
+				StartCoroutine(waitAttackTime());
+				anim.SetFloat("Speed",0.0f);
+				anim.SetTrigger("Attack");
+			}
 		}
 		if(Input.GetButtonDown(Controller+"Fire2")) {
-			StartCoroutine(waitSpecialTime());
-			anim.SetFloat("Speed",0.0f);
-			anim.SetTrigger("Special");
-			Special();
+			if(!isSpe){
+				StartCoroutine(waitSpecialTime());
+				anim.SetFloat("Speed",0.0f);
+				anim.SetTrigger("Special");
+				Special();
+			}
 		}
 		if(Input.GetButtonDown(Controller+"Fire3")) {
-			anim.SetTrigger("Dodge");
-			StartCoroutine(RollTime());
+			if(!isDog){
+				anim.SetTrigger("Dodge");
+				StartCoroutine(RollTime());
+			}
 		}
 		ControlPlayer();
 	}
 
 	private IEnumerator waitAttackTime() {
 		isMovable=false;
+		isAtk=true;
+		isDog=true;
+		isSpe=true;
 		yield return new WaitForSeconds(AttackTime);
 		isMovable=true;
+		isAtk=false;
+		isDog=false;
+		isSpe=false;
 	}
 
 	private IEnumerator waitSpecialTime() {
 		isMovable=false;
+		isAtk=true;
+		isDog=true;
+		isSpe=true;
 		yield return new WaitForSeconds(SpecialTime);
 		isMovable=true;
+		isAtk=false;
+		isDog=false;
+		isSpe=false;
 	}
 
 	public void takeDamage(float damage){
@@ -109,19 +133,31 @@ public class Movement : MonoBehaviour {
 	private IEnumerator waitInvinciTime() {
 		canBeHurt = false;
 		isMovable=false;
+		isAtk=true;
+		isDog=true;
+		isSpe=true;
 		anim.SetBool("CanAttack",false);
 		yield return new WaitForSeconds(invicibilityTime);
 		canBeHurt = true;
 		isMovable=true;
 		anim.SetBool("CanAttack",true);
+		isAtk=false;
+		isDog=false;
+		isSpe=false;
 	}
 
 	private IEnumerator waitReviveTime() {
 		canBeHurt = false;
+		isAtk=true;
+		isDog=true;
+		isSpe=true;
 		isMovable=false;
 		anim.SetBool("CanAttack",false);
 		yield return new WaitForSeconds(RevivalTime);
 		canBeHurt = true;
+		isAtk=false;
+		isDog=false;
+		isSpe=false;
 		isMovable=true;
 		anim.SetBool("CanAttack",true);
 	}
@@ -143,9 +179,11 @@ public class Movement : MonoBehaviour {
 	private IEnumerator RollTime(){
 		defense = rollDmgRed;
 		//isMovable=false;
+		isDog=true;
 		anim.SetBool("CanAttack",false);
 		yield return new WaitForSeconds (rollTime);
 		defense = 1.0f;
+		isDog=false;
 		//isMovable=true;
 		anim.SetBool("CanAttack",true);
 	}
