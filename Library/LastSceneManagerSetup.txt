@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ExtrasMenu.unity
+- path: Assets/Scenes/Enemy1Behaviour.unity
   isLoaded: 1
   isActive: 1
