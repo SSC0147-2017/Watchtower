@@ -60,7 +60,7 @@ public class CharacterSelect : MonoBehaviour {
     //selects next character in cycle
     //if it reaches the end, goes to the beginning
     //also skips any character that is not available (i.e. already chosen)
-    public void NextCharacter()
+    public string NextCharacter()
     {
         if (CurrentIndex == CSM.Models.Count - 1)
         {
@@ -83,12 +83,23 @@ public class CharacterSelect : MonoBehaviour {
             }
         }
         Moving = true;
+
+        if (CurrentIndex == 0)
+            return "Corvo";
+        else if (CurrentIndex == 1)
+            return "Hobbes";
+        else if (CurrentIndex == 2)
+            return "Arwin";
+        else if (CurrentIndex == 3)
+            return "Jackie";
+        else
+            return null;
     }
 
     //selects previous character in cycle
     //if it reaches the start, goes to the beginning
     //also skips any character that is not available (i.e. already chosen)
-    public void PreviousCharacter()
+    public string PreviousCharacter()
     {
         if (CurrentIndex == 0)
         {
@@ -112,6 +123,17 @@ public class CharacterSelect : MonoBehaviour {
             }
         }
         Moving = true;
+
+        if (CurrentIndex == 0)
+            return "Corvo";
+        else if (CurrentIndex == 1)
+            return "Hobbes";
+        else if (CurrentIndex == 2)
+            return "Arwin";
+        else if (CurrentIndex == 3)
+            return "Jackie";
+        else
+            return null;
     }
 
     //updates GameManager lists accordingly by setting this character to "not available"
@@ -122,5 +144,10 @@ public class CharacterSelect : MonoBehaviour {
         CSM.Available[CurrentIndex] = false;
         //SelectedSprite.GetComponent<Image>().sprite = CSM.Models[CurrentIndex];
         return CSM.Models[CurrentIndex];
+    }
+
+    public int GetCurrentIndex()
+    {
+        return CurrentIndex;
     }
 }

@@ -69,7 +69,7 @@ public class WaveSpawner : MonoBehaviour {
 		Vector3 pos = new Vector3(Random.Range(-SpawnRange, SpawnRange), transform.position.y, Random.Range(-SpawnRange, SpawnRange));
 		print(pos);
 		//instantiates the next enemy
-		GameObject obj = Instantiate(prefabs[count], transform.position + pos, Quaternion.identity);
+		Instantiate(prefabs[count], transform.position + pos, Quaternion.identity);
 		count++;
 		
 		//detects if it's the last enemy. if it's not, calls the coroutine again. if it is, destroys the spawner

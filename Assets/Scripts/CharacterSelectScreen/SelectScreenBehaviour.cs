@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectScreenBehaviour : MonoBehaviour {
 
@@ -85,7 +86,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
             {
                 if (AnalogInUse == false)
                 {
-                    transform.GetComponent<CharacterSelect>().NextCharacter();
+                    transform.GetChild(0).GetComponent<Text>().text = transform.GetComponent<CharacterSelect>().NextCharacter();
                     AnalogInUse = true;
                     CanSelect = false;
                 }
@@ -94,7 +95,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
             {
                 if (AnalogInUse == false)
                 {
-                    transform.GetComponent<CharacterSelect>().PreviousCharacter();
+                    transform.GetChild(0).GetComponent<Text>().text = transform.GetComponent<CharacterSelect>().PreviousCharacter();
                     AnalogInUse = true;
                     CanSelect = false;
                 }
@@ -140,7 +141,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
             {
                 if (AnalogInUse == false)
                 {
-                    transform.GetComponent<CharacterSelect>().NextCharacter();
+                    transform.GetChild(0).GetComponent<Text>().text = transform.GetComponent<CharacterSelect>().NextCharacter();
                     AnalogInUse = true;
                     CanSelect = false;
                 }
@@ -149,7 +150,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
             {
                 if (AnalogInUse == false)
                 {
-                    transform.GetComponent<CharacterSelect>().PreviousCharacter();
+                    transform.GetChild(0).GetComponent<Text>().text = transform.GetComponent<CharacterSelect>().PreviousCharacter();
                     AnalogInUse = true;
                     CanSelect = false;
                 }
@@ -194,7 +195,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
             {
                 if (AnalogInUse == false)
                 {
-                    transform.GetComponent<CharacterSelect>().NextCharacter();
+                    transform.GetChild(0).GetComponent<Text>().text = transform.GetComponent<CharacterSelect>().NextCharacter();
                     AnalogInUse = true;
                     CanSelect = false;
                 }
@@ -203,7 +204,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
             {
                 if (AnalogInUse == false)
                 {
-                    transform.GetComponent<CharacterSelect>().PreviousCharacter();
+                    transform.GetChild(0).GetComponent<Text>().text = transform.GetComponent<CharacterSelect>().PreviousCharacter();
                     AnalogInUse = true;
                     CanSelect = false;
                 }
@@ -248,7 +249,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
             {
                 if (AnalogInUse == false)
                 {
-                    transform.GetComponent<CharacterSelect>().NextCharacter();
+                    transform.GetChild(0).GetComponent<Text>().text = transform.GetComponent<CharacterSelect>().NextCharacter();
                     AnalogInUse = true;
                     CanSelect = false;
                 }
@@ -257,7 +258,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
             {
                 if (AnalogInUse == false)
                 {
-                    transform.GetComponent<CharacterSelect>().PreviousCharacter();
+                    transform.GetChild(0).GetComponent<Text>().text = transform.GetComponent<CharacterSelect>().PreviousCharacter();
                     AnalogInUse = true;
                     CanSelect = false;
                 }

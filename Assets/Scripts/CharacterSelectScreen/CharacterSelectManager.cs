@@ -70,6 +70,7 @@ public class CharacterSelectManager : Utilities {
 
     public void BackToMenu()
     {
+        SwooshSound.Play();
         StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
 
         if(GameObject.Find("Music") != null)
