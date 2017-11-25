@@ -60,6 +60,9 @@ public class GameManager : MonoBehaviour {
 			Instantiate(CharPrefabs[PlayerCharacters[i]], transform.GetChild(0).position, transform.GetChild(0).rotation);
 			Destroy(transform.GetChild(0).gameObject);
 		}
+		
+		for(int i = NumPlayers; i < 4; i++)
+			Destroy(transform.GetChild(i).gameObject);
 	}
 	
 	void SetCamera()
