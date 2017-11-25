@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelectManager : Utilities {
 
-    [Space(20)]
+    [Space(20)] 
     [Header("Which players are ready to play")]
     public List<bool> ReadyPlayers = new List<bool>();
 

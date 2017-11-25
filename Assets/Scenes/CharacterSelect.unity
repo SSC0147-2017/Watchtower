@@ -14717,7 +14717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReadyPlayers: 
-  SelectedCharacters: []
+  SelectedCharacters: 
   Models:
   - {fileID: 123555809}
   - {fileID: 2140064609}
