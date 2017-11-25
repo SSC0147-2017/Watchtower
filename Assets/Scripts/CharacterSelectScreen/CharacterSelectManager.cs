@@ -11,7 +11,7 @@ public class CharacterSelectManager : Utilities {
 
     [Space(20)]
     [Header("Which characters have been selected")]
-    public List<GameObject> SelectedCharacters = new List<GameObject>();
+    public List<int> SelectedCharacters = new List<int>();
 
     [Space(20)]
     [Header("List of Characters")]
@@ -35,7 +35,7 @@ public class CharacterSelectManager : Utilities {
         //initialize lists
         for (int i = 0; i < 4; i++)
         {
-            SelectedCharacters.Add(null);
+            SelectedCharacters.Add(-1);
             Available.Add(true);
         }
 
@@ -58,8 +58,9 @@ public class CharacterSelectManager : Utilities {
             }
             if (ready == ReadyPlayers.Count && ready != 0)
             {
+				SwooshSound.Play();
                 StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
-                print("Start game");
+                StartCoroutine(StartGameDelay(2f));
             }
             else{
                 print("Wait for everybody to be ready");
@@ -84,5 +85,11 @@ public class CharacterSelectManager : Utilities {
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene("MainMenu");
         Destroy(gameObject);
+    }
+	
+	IEnumerator StartGameDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("Game");
     }
 }

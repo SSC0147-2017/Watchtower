@@ -17,8 +17,8 @@ public class DepthsBehaviour : EnemyBehaviour {
 	void Start()
 	{
 		base.Start ();
-		for(int i = 0; i < GameManager.GM.Players.Count; i++){
-			Targets.Add(GameManager.GM.Players[i]);
+		for(int i = 0; i < GameManager.GM.PlayerRefs.Count; i++){
+			Targets.Add(GameManager.GM.PlayerRefs[i]);
 		}
 	}
 		

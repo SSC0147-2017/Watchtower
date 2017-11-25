@@ -57,15 +57,16 @@ public class ReadyScreenBehaviour : Utilities {
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < CSM.Models.Count; i++)
+            /*for (int i = 0; i < CSM.Models.Count; i++)
             {
                 if (CSM.SelectedCharacters[PlayerNumber - 1] == CSM.Models[i])
                 {
                     CSM.Available[i] = true;
                 }
-            }
+            }*/
+			CSM.Available[CSM.SelectedCharacters[PlayerNumber - 1]] = true;
 
-            CSM.SelectedCharacters[PlayerNumber - 1] = null;
+            CSM.SelectedCharacters[PlayerNumber - 1] = -1;
 
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
@@ -83,15 +84,16 @@ public class ReadyScreenBehaviour : Utilities {
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < CSM.Models.Count; i++)
+            /*for (int i = 0; i < CSM.Models.Count; i++)
             {
-                if(CSM.SelectedCharacters[PlayerNumber-1] == CSM.Models[i])
+                if (CSM.SelectedCharacters[PlayerNumber - 1] == CSM.Models[i])
                 {
                     CSM.Available[i] = true;
                 }
-            }
+            }*/
+			CSM.Available[CSM.SelectedCharacters[PlayerNumber - 1]] = true;
 
-            CSM.SelectedCharacters[PlayerNumber - 1] = null;
+            CSM.SelectedCharacters[PlayerNumber - 1] = -1;
 
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
@@ -109,15 +111,16 @@ public class ReadyScreenBehaviour : Utilities {
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < CSM.Models.Count; i++)
+            /*for (int i = 0; i < CSM.Models.Count; i++)
             {
                 if (CSM.SelectedCharacters[PlayerNumber - 1] == CSM.Models[i])
                 {
                     CSM.Available[i] = true;
                 }
-            }
+            }*/
+			CSM.Available[CSM.SelectedCharacters[PlayerNumber - 1]] = true;
 
-            CSM.SelectedCharacters[PlayerNumber - 1] = null;
+            CSM.SelectedCharacters[PlayerNumber - 1] = -1;
 
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
@@ -135,15 +138,16 @@ public class ReadyScreenBehaviour : Utilities {
 
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
-            for (int i = 0; i < CSM.Models.Count; i++)
+            /*for (int i = 0; i < CSM.Models.Count; i++)
             {
                 if (CSM.SelectedCharacters[PlayerNumber - 1] == CSM.Models[i])
                 {
                     CSM.Available[i] = true;
                 }
-            }
+            }*/
+			CSM.Available[CSM.SelectedCharacters[PlayerNumber - 1]] = true;
 
-            CSM.SelectedCharacters[PlayerNumber - 1] = null;
+            CSM.SelectedCharacters[PlayerNumber - 1] = -1;
 
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);

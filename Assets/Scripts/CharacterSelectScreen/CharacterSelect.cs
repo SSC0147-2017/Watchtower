@@ -139,11 +139,10 @@ public class CharacterSelect : MonoBehaviour {
     //updates GameManager lists accordingly by setting this character to "not available"
     //also returns the selected Character
     //used primarily by SelectScreenBehaviour
-    public GameObject SelectCharacter()
+    public int SelectCharacter()
     {
         CSM.Available[CurrentIndex] = false;
-        //SelectedSprite.GetComponent<Image>().sprite = CSM.Models[CurrentIndex];
-        return CSM.Models[CurrentIndex];
+        return CurrentIndex;
     }
 
     public int GetCurrentIndex()
