@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class HazWaypointGizmos : MonoBehaviour {
 
+	public Vector3 size;
+	public Color color;
+
 	void OnDrawGizmos() {
-		Gizmos.color = new Color (1, 1, 1, 0.5f);
-		Gizmos.DrawCube (transform.position, new Vector3 (1, 1, 1));
+		Gizmos.color = color;
+		Gizmos.DrawCube (transform.position, size);
 	}
 }
