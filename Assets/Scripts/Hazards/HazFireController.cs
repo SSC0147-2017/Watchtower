@@ -16,7 +16,7 @@ public class HazFireController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currTimer = period;
-		isHazardActive = false;
+		DeactivateHazard ();
 	}
 	
 	// Update is called once per frame
@@ -49,7 +49,6 @@ public class HazFireController : MonoBehaviour {
 	void OnTriggerStay (Collider col){
 		HealthController tgtHealth = col.gameObject.GetComponent<HealthController> ();
 		if (tgtHealth != null) {
-			print ("dando dano");
 			tgtHealth.takeDamage (damage);
 		}
 	}
