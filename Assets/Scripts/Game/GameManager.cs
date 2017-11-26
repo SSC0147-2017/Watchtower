@@ -12,6 +12,7 @@ public class GameManager : Utilities {
 	int NumPlayers;
 	List<int> PlayerCharacters = new List<int>();
 	
+    [HideInInspector]
 	public List<GameObject> PlayerRefs = new List<GameObject>();
 
     public GameObject TargetGroup;
@@ -19,6 +20,9 @@ public class GameManager : Utilities {
     public GameObject BlackScreen;
 
     public GameObject Canvas;
+
+    private bool isGameOver = false;
+    private bool isGamePaused = false;
 
 	void Awake(){
 		if(GM == null){
@@ -58,7 +62,17 @@ public class GameManager : Utilities {
 	// Update is called once per frame
 	void Update ()
 	{
-		
+		if(Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7) || Input.GetKeyDown(KeyCode.Joystick3Button7) || Input.GetKeyDown(KeyCode.Joystick4Button7))
+        {
+            if (isGamePaused)
+            {
+                UnPauseGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
 	}
 	
 	void InstantiatePrefabs(){
@@ -84,7 +98,7 @@ public class GameManager : Utilities {
 	
 	void SetControllers()
 	{
-		
+		//defines which character should be controlled by each player/controller
 	}
 	
 	void SetUI()
@@ -95,4 +109,24 @@ public class GameManager : Utilities {
             //pegar referencias de vida e skills do player
         }
 	}
+
+    void GameOver()
+    {
+        //activate gameover ui
+        isGameOver = true;
+    }
+
+    void PauseGame()
+    {
+        print("game paused");
+        //activate pause ui
+        isGamePaused = true;
+    }
+
+    void UnPauseGame()
+    {
+        print("game unpaused");
+        //deactivate pause ui
+        isGamePaused = false;
+    }
 }
