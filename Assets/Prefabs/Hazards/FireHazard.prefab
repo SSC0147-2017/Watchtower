@@ -392,7 +392,7 @@ MonoBehaviour:
   - {fileID: 198658198963822378}
   - {fileID: 198390023952381688}
   - {fileID: 198131725504106274}
-  light: {fileID: 108475174597145406}
+  _light: {fileID: 108475174597145406}
 --- !u!114 &114922866932970452
 MonoBehaviour:
   m_ObjectHideFlags: 1
