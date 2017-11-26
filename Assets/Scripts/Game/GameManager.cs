@@ -17,8 +17,6 @@ public class GameManager : Utilities {
 
     public GameObject TargetGroup;
 
-    public GameObject BlackScreen;
-
     public GameObject Canvas;
 
     private bool isGameOver = false;
@@ -32,7 +30,7 @@ public class GameManager : Utilities {
 			Destroy(GM);
 		}
 
-        StartCoroutine(FadeOut(BlackScreen, 2f, 1f));
+        StartCoroutine(FadeOut(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 
     }
 	
@@ -47,16 +45,18 @@ public class GameManager : Utilities {
 					NumPlayers++;
 				}
 			}
+			
+			InstantiatePrefabs();
+			SetCamera();
+			SetControllers();
+			SetUI();
+			
+			
+			GameObject.Destroy(csm.gameObject);
 		}
 		else{
 			print("deu merda");
-		}
-		
-		InstantiatePrefabs();
-		SetCamera();
-		SetControllers();
-		SetUI();
-		
+		}		
 	}
 	
 	// Update is called once per frame
@@ -112,21 +112,29 @@ public class GameManager : Utilities {
 
     void GameOver()
     {
-        //activate gameover ui
+		print("game over");
+		//fade in black screen
+        Canvas.transform.Find("GameOverPanel").gameObject.SetActive(true);
+		Canvas.transform.Find("GameOverPanel").GetComponent<PauseMenuBehaviour>().SelectFirstButton();
         isGameOver = true;
     }
 
     void PauseGame()
     {
         print("game paused");
-        //activate pause ui
+        Canvas.transform.Find("PausePanel").gameObject.SetActive(true);
+		Canvas.transform.Find("PausePanel").GetComponent<PauseMenuBehaviour>().SelectFirstButton();
         isGamePaused = true;
     }
 
-    void UnPauseGame()
+    public void UnPauseGame()
     {
         print("game unpaused");
-        //deactivate pause ui
+        Canvas.transform.Find("PausePanel").gameObject.SetActive(false);
         isGamePaused = false;
     }
+	
+	public void BackToMainMenu(){
+		
+	}
 }
