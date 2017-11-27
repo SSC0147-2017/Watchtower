@@ -50,6 +50,7 @@ public class Movement : MonoBehaviour {
 		isAtk=false;
 		isDog=false;
 		isSpe=false;
+		defense=1;
 	}
 
 	public void Initiate(string Con){
@@ -58,7 +59,6 @@ public class Movement : MonoBehaviour {
 
 
 	void FixedUpdate () {
-		
 		if(Input.GetButtonDown(Controller+"Fire1")) {
 			if(!isAtk){
 				StartCoroutine(waitAttackTime());
@@ -108,8 +108,8 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void takeDamage(float damage){
-
 		if (canBeHurt) {
+			Debug.Log(ColLayer+" HP:"+CurrentHP);
 			float netDamage = damage * defense;
 			if (netDamage > 0) {
 				CurrentHP -= (int)netDamage;
