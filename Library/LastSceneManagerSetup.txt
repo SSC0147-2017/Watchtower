@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ChieppeCharTeste.unity
+- path: Assets/Scenes/TesteDanoChieppe.unity
   isLoaded: 1
   isActive: 1

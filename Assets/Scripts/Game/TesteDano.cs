@@ -28,5 +28,9 @@ public class TesteDano : MonoBehaviour {
 			M[2].takeDamage(10);
 			Debug.Log("Arwin");
 		}
+		if (Input.GetButton("Fire0")){
+			M[3].takeDamage(10);
+			Debug.Log("Jackie");
+		}
 	}
 }
