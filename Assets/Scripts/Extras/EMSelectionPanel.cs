@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 [RequireComponent (typeof(EMContentPanel))]
 
@@ -13,10 +14,55 @@ public class EMSelectionPanel : MonoBehaviour {
 	public GameObject listPanelLore;
 	public GameObject listPanelJournal;
 	public GameObject listPanelBios;
+	
+	public GameObject buttonLore;
+	public GameObject buttonJournal;
+	public GameObject buttonBios;
 
 	public ScrollRect scrollView;
 
 	public EMContentPanel contentPanelScript;
+	
+	public EventSystem EventSys;
+	
+	public void Start()
+    {
+		currentActiveLP = "lore";
+        StartCoroutine(PanelHighlightDelay(buttonLore));
+    }
+	
+	public void Update(){
+		print(currentActiveLP);
+		if(Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetAxis("Joystick1Triggers") < 0){
+			if(currentActiveLP == "lore"){
+				EventSys.SetSelectedGameObject(buttonJournal);
+				switchPanel("journal");
+			}
+			else if(currentActiveLP == "journal"){
+				EventSys.SetSelectedGameObject(buttonBios);
+				switchPanel("bios");
+			}
+			else if(currentActiveLP == "bios"){
+				EventSys.SetSelectedGameObject(buttonLore);
+				switchPanel("lore");
+			}
+		}
+		if(Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetAxis("Joystick1Triggers") > 0){
+			if(currentActiveLP == "lore"){
+				EventSys.SetSelectedGameObject(buttonBios);
+				switchPanel("bios");
+			}
+			else if(currentActiveLP == "journal"){
+				EventSys.SetSelectedGameObject(buttonLore);
+				switchPanel("lore");
+			}
+			else if(currentActiveLP == "bios"){
+				EventSys.SetSelectedGameObject(buttonJournal);
+				switchPanel("journal");
+			}
+		}
+		
+	}
 
 	/***
 	 * Método usado nos botões para trocar o painel ativo
@@ -69,4 +115,10 @@ public class EMSelectionPanel : MonoBehaviour {
 		}
 
 	}
+	
+	IEnumerator PanelHighlightDelay(GameObject obj)
+    {
+        yield return new WaitForSeconds(0.3f);
+        EventSys.SetSelectedGameObject(obj);
+    }
 }
