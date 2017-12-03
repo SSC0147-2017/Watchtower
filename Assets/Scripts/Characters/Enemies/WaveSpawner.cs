@@ -10,8 +10,8 @@ public class WaveSpawner : MonoBehaviour {
 	//reference to each enemy prefab
 	public GameObject Enemy1;
 	public GameObject Enemy2;
-	public GameObject Enemy3;
-	public GameObject Enemy4;
+	//public GameObject Enemy3;
+	//public GameObject Enemy4;
 	
 	//auxiliar count and bool to spawn only once.
 	int count = 0;
@@ -19,8 +19,8 @@ public class WaveSpawner : MonoBehaviour {
 	
 	[Header ("1 - Bugfolk")]
 	[Header ("2 - Spawn of the Depths")]
-	[Header ("3 - Howler of the Spawn")]
-	[Header ("4 - Waspinoid")]
+	//[Header ("3 - Howler of the Spawn")]
+	//[Header ("4 - Waspinoid")]
 	//list of all enemies that will spawn, and the delay before each spawn
 	public List<enemiesType> enemies = new List<enemiesType>();
 	List <GameObject> prefabs = new List<GameObject>();
@@ -39,12 +39,12 @@ public class WaveSpawner : MonoBehaviour {
 			else if(enemies[i] == enemiesType.depths){
 				prefabs.Add(Enemy2);
 			}
-			else if(enemies[i] == enemiesType.howler){
+			/*else if(enemies[i] == enemiesType.howler){
 				prefabs.Add(Enemy3);
 			}
 			else if(enemies[i] == enemiesType.waspinoid){
 				prefabs.Add(Enemy4);
-			}
+			}*/
 		}
 	}
 

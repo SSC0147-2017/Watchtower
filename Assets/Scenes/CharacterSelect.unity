@@ -14137,8 +14137,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1755127231}
-  - component: {fileID: 1755127230}
   - component: {fileID: 1755127232}
+  - component: {fileID: 1755127230}
   m_Layer: 0
   m_Name: CharacterSelectManager
   m_TagString: Untagged
@@ -14154,7 +14154,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1755127229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0cb335ca7cc6a9468e808f021ced026, type: 3}
+  m_Script: {fileID: 11500000, guid: a3b81095ee945ad40aaa5db98f8b645d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ReadyPlayers: 

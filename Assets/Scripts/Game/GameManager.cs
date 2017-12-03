@@ -48,7 +48,6 @@ public class GameManager : Utilities {
 			
 			InstantiatePrefabs();
 			SetCamera();
-			SetControllers();
 			SetUI();
 			
 			
@@ -81,7 +80,7 @@ public class GameManager : Utilities {
 			GameObject obj = Instantiate(CharPrefabs[PlayerCharacters[i]], transform.GetChild(0).position, transform.GetChild(0).rotation);
 			PlayerRefs.Add(obj);
 			Destroy(transform.GetChild(i).gameObject);
-			SetController(obj, PlayerCharacters[i]);
+			SetController(obj, i+1);
 		}
 		
 		for(int i = NumPlayers; i < 4; i++)
@@ -98,18 +97,20 @@ public class GameManager : Utilities {
         }
 	}
 	
-	void SetController(GameObject obj, int index);
+	void SetController(GameObject obj, int index)
 	{
-		string str = "Controller"+index;
-		obj.GetComponent<Movement>().Initialize(str); 		
+		string str = "Joystick"+(index);
+		obj.GetComponent<Movement>().Initiate(str); 		
 	}
 	
 	void SetUI()
 	{
 		for(int i = 0; i < NumPlayers; i++)
         {
-            Canvas.transform.GetChild(i).gameObject.SetActive(true);
-            //pegar referencias de vida e skills do player
+			GameObject ui = Canvas.transform.GetChild(i).gameObject;
+			
+            ui.SetActive(true);
+            
         }
 	}
 
