@@ -64,6 +64,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4449119243483686}
+  - component: {fileID: 136101184408457346}
   m_Layer: 9
   m_Name: mixamorig:RightArm
   m_TagString: Untagged
@@ -110,6 +111,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4072485149945140}
+  - component: {fileID: 136246877947316708}
   m_Layer: 9
   m_Name: mixamorig:Spine2
   m_TagString: Untagged
@@ -140,6 +142,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4769093874493282}
+  - component: {fileID: 136280282583488190}
   m_Layer: 9
   m_Name: mixamorig:Spine
   m_TagString: Untagged
@@ -155,6 +158,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4475308566562720}
+  - component: {fileID: 136126431927215008}
   m_Layer: 9
   m_Name: mixamorig:RightLeg
   m_TagString: Untagged
@@ -188,7 +192,6 @@ GameObject:
   - component: {fileID: 95067364511207428}
   - component: {fileID: 114420385486182732}
   - component: {fileID: 54500823593103448}
-  - component: {fileID: 65117133264171340}
   m_Layer: 9
   m_Name: Hobbes
   m_TagString: Untagged
@@ -219,6 +222,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4189470648474764}
+  - component: {fileID: 136976035935849240}
   m_Layer: 9
   m_Name: mixamorig:Neck
   m_TagString: Untagged
@@ -249,6 +253,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4518081493478570}
+  - component: {fileID: 136766490029585900}
   m_Layer: 9
   m_Name: mixamorig:LeftForeArm
   m_TagString: Untagged
@@ -279,6 +284,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4521315687552798}
+  - component: {fileID: 136579933295323568}
   m_Layer: 9
   m_Name: mixamorig:LeftLeg
   m_TagString: Untagged
@@ -294,6 +300,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4072987398024694}
+  - component: {fileID: 136930881106135594}
   m_Layer: 9
   m_Name: mixamorig:LeftArm
   m_TagString: Untagged
@@ -354,6 +361,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4235368986952500}
+  - component: {fileID: 136177374158377880}
   m_Layer: 9
   m_Name: mixamorig:RightForeArm
   m_TagString: Untagged
@@ -735,7 +743,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595417321565934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 137.7888, y: 0.324, z: 128.81255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4018747813847498}
@@ -808,23 +816,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65117133264171340
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1595417321565934}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 2, z: 0.7}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!95 &95067364511207428
 Animator:
   serializedVersion: 3
@@ -856,7 +852,7 @@ MonoBehaviour:
   MaxHP: 130
   isDead: 0
   invicibilityTime: 1.7
-  RevivalTime: 30
+  RevivalTime: 5.4
   turnSpeed: 0.2
   Projectile: {fileID: 0}
   Pos: {fileID: 0}
@@ -868,6 +864,123 @@ MonoBehaviour:
   rollDmgRed: 0.5
   AttackTime: 3.5
   Controller: 
+--- !u!136 &136101184408457346
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117482795504932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 0.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.13, z: 0}
+--- !u!136 &136126431927215008
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522913034482694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 0.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!136 &136177374158377880
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1891637725192210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 0.65
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.35, z: 0}
+--- !u!136 &136246877947316708
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282490709461948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.15
+  m_Height: 0.7
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!136 &136280282583488190
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1481195528102038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!136 &136579933295323568
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1756059695265110}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 0.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!136 &136766490029585900
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746255950345140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 0.65
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.35, z: 0}
+--- !u!136 &136930881106135594
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757339207160446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 0.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.13, z: 0}
+--- !u!136 &136976035935849240
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1665180772468452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!137 &137326460457470498
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
