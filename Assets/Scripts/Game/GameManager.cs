@@ -78,8 +78,10 @@ public class GameManager : Utilities {
 	void InstantiatePrefabs(){
 		
 		for (int i = 0 ; i < NumPlayers; i++){
-			PlayerRefs.Add(Instantiate(CharPrefabs[PlayerCharacters[i]], transform.GetChild(0).position, transform.GetChild(0).rotation));
-			Destroy(transform.GetChild(0).gameObject);
+			GameObject obj = Instantiate(CharPrefabs[PlayerCharacters[i]], transform.GetChild(0).position, transform.GetChild(0).rotation);
+			PlayerRefs.Add(obj);
+			Destroy(transform.GetChild(i).gameObject);
+			SetController(obj, PlayerCharacters[i]);
 		}
 		
 		for(int i = NumPlayers; i < 4; i++)
@@ -96,9 +98,10 @@ public class GameManager : Utilities {
         }
 	}
 	
-	void SetControllers()
+	void SetController(GameObject obj, int index);
 	{
-		//defines which character should be controlled by each player/controller
+		string str = "Controller"+index;
+		obj.GetComponent<Movement>().Initialize(str); 		
 	}
 	
 	void SetUI()

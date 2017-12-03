@@ -7342,10 +7342,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharPrefabs:
-  - {fileID: 1609793261768748, guid: 9e19ecbf132bf6c44b096fb5198a82ca, type: 2}
-  - {fileID: 1217926244836652, guid: 841fceef446ea1a4dbc266800fcf67f3, type: 2}
-  - {fileID: 1807319077730578, guid: 1fbf7c13f914aa441b2aa32f86c4e23e, type: 2}
-  - {fileID: 1098017557597574, guid: c0c55aa5dd63ace4da652b964d4164fa, type: 2}
+  - {fileID: 1114954814395604, guid: 968519f3dd652294f95fe2e16d82c88f, type: 2}
+  - {fileID: 1595417321565934, guid: 9434eb38da154af40bf8b1a79bb9f53a, type: 2}
+  - {fileID: 1819715347530290, guid: 08780ba2dc47ff548b092183c1a4d1e0, type: 2}
+  - {fileID: 1361226966930994, guid: e57deb4086d2bf4439242f7a0da41174, type: 2}
   PlayerRefs: []
   TargetGroup: {fileID: 1451041635}
   Canvas: {fileID: 967213670}
