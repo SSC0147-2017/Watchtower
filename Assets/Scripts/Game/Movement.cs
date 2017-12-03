@@ -51,6 +51,7 @@ public class Movement : MonoBehaviour {
 		isDog=false;
 		isSpe=false;
 		defense=1;
+		anim.SetBool("CanAttack",true);
 	}
 
 	public void Initiate(string Con){
