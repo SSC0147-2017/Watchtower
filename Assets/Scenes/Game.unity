@@ -2111,7 +2111,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781980650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94, y: 0, z: 0.11}
+  m_LocalPosition: {x: 2.03, y: 0, z: -0.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1702252778}
@@ -7014,7 +7014,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1451041635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.525, y: 0, z: -0.43000007}
+  m_LocalPosition: {x: 4.0699997, y: 0, z: -0.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7100,6 +7100,7 @@ GameObject:
   - component: {fileID: 1576353705}
   - component: {fileID: 1576353704}
   - component: {fileID: 1576353706}
+  - component: {fileID: 1576353707}
   m_Layer: 0
   m_Name: RoomX
   m_TagString: Untagged
@@ -7152,6 +7153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnerList: []
+  WaveDelay: 2
   FlagPrefab: {fileID: 1890579438794206, guid: d407929e83de19644857068577b7e79d, type: 2}
 --- !u!114 &1576353706
 MonoBehaviour:
@@ -7173,6 +7175,18 @@ MonoBehaviour:
   SpawnPosition: {x: 115.2, y: 0, z: 112.6}
   SpawnRange: 2
   allDead: 0
+--- !u!65 &1576353707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1576353702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 1, z: 10}
+  m_Center: {x: 8.7, y: 0, z: 6.75}
 --- !u!1001 &1591719713
 Prefab:
   m_ObjectHideFlags: 0
@@ -7491,7 +7505,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1680063081}
   m_LocalRotation: {x: 0.5876093, y: 0.0001396855, z: -0.000101441045, w: 0.8091448}
-  m_LocalPosition: {x: 3.525, y: 20.59, z: -7.13}
+  m_LocalPosition: {x: 4.0699997, y: 20.59, z: -7.3799996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 297692606}
@@ -8091,7 +8105,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 0
-  orthographic size: 2.1691406
+  orthographic size: 1.7859374
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8113,7 +8127,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935273251}
   m_LocalRotation: {x: 0.5876093, y: 0.0001396855, z: -0.000101441045, w: 0.8091448}
-  m_LocalPosition: {x: 3.525, y: 20.59, z: -7.13}
+  m_LocalPosition: {x: 4.0699997, y: 20.59, z: -7.3799996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -7,8 +7,12 @@ public class RoomBehaviour : MonoBehaviour {
     public WaveSpawner[] SpawnerList;
     int SpawnCount = 0;
 
+    public float WaveDelay;
+
     public GameObject FlagPrefab;
     bool FlagSpawned = false;
+
+    bool StartedWaves = false;
 
 	// Use this for initialization
 	void Start () {
@@ -17,11 +21,6 @@ public class RoomBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space) && SpawnCount < SpawnerList.Length)
-        {
-            StartCoroutine(SpawnerList[SpawnCount].Spawn());
-            SpawnCount++;
-        }
 
         int aux = 0;
         for(int i = 0; i< SpawnerList.Length; i++)
@@ -38,6 +37,27 @@ public class RoomBehaviour : MonoBehaviour {
             FlagSpawned = true;
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print(other);
+        if (StartedWaves == false && other.tag == "Player")
+        {
+            StartCoroutine(Wave());
+            StartedWaves = true;
+        }
+    }
+
+    IEnumerator Wave()
+    {
+        yield return new WaitForSeconds(WaveDelay);
+        if (SpawnCount < SpawnerList.Length)
+        {
+            StartCoroutine(SpawnerList[SpawnCount].Spawn());
+            SpawnCount++;
+            StartCoroutine(Wave());
+        }
     }
 
     void SpawnFlag()

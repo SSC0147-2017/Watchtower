@@ -15,7 +15,6 @@ public class WaveSpawner : MonoBehaviour {
 	
 	//auxiliar count and bool to spawn only once.
 	int count = 0;
-	bool hasSpawned = false;
 	
 	[Header ("1 - Bugfolk")]
 	[Header ("2 - Spawn of the Depths")]
@@ -67,42 +66,27 @@ public class WaveSpawner : MonoBehaviour {
         if(refCount > 0 && refCount == refs.Count)
         {
             allDead = true;
-            print("all dead");
         }
     }
-
-    //detects if a player reaches the trigger area and starts the spawning
-    void OnTriggerEnter(Collider collision){
-		if(hasSpawned == false){
-			if(collision.tag == "Player"){
-			
-				if(prefabs.Count > 0){
-					StartCoroutine(Spawn());
-					hasSpawned = true;
-				}
-			}
-		}
-	}
 	
 	public IEnumerator Spawn(){
 		//delay before each spawn
 		yield return new WaitForSeconds(spawnDelays[count]);
-		
-		//generates a random position for spawning, inside a range
-		Vector3 pos = new Vector3(Random.Range(-SpawnRange, SpawnRange), transform.position.y, Random.Range(-SpawnRange, SpawnRange));
-		print(pos);
-		//instantiates the next enemy
-		GameObject obj = Instantiate(prefabs[count], SpawnPosition + pos, Quaternion.identity);
+
+        //generates a random position for spawning, inside a range
+        Vector3 pos = SpawnPosition + new Vector3(Random.Range(-SpawnRange, SpawnRange), transform.position.y, Random.Range(-SpawnRange, SpawnRange));
+
+        //instantiates the next enemy
+		GameObject obj = Instantiate(prefabs[count], pos, Quaternion.identity);
+
         refs.Add(obj);
 		count++;
-		
-		//detects if it's the last enemy. if it's not, calls the coroutine again. if it is, destroys the spawner
-		if(count < enemies.Count && count < spawnDelays.Count){
-			StartCoroutine(Spawn());
-		}	
-		else{
-		    
-		}
+
+        //detects if it's the last enemy. if it's not, calls the coroutine again. if it is, destroys the spawner
+        if (count < enemies.Count && count < spawnDelays.Count)
+        {
+            StartCoroutine(Spawn());
+        }
 	}
 	
 	//draws a cube for reference of where the spawn area is in the scene
