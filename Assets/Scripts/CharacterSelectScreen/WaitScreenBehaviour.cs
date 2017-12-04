@@ -53,7 +53,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer1()
     {
         //if P1 presses A, goes to character selection screen and signals the GameManager that this player is active
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Space))
         {
             CSM.ReadyPlayers.Add(false);
             SelectScreen.SetActive(true);
@@ -61,7 +61,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
         }
 
         //if P1 presses B, goes back to menu
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Escape))
         {
             CSM.BackToMenu();
         }
@@ -71,7 +71,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer2()
     {
         //if P2 presses A, goes to character selection screen and signals the GameManager that this player is active
-        if (Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Joystick2Button0))
         {
             CSM.ReadyPlayers.Add(false);
             SelectScreen.SetActive(true);
@@ -83,7 +83,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer3()
     {
         //if P3 presses A, goes to character selection screen and signals the GameManager that this player is active
-        if (Input.GetKeyDown(KeyCode.Joystick3Button0) || Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Joystick3Button0))
         {
             CSM.ReadyPlayers.Add(false);
             SelectScreen.SetActive(true);
@@ -95,7 +95,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer4()
     {
         //if P4 presses A, goes to character selection screen and signals the GameManager that this player is active
-        if (Input.GetKeyDown(KeyCode.Joystick4Button0) || Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Joystick4Button0))
         {
             CSM.ReadyPlayers.Add(false);
             SelectScreen.SetActive(true);

@@ -51,7 +51,7 @@ public class ReadyScreenBehaviour : Utilities {
     {
         //if P1 presses B, marks the player as not ready again and goes back to character selection scree
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Escape))
         {
             CSM.ReadyPlayers[PlayerNumber-1] = false;
 
@@ -78,7 +78,7 @@ public class ReadyScreenBehaviour : Utilities {
     {
         //if P2 presses B, marks the player as not ready again and goes back to character selection screen
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
-        if (Input.GetKeyDown(KeyCode.Joystick2Button1) || Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Joystick2Button1))
         {
             CSM.ReadyPlayers[PlayerNumber-1] = false;
 
@@ -105,7 +105,7 @@ public class ReadyScreenBehaviour : Utilities {
     {
         //if P3 presses B, marks the player as not ready again and goes back to character selection scree
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
-        if (Input.GetKeyDown(KeyCode.Joystick3Button1) || Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Joystick3Button1))
         {
             CSM.ReadyPlayers[PlayerNumber - 1] = false;
 
@@ -132,7 +132,7 @@ public class ReadyScreenBehaviour : Utilities {
     {
         //if P4 presses B, marks the player as not ready again and goes back to character selection scree
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
-        if (Input.GetKeyDown(KeyCode.Joystick4Button1) || Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Joystick4Button1))
         {
             CSM.ReadyPlayers[PlayerNumber - 1] = false;
 

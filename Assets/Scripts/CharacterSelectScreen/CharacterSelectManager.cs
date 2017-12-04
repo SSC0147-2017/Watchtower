@@ -46,7 +46,7 @@ public class CharacterSelectManager : Utilities {
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button7))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Return))
         {
             int ready = 0;
             for (int i = 0; i < ReadyPlayers.Count; i++)
