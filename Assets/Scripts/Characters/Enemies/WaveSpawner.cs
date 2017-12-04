@@ -23,15 +23,21 @@ public class WaveSpawner : MonoBehaviour {
 	//[Header ("4 - Waspinoid")]
 	//list of all enemies that will spawn, and the delay before each spawn
 	public List<enemiesType> enemies = new List<enemiesType>();
+    
 	List <GameObject> prefabs = new List<GameObject>();
 	
 	[Space(20)]
 	public List<float> spawnDelays = new List<float>();
 	
 	[Space(20)]
-	public float SpawnRange;
-	
-	void Start(){
+    public Vector3 SpawnPosition;
+    public float SpawnRange;
+
+    //tracks if there are any enemies alive
+    List<GameObject> refs = new List<GameObject>();
+    public bool allDead = false;
+
+    void Start(){
 		for(int i = 0; i < enemies.Count; i++){
 			if(enemies[i] == enemiesType.bugfolk){
 				prefabs.Add(Enemy1);
@@ -48,8 +54,25 @@ public class WaveSpawner : MonoBehaviour {
 		}
 	}
 
-	//detects if a player reaches the trigger area and starts the spawning
-	void OnTriggerEnter(Collider collision){
+    private void Update()
+    {
+        int refCount = 0;
+        for(int i = 0; i < refs.Count; i++)
+        {
+            if(refs[i] == null)
+            {
+                refCount++;
+            }
+        }
+        if(refCount > 0 && refCount == refs.Count)
+        {
+            allDead = true;
+            print("all dead");
+        }
+    }
+
+    //detects if a player reaches the trigger area and starts the spawning
+    void OnTriggerEnter(Collider collision){
 		if(hasSpawned == false){
 			if(collision.tag == "Player"){
 			
@@ -61,7 +84,7 @@ public class WaveSpawner : MonoBehaviour {
 		}
 	}
 	
-	IEnumerator Spawn(){
+	public IEnumerator Spawn(){
 		//delay before each spawn
 		yield return new WaitForSeconds(spawnDelays[count]);
 		
@@ -69,7 +92,8 @@ public class WaveSpawner : MonoBehaviour {
 		Vector3 pos = new Vector3(Random.Range(-SpawnRange, SpawnRange), transform.position.y, Random.Range(-SpawnRange, SpawnRange));
 		print(pos);
 		//instantiates the next enemy
-		Instantiate(prefabs[count], transform.position + pos, Quaternion.identity);
+		GameObject obj = Instantiate(prefabs[count], SpawnPosition + pos, Quaternion.identity);
+        refs.Add(obj);
 		count++;
 		
 		//detects if it's the last enemy. if it's not, calls the coroutine again. if it is, destroys the spawner
@@ -77,13 +101,13 @@ public class WaveSpawner : MonoBehaviour {
 			StartCoroutine(Spawn());
 		}	
 		else{
-			GameObject.Destroy(this.gameObject);
+		    
 		}
 	}
 	
 	//draws a cube for reference of where the spawn area is in the scene
 	void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;	
-        Gizmos.DrawCube(transform.position, new Vector3(2*SpawnRange, 1, 2*SpawnRange));
+        Gizmos.DrawCube(SpawnPosition, new Vector3(2*SpawnRange, 1, 2*SpawnRange));
     }
 }
