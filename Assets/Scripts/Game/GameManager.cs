@@ -2,10 +2,13 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Utilities {
 
 	public static GameManager GM;
+	
+	public AudioSource SwooshSound;
 	
 	public List<GameObject> CharPrefabs = new List<GameObject>();
 	
@@ -61,7 +64,7 @@ public class GameManager : Utilities {
 	// Update is called once per frame
 	void Update ()
 	{
-		if(Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7) || Input.GetKeyDown(KeyCode.Joystick3Button7) || Input.GetKeyDown(KeyCode.Joystick4Button7))
+		if(Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7) || Input.GetKeyDown(KeyCode.Joystick3Button7) || Input.GetKeyDown(KeyCode.Joystick4Button7) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (isGamePaused)
             {
@@ -137,20 +140,32 @@ public class GameManager : Utilities {
 
     void PauseGame()
     {
-        print("game paused");
         Canvas.transform.Find("PausePanel").gameObject.SetActive(true);
 		Canvas.transform.Find("PausePanel").GetComponent<PauseMenuBehaviour>().SelectFirstButton();
         isGamePaused = true;
+		Time.timeScale = 0;
     }
 
     public void UnPauseGame()
     {
-        print("game unpaused");
         Canvas.transform.Find("PausePanel").gameObject.SetActive(false);
         isGamePaused = false;
+		Time.timeScale = 1;
     }
 	
 	public void BackToMainMenu(){
+		Time.timeScale = 1;
+		SwooshSound.Play();
+        StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 		
+		if(GameObject.Find("Music") != null)
+            GameObject.Find("Music").name = "RealMusic";
+		StartCoroutine(BackToMenuDelay(2f));
 	}
+	
+	IEnumerator BackToMenuDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("MainMenu");
+    }
 }

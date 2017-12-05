@@ -47,9 +47,11 @@ public class HazFireController : MonoBehaviour {
 	}
 
 	void OnTriggerStay (Collider col){
-		HealthController tgtHealth = col.gameObject.GetComponent<HealthController> ();
-		if (tgtHealth != null) {
-			tgtHealth.takeDamage (damage);
+		if(col.tag != "Enemy" || col.GetType() != typeof(SphereCollider)){
+			HealthController tgtHealth = col.gameObject.GetComponent<HealthController> ();
+			if (tgtHealth != null) {
+				tgtHealth.takeDamage (damage);
+			}
 		}
 	}
 }

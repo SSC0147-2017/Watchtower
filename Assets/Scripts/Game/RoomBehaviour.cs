@@ -67,7 +67,7 @@ public class RoomBehaviour : MonoBehaviour {
     void SpawnFlag()
     {
         GameObject obj = Instantiate(FlagPrefab, transform.position + new Vector3(0, 10, 0), Quaternion.identity);
-		obj.transform.GetChild(1).GetComponent<Light>().range = FlagRadius;
+		obj.transform.GetChild(0).GetComponent<Light>().range = FlagRadius;
     }
 	
 	void OnDrawGizmosSelected() {
