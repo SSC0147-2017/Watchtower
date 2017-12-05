@@ -123,6 +123,18 @@ public class GameManager : Utilities {
         isGameOver = true;
     }
 
+
+	/**
+	 * Função chamada quando os jogadores chegarem no Floofy
+	 */
+	public void Victory(){
+		//SETAR PAINEL DE FIM DE JOGO -------------------------	
+		isGameOver = true;
+		print ("Huzzah!");
+	}
+
+
+
     void PauseGame()
     {
         print("game paused");
