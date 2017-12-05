@@ -47,7 +47,7 @@ public class InfoScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer1()
     {
         //if P1 presses B, goes back to the selection screen
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.LeftControl))
         {
 
             SelectScreen.SetActive(true);
@@ -60,7 +60,7 @@ public class InfoScreenBehaviour : MonoBehaviour {
     {
 
         //if P2 presses B, goes back to the selection screen
-        if (Input.GetKeyDown(KeyCode.Joystick2Button1))
+        if (Input.GetKeyDown(KeyCode.Joystick2Button1) || Input.GetKeyDown(KeyCode.Joystick2Button2))
         {
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
@@ -71,7 +71,7 @@ public class InfoScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer3()
     {
         //if P3 presses B, goes back to the selection screen
-        if (Input.GetKeyDown(KeyCode.Joystick3Button1))
+        if (Input.GetKeyDown(KeyCode.Joystick3Button1) || Input.GetKeyDown(KeyCode.Joystick3Button2))
         {
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
@@ -82,7 +82,7 @@ public class InfoScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer4()
     {
         //if P4 presses B, goes back to the selection screen
-        if (Input.GetKeyDown(KeyCode.Joystick4Button1))
+        if (Input.GetKeyDown(KeyCode.Joystick4Button1) || Input.GetKeyDown(KeyCode.Joystick4Button2))
         {
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);

@@ -8,8 +8,19 @@ public class HazDamageOnTrigger : MonoBehaviour {
 
 	void OnTriggerStay (Collider col){
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if(col.tag=="Player"){
 			
+=======
+		if(col.tag=="Player"){
+			
+		}
+		else{
+			HealthController tgtHealth = col.gameObject.GetComponent<HealthController> ();
+			if (tgtHealth != null) {
+				tgtHealth.takeDamage (damage);
+			}			
+>>>>>>> master
 		}
 		else{
 			HealthController tgtHealth = col.gameObject.GetComponent<HealthController> ();

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class RoomBehaviour : MonoBehaviour {
 
-    public WaveSpawner[] SpawnerList;
+    WaveSpawner[] SpawnerList;
     int SpawnCount = 0;
 
     public float WaveDelay;
 
+	public float FlagRadius;
     public GameObject FlagPrefab;
     bool FlagSpawned = false;
 
@@ -51,17 +52,26 @@ public class RoomBehaviour : MonoBehaviour {
 
     IEnumerator Wave()
     {
-        yield return new WaitForSeconds(WaveDelay);
-        if (SpawnCount < SpawnerList.Length)
+        
+		StartCoroutine(SpawnerList[SpawnCount].Spawn());
+		SpawnCount++;
+
+		yield return new WaitForSeconds(WaveDelay);
+		
+		if (SpawnCount < SpawnerList.Length)
         {
-            StartCoroutine(SpawnerList[SpawnCount].Spawn());
-            SpawnCount++;
             StartCoroutine(Wave());
         }
     }
 
     void SpawnFlag()
     {
-        Instantiate(FlagPrefab, transform.position + new Vector3(0, 10, 0), Quaternion.identity);
+        GameObject obj = Instantiate(FlagPrefab, transform.position + new Vector3(0, 10, 0), Quaternion.identity);
+		obj.transform.GetChild(0).GetComponent<Light>().range = FlagRadius;
+    }
+	
+	void OnDrawGizmosSelected() {
+        Gizmos.color = Color.green;	
+        Gizmos.DrawCube(transform.position, new Vector3(1, 5, 1));
     }
 }
