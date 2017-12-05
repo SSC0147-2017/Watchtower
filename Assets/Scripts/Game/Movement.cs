@@ -37,6 +37,9 @@ public class Movement : MonoBehaviour {
 	private bool isAtk;
 	//Attack
 
+	public bool outsiderAtk=false;
+	public bool outsiderSP=false;
+
 	public string Controller;
 	private Animator anim;
 
@@ -50,7 +53,7 @@ public class Movement : MonoBehaviour {
 		isAtk=false;
 		isDog=false;
 		isSpe=false;
-		defense=1;
+		defense=1.0f;
 		anim.SetBool("CanAttack",true);
 	}
 
@@ -89,8 +92,10 @@ public class Movement : MonoBehaviour {
 		isAtk=true;
 		isDog=true;
 		isSpe=true;
+		outsiderAtk=true;
 		yield return new WaitForSeconds(AttackTime);
 		isMovable=true;
+		outsiderAtk=false;
 		isAtk=false;
 		isDog=false;
 		isSpe=false;
@@ -101,8 +106,10 @@ public class Movement : MonoBehaviour {
 		isAtk=true;
 		isDog=true;
 		isSpe=true;
+		outsiderSP=true;
 		yield return new WaitForSeconds(SpecialTime);
 		isMovable=true;
+		outsiderSP=false;
 		isAtk=false;
 		isDog=false;
 		isSpe=false;
@@ -110,7 +117,6 @@ public class Movement : MonoBehaviour {
 
 	public void takeDamage(float damage){
 		if (canBeHurt) {
-			Debug.Log(ColLayer+" HP:"+CurrentHP);
 			float netDamage = damage * defense;
 			if (netDamage > 0) {
 				CurrentHP -= (int)netDamage;
@@ -118,6 +124,7 @@ public class Movement : MonoBehaviour {
 				anim.SetFloat("Speed",0.0f);
 				anim.SetTrigger("Hit");
 			}
+			Debug.Log(ColLayer+" HP:"+CurrentHP);
 		}
 		else
 			return;
@@ -223,7 +230,7 @@ public class Movement : MonoBehaviour {
 		if(Pos==null)
 			return;
 		Rigidbody Clone = (Rigidbody) Instantiate(Projectile, Pos.position, Pos.rotation);
-		Clone.transform.Rotate(Random.Range(0.0f,spread), Random.Range(0.0f,spread), Random.Range(0.0f,spread));
-		Clone.velocity = Pos.TransformDirection(Vector3.forward * ProjSpd);
+		Clone.transform.Rotate(0.0f, Random.Range(-1.0f*spread,spread), 0.0f);
+		Clone.velocity = Clone.transform.TransformDirection(Vector3.forward * ProjSpd);
 	}
 }

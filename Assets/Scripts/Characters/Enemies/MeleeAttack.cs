@@ -40,10 +40,9 @@ public class MeleeAttack : MonoBehaviour {
 	void OnTriggerStay (Collider col){
 
 		if (behav.getIsAttacking() && col.gameObject.tag == "Player") {//Só da dano se ele estiver atacando.
-			HealthController tgtHealth = col.gameObject.GetComponent<HealthController> ();
-			if (tgtHealth != null) {
-				tgtHealth.takeDamage (damage);
-			}
+			Movement M = col.gameObject.GetComponent<GetParentCol>().Get();
+			if(M!=null)
+				M.takeDamage(damage);
 		}
 	}
 
