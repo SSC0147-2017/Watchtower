@@ -6558,7 +6558,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  - 0
+  - 3
   - 0
   - 0
   - 0
@@ -10967,6 +10967,11 @@ Prefab:
         type: 2}
       propertyPath: spawnDelays.Array.data[12]
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110655235581324, guid: c07c04d41ed3cb3479b62f336cf8dd8a,
+        type: 2}
+      propertyPath: FlagRadius
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c07c04d41ed3cb3479b62f336cf8dd8a, type: 2}
