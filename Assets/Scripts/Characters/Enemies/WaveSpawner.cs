@@ -34,7 +34,8 @@ public class WaveSpawner : MonoBehaviour {
 
     //tracks if there are any enemies alive
     List<GameObject> refs = new List<GameObject>();
-    public bool allDead = false;
+    [HideInInspector]
+	public bool allDead = false;
 
     void Start(){
 		for(int i = 0; i < enemies.Count; i++){
