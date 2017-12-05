@@ -76,6 +76,8 @@ public class HealthController : MonoBehaviour {
                 //print("Ai");
             }
 		}
+		
+		//movement.anim.play
 	}
 		
 
