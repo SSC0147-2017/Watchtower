@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -107,10 +107,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 711, y: 492}
+  m_MaxSize: {x: 18006, y: 14042}
   vertical: 0
-  controlID: 74
+  controlID: 9
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 51
+  controlID: 58
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -177,7 +177,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1054
-    height: 543
+    height: 566
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 13}
@@ -202,9 +202,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 543
+    y: 566
     width: 1054
-    height: 404
+    height: 381
   m_MinSize: {x: 234, y: 271}
   m_MaxSize: {x: 10004, y: 10021}
   m_ActualView: {fileID: 15}
@@ -232,8 +232,8 @@ MonoBehaviour:
     y: 0
     width: 582
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -345,9 +345,9 @@ MonoBehaviour:
     height: 926
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 48090000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 2cfdfdff8847ffff1ca5ffffa6fbffff00000000da410000f241000030650000da650000ec6500000066000094ae0000
+    m_SelectedIDs: b075f7ff
+    m_LastClickedID: -559696
+    m_ExpandedIDs: 9c9cfdff7a39feff52c0feffeed4feff00000000008000005a88000072880000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -366,7 +366,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
   m_ExpandedScenes:
-  - CharacterSelect
+  - Game
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -395,16 +395,16 @@ MonoBehaviour:
     x: 286
     y: 92
     width: 1050
-    height: 522
+    height: 545
   m_SceneLighting: 1
-  lastFramingTime: 1134.2517582089001
-  m_2DMode: 1
+  lastFramingTime: 6880.765019980454
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1308.5095, y: 415.71387, z: 19.81375}
+    m_Target: {x: 31.34764, y: 2.9411602, z: 49.872894}
     speed: 2
-    m_Value: {x: 1308.5095, y: 415.71387, z: 19.81375}
+    m_Value: {x: 31.34764, y: 2.9411602, z: 49.872894}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -419,27 +419,26 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 0
-      speed: 2
-      m_Value: 0
-    zGrid:
       m_Target: 1
       speed: 2
       m_Value: 1
+    zGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: 0.4088219, y: 0.5875439, z: -0.44926018, w: 0.5346483}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: 0.40881646, y: 0.58753604, z: -0.44925418, w: 0.53464115}
   m_Size:
-    m_Target: 1719.2881
+    m_Target: 164.6127
     speed: 2
-    m_Value: 1719.2881
+    m_Value: 164.6127
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
-  m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.46454015, y: 0.024431204, z: -0.012824198, w: -0.88513136}
+    m_Value: 0
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -494,9 +493,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 286
-    y: 635
+    y: 658
     width: 1050
-    height: 383
+    height: 360
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -509,18 +508,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/CharacterSelectScreen
+    - Assets/Prefabs
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: "C:\\Users\\Fabr\xEDcio\\Documents\\UnityProjects\\Grupo1"
+  m_LastProjectPath: C:\Users\9293522\Desktop\Grupo1
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 6c260000
     m_LastClickedID: 9836
-    m_ExpandedIDs: 00000000b4290000c631000008320000ee3300002a3400002a350000c0350000063600007e360000803600009436000098360000b237000038380000ba3b0000f03c0000303d00001a3e0000986200009a6200009c6200009e620000a0620000a2620000a4620000
+    m_ExpandedIDs: 00000000066b00008c770000a0780000ae7900008c7a0000b27a0000e07a0000e27a0000ee7a00005a7b00007e7b0000d87b00006c7d0000dc7d00000a7e0000a8860000aa860000ac860000ae860000b0860000b2860000b4860000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -545,24 +544,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 243}
+    scrollPos: {x: 0, y: 62}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b4290000c63100000832000024340000c0350000063600007e360000803600009836000080370000b237000038380000ba3b0000f03c0000303d0000986200009a6200009c6200009e620000a0620000a2620000a4620000
+    m_ExpandedIDs: 00000000066b00008c770000a07800009c790000b27a0000e07a0000ee7a0000d87b0000dc7d00000a7e0000a8860000aa860000ac860000ae860000b0860000b2860000b4860000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: CharacterSelectManager
-      m_OriginalName: CharacterSelectManager
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 2034
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
