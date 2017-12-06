@@ -21,29 +21,183 @@ Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build
 Loading C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll into Unity Child Domain
 Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.020 seconds
+- Completed reload, in  0.022 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.933097 ms
+UnloadTime: 1.781386 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: ca4 -> priority: 1 
-  Thread -> id: dc8 -> priority: 1 
+  Thread -> id: 214c -> priority: 1 
+  Thread -> id: 19a8 -> priority: 1 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.661497 ms
+UnloadTime: 2.518444 ms
 
 Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 1584.
-Total: 4.290854 ms (FindLiveObjects: 0.088203 ms CreateObjectMapping: 0.033677 ms MarkObjects: 0.609084 ms  DeleteObjects: 3.558926 ms)
+Total: 4.494198 ms (FindLiveObjects: 0.078901 ms CreateObjectMapping: 0.040413 ms MarkObjects: 0.655270 ms  DeleteObjects: 3.719292 ms)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.310542 ms
+UnloadTime: 2.410997 ms
 
 Unloading 103 unused Assets to reduce memory usage. Loaded Objects now: 6363.
-Total: 2.559502 ms (FindLiveObjects: 0.274553 ms CreateObjectMapping: 0.096542 ms MarkObjects: 0.839696 ms  DeleteObjects: 1.348389 ms)
+Total: 2.752905 ms (FindLiveObjects: 0.283533 ms CreateObjectMapping: 0.113220 ms MarkObjects: 1.004234 ms  DeleteObjects: 1.350633 ms)
+
+Joystick connected ("Controller (XBOX 360 For Windows)").
+ 
+(Filename:  Line: 1351)
+
+mixamorig:RightForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:Head (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:RightArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:Spine (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftLeg (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:Spine2 (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:RightLeg (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:Spine2 (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:RightLeg (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftLeg (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:RightForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:Head (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:Spine2 (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:Spine (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:RightArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:RightForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftForeArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+mixamorig:LeftArm (UnityEngine.CapsuleCollider)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.590038 ms
+UnloadTime: 4.175384 ms
 
 Unloading 260 unused Assets to reduce memory usage. Loaded Objects now: 1127.
-Total: 0.770416 ms (FindLiveObjects: 0.064789 ms CreateObjectMapping: 0.034639 ms MarkObjects: 0.457053 ms  DeleteObjects: 0.213612 ms)
+Total: 0.963821 ms (FindLiveObjects: 0.075694 ms CreateObjectMapping: 0.064147 ms MarkObjects: 0.574764 ms  DeleteObjects: 0.248893 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.545898 ms
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 1958.
+Total: 4.464690 ms (FindLiveObjects: 0.084033 ms CreateObjectMapping: 0.052921 ms MarkObjects: 0.759510 ms  DeleteObjects: 3.567903 ms)
+
+Controller (XBOX 360 For Windows)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.113606 ms
+
+Unloading 103 unused Assets to reduce memory usage. Loaded Objects now: 6364.
+Total: 3.306180 ms (FindLiveObjects: 0.270062 ms CreateObjectMapping: 0.138559 ms MarkObjects: 1.098211 ms  DeleteObjects: 1.799026 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.570790 ms
+
+Unloading 260 unused Assets to reduce memory usage. Loaded Objects now: 1127.
+Total: 0.785490 ms (FindLiveObjects: 0.050997 ms CreateObjectMapping: 0.050035 ms MarkObjects: 0.455770 ms  DeleteObjects: 0.227724 ms)
 

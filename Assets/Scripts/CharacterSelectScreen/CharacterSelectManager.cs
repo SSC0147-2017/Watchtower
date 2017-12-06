@@ -23,6 +23,9 @@ public class CharacterSelectManager : Utilities {
 
     AudioSource SwooshSound;
     public GameObject BlackScreen;
+	
+	[HideInInspector] public int NumPlayers;
+	[HideInInspector] public bool isKeyboardActive = false;
 
     // Use this for initialization
     void Start () {
@@ -37,6 +40,7 @@ public class CharacterSelectManager : Utilities {
         {
             SelectedCharacters.Add(-1);
             Available.Add(true);
+			ReadyPlayers.Add(false);
         }
 
         for (int i = 0; i < Input.GetJoystickNames().Length; i++) {
@@ -46,7 +50,7 @@ public class CharacterSelectManager : Utilities {
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7) || Input.GetKeyDown(KeyCode.Joystick3Button7) || Input.GetKeyDown(KeyCode.Joystick4Button7)|| Input.GetKeyDown(KeyCode.Return))
         {
             int ready = 0;
             for (int i = 0; i < ReadyPlayers.Count; i++)
@@ -56,7 +60,7 @@ public class CharacterSelectManager : Utilities {
                     ready++;
                 }
             }
-            if (ready == ReadyPlayers.Count && ready != 0)
+            if (ready == NumPlayers && ready != 0)
             {
 				SwooshSound.Play();
                 StartCoroutine(FadeIn(BlackScreen, 2f, 1f));

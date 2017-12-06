@@ -49,7 +49,7 @@ public class GameManager : Utilities {
 				}
 			}
 			
-			InstantiatePrefabs();
+			InstantiatePrefabs(csm);
 			SetCamera();
 			SetUI();
 			
@@ -77,17 +77,19 @@ public class GameManager : Utilities {
         }
 	}
 	
-	void InstantiatePrefabs(){
+	void InstantiatePrefabs(CharacterSelectManager csm){
 		
-		for (int i = 0 ; i < NumPlayers; i++){
-			GameObject obj = Instantiate(CharPrefabs[PlayerCharacters[i]], transform.GetChild(0).position, transform.GetChild(0).rotation);
-			PlayerRefs.Add(obj);
-			Destroy(transform.GetChild(i).gameObject);
-			SetController(obj, i+1);
+		for (int i = 0 ; i < 4; i++){
+			if(PlayerCharacters[i] != -1){
+				GameObject obj = Instantiate(CharPrefabs[PlayerCharacters[i]], transform.GetChild(0).position, transform.GetChild(0).rotation);
+				PlayerRefs.Add(obj);
+				Destroy(transform.GetChild(i).gameObject);
+				SetController(obj, i+1, csm);
+			}
 		}
 		
-		for(int i = NumPlayers; i < 4; i++)
-			Destroy(transform.GetChild(i).gameObject);
+		for(int i = 0; i < 4; i++)
+			if(transform.GetChild(i) != null) Destroy(transform.GetChild(i).gameObject);
 	}
 	
 	void SetCamera()
@@ -100,9 +102,11 @@ public class GameManager : Utilities {
         }
 	}
 	
-	void SetController(GameObject obj, int index)
+	void SetController(GameObject obj, int index, CharacterSelectManager csm)
 	{
 		string str = "Joystick"+(index);
+		if(index == 4 && csm.isKeyboardActive)
+			str = "";
 		obj.GetComponent<Movement>().Initiate(str); 		
 	}
 	

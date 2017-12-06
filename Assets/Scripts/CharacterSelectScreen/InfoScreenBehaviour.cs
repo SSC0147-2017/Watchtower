@@ -47,7 +47,7 @@ public class InfoScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer1()
     {
         //if P1 presses B, goes back to the selection screen
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
 
             SelectScreen.SetActive(true);
@@ -82,7 +82,7 @@ public class InfoScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer4()
     {
         //if P4 presses B, goes back to the selection screen
-        if (Input.GetKeyDown(KeyCode.Joystick4Button1) || Input.GetKeyDown(KeyCode.Joystick4Button2))
+        if (Input.GetKeyDown(KeyCode.Joystick4Button1) || Input.GetKeyDown(KeyCode.Joystick4Button2)  || Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
         {
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
