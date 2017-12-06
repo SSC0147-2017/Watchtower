@@ -1,0 +1,49 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 4600 (ID=0x412)
+    Vendor:   Intel
+    VRAM:     1136 MB
+    Driver:   20.19.15.4531
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll (this message is harmless)
+Loading C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll into Unity Child Domain
+Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\9293522\Desktop\Grupo1\Watchtower-TRB (Windows Build)_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.020 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.933097 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: ca4 -> priority: 1 
+  Thread -> id: dc8 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.661497 ms
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 1584.
+Total: 4.290854 ms (FindLiveObjects: 0.088203 ms CreateObjectMapping: 0.033677 ms MarkObjects: 0.609084 ms  DeleteObjects: 3.558926 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.310542 ms
+
+Unloading 103 unused Assets to reduce memory usage. Loaded Objects now: 6363.
+Total: 2.559502 ms (FindLiveObjects: 0.274553 ms CreateObjectMapping: 0.096542 ms MarkObjects: 0.839696 ms  DeleteObjects: 1.348389 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.590038 ms
+
+Unloading 260 unused Assets to reduce memory usage. Loaded Objects now: 1127.
+Total: 0.770416 ms (FindLiveObjects: 0.064789 ms CreateObjectMapping: 0.034639 ms MarkObjects: 0.457053 ms  DeleteObjects: 0.213612 ms)
+
