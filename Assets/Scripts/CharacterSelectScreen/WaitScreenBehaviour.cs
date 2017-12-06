@@ -53,15 +53,15 @@ public class WaitScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer1()
     {
         //if P1 presses A, goes to character selection screen and signals the GameManager that this player is active
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
-            CSM.ReadyPlayers.Add(false);
+			CSM.NumPlayers ++;
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
         }
 
         //if P1 presses B, goes back to menu
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             CSM.BackToMenu();
         }
@@ -73,7 +73,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
         //if P2 presses A, goes to character selection screen and signals the GameManager that this player is active
         if (Input.GetKeyDown(KeyCode.Joystick2Button0))
         {
-            CSM.ReadyPlayers.Add(false);
+            CSM.NumPlayers ++;
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
         }
@@ -85,7 +85,7 @@ public class WaitScreenBehaviour : MonoBehaviour {
         //if P3 presses A, goes to character selection screen and signals the GameManager that this player is active
         if (Input.GetKeyDown(KeyCode.Joystick3Button0))
         {
-            CSM.ReadyPlayers.Add(false);
+            CSM.NumPlayers ++;
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
         }
@@ -95,11 +95,16 @@ public class WaitScreenBehaviour : MonoBehaviour {
     void GetInputsPlayer4()
     {
         //if P4 presses A, goes to character selection screen and signals the GameManager that this player is active
-        if (Input.GetKeyDown(KeyCode.Joystick4Button0))
+        if (Input.GetKeyDown(KeyCode.Joystick4Button0) || Input.GetButtonDown("Fire0"))
         {
-            CSM.ReadyPlayers.Add(false);
+            CSM.NumPlayers ++;
             SelectScreen.SetActive(true);
             gameObject.SetActive(false);
+        }
+		
+		if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CSM.BackToMenu();
         }
     }
 }

@@ -51,7 +51,7 @@ public class ReadyScreenBehaviour : Utilities {
     {
         //if P1 presses B, marks the player as not ready again and goes back to character selection scree
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             CSM.ReadyPlayers[PlayerNumber-1] = false;
 
@@ -132,10 +132,10 @@ public class ReadyScreenBehaviour : Utilities {
     {
         //if P4 presses B, marks the player as not ready again and goes back to character selection scree
         //also goes to SelectedCaracters list and deselects the character, making it available to choose again
-        if (Input.GetKeyDown(KeyCode.Joystick4Button1))
+        if (Input.GetKeyDown(KeyCode.Joystick4Button1) || Input.GetButtonDown("Fire1"))
         {
             CSM.ReadyPlayers[PlayerNumber - 1] = false;
-
+			CSM.isKeyboardActive = false;
             //searches the Sprites list for the position that has this player's selected character
             //that position is the same for Available list, so it sets its value back to true (available to pick)
             /*for (int i = 0; i < CSM.Models.Count; i++)
