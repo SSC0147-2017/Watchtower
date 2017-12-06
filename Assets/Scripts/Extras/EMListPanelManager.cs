@@ -67,4 +67,16 @@ public class EMListPanelManager : MonoBehaviour {
 
 	}
 
+
+	public GameObject getFirstActiveButton(){
+		GameObject btn = null;
+		for (int i = 0; i < arrUnlocked.Length; i++) {
+			if (textSwitchButtons [i].activeSelf){
+				btn = textSwitchButtons [i];
+				break;
+			}
+		}
+		return btn;
+	}
+
 }
