@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour {
 
 	public int MaxHP;
 	private bool canBeHurt;
-	private int CurrentHP;
+	[HideInInspector] public int CurrentHP;
 	private float defense;
 	public bool isDead;
 	public float invicibilityTime;

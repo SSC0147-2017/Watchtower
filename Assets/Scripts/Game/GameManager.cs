@@ -50,9 +50,7 @@ public class GameManager : Utilities {
 			}
 			
 			InstantiatePrefabs(csm);
-			SetCamera();
-			SetUI();
-			
+			SetCamera();			
 			
 			GameObject.Destroy(csm.gameObject);
 		}
@@ -85,6 +83,7 @@ public class GameManager : Utilities {
 				PlayerRefs.Add(obj);
 				Destroy(transform.GetChild(i).gameObject);
 				SetController(obj, i+1, csm);
+                SetUI(i, obj);
 			}
 		}
 		
@@ -110,15 +109,14 @@ public class GameManager : Utilities {
 		obj.GetComponent<Movement>().Initiate(str); 		
 	}
 	
-	void SetUI()
+	void SetUI(int index, GameObject obj)
 	{
-		for(int i = 0; i < NumPlayers; i++)
-        {
-			GameObject ui = Canvas.transform.GetChild(i).gameObject;
+	
+		GameObject ui = Canvas.transform.GetChild(index).gameObject;
 			
-            ui.SetActive(true);
+        ui.SetActive(true);
+        ui.GetComponent<UIBehaviour>().player = obj;
             
-        }
 	}
 
     void GameOver()
