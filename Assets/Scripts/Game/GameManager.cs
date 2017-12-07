@@ -128,6 +128,10 @@ public class GameManager : Utilities {
         isGameOver = true;
     }
 
+	public void RestartGame(){
+		SceneManager.LoadScene ("CharacterSelect");
+	}
+
 
 	/**
 	 * Função chamada quando os jogadores chegarem no Floofy

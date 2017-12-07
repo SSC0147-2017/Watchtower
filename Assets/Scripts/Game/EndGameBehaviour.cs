@@ -19,12 +19,12 @@ public class EndGameBehaviour : MonoBehaviour {
 		
 	}
 
-    void Restart()
+    public void Restart()
     {
-        //restart
+		GameManager.GM.RestartGame ();
     }
 
-    void Quit()
+    public void Quit()
     {
         GameManager.GM.BackToMainMenu();
     }
