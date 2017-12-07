@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryController : MonoBehaviour {
+public class InventoryController : MonoBehaviour
+{
 
 	public Movement playerBehav;
 
@@ -31,6 +32,9 @@ public class InventoryController : MonoBehaviour {
 	[Header("Arquebus")]
 	public bool hasArquebus;
 
+    public int currBread;
+    public int currBombs;
+    public bool hasArquebus;
 
 	void Start(){
 
