@@ -42,7 +42,6 @@ public class RoomBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other);
         if (StartedWaves == false && other.tag == "Player")
         {
             StartCoroutine(Wave());

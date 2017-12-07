@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class GameOverBehaviour : MonoBehaviour {
+public class EndGameBehaviour : MonoBehaviour {
 
 	public EventSystem EventSys;
 	GameObject FirstButton;
@@ -13,7 +14,7 @@ public class GameOverBehaviour : MonoBehaviour {
 		FirstButton = transform.Find("RestartButton").gameObject;
         SelectFirstButton();
     }
-
+	
     public void SelectFirstButton()
     {
         StartCoroutine(ButtonHighlightDelay());
