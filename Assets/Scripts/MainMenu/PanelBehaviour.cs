@@ -40,10 +40,10 @@ public class PanelBehaviour : MonoBehaviour
     {
         SynchronizeFade();
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button7))
+        /*if (Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             SelectFirstButton();
-        }
+        }*/
     }
 
     void SynchronizeFade()

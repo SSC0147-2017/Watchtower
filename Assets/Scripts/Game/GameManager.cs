@@ -123,10 +123,8 @@ public class GameManager : Utilities {
 
     void GameOver()
     {
-		print("game over");
-		//fade in black screen
-        Canvas.transform.Find("GameOverPanel").gameObject.SetActive(true);
-		Canvas.transform.Find("GameOverPanel").GetComponent<PauseMenuBehaviour>().SelectFirstButton();
+		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
+		StartCoroutine(PanelDelay(2f, "GameOverPanel"));
         isGameOver = true;
     }
 
@@ -135,9 +133,9 @@ public class GameManager : Utilities {
 	 * Função chamada quando os jogadores chegarem no Floofy
 	 */
 	public void Victory(){
-		//SETAR PAINEL DE FIM DE JOGO -------------------------	
+		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
+		StartCoroutine(PanelDelay(2f, "VictoryPanel"));
 		isGameOver = true;
-		print ("Huzzah!");
 	}
 
 
@@ -172,4 +170,10 @@ public class GameManager : Utilities {
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene("MainMenu");
     }
+	
+	IEnumerator PanelDelay(float delay, string name){
+		yield return new WaitForSeconds(delay);
+		Canvas.transform.Find(name).gameObject.SetActive(true);
+		Canvas.transform.Find(name).GetComponent<EndGameBehaviour>().SelectFirstButton();
+	}
 }
