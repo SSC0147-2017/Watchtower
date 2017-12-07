@@ -1,36 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class EndGameBehaviour : MonoBehaviour {
 
-	public EventSystem EventSys;
-	GameObject FirstButton;
+    public EventSystem EventSys;
+    public Selectable FirstButton;
 
-	void Start()
-    {
-		FirstButton = transform.Find("RestartButton").gameObject;
-        SelectFirstButton();
-    }
-	
-    public void SelectFirstButton()
-    {
+    // Use this for initialization
+    void Start () {
         StartCoroutine(ButtonHighlightDelay());
     }
 	
-	public void QuitGame(){
-		GameManager.GM.BackToMainMenu();
+	// Update is called once per frame
+	void Update () {
+		
 	}
-	
-	public void Restart(){
-		//restart
-	}
-	
-	IEnumerator ButtonHighlightDelay()
+
+    void Restart()
     {
-        yield return new WaitForSeconds(0.1f);
+        //restart
+    }
+
+    void Quit()
+    {
+        GameManager.GM.BackToMainMenu();
+    }
+
+    IEnumerator ButtonHighlightDelay()
+    {
+        yield return new WaitForSeconds(0.3f);
         EventSys.SetSelectedGameObject(FirstButton.gameObject);
     }
 }

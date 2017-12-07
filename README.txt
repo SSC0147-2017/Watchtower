@@ -9,7 +9,7 @@ A cena de jogo (após selecionar um personagem) funciona tanto com teclado quanto
 Mapeamentos pra tela de seleção de personagens:
 	A = Espaço
 	B = Esc
-	X = Ctrl esquerdo
+	X = Alt esquerdo
 	Start = Enter
 
 Para testar o projeto, basta rodar a build.

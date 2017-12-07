@@ -31,19 +31,12 @@ public class PanelBehaviour : MonoBehaviour
     public void SelectFirstButton()
     {
         StartCoroutine(ButtonHighlightDelay());
-        //FirstButton.Select();
-        //EventSys.SetSelectedGameObject(FirstButton.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
         SynchronizeFade();
-
-        /*if (Input.GetKeyDown(KeyCode.Joystick1Button7))
-        {
-            SelectFirstButton();
-        }*/
     }
 
     void SynchronizeFade()

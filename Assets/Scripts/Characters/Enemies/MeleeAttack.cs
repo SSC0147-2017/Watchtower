@@ -39,7 +39,7 @@ public class MeleeAttack : MonoBehaviour {
 
 	void OnTriggerStay (Collider col){
 
-		if (behav.getIsAttacking() && col.gameObject.tag == "Player") {//Só da dano se ele estiver atacando.
+		if (behav.getIsAttacking() && col.gameObject.tag == "Player" && col.GetType()!=typeof(SphereCollider)) {//Só da dano se ele estiver atacando.
 			Movement M = col.gameObject.GetComponent<GetParentCol>().Get();
 			if(M!=null)
 				M.takeDamage(damage);

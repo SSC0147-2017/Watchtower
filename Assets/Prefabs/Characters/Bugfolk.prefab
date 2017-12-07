@@ -1301,8 +1301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
-  defense: 0
-  invicibilityTime: 0
+  defense: 1
+  invicibilityTime: 0.2
+  LevandoDano: 0
   entityRigidBody: {fileID: 54057151893907690}
   animator: {fileID: 95892465179581780}
 --- !u!135 &135066189417800646

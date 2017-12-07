@@ -63,28 +63,30 @@ public class Movement : MonoBehaviour {
 
 
 	void FixedUpdate () {
-		if(Input.GetButtonDown(Controller+"Fire1")) {
-			if(!isAtk){
-				StartCoroutine(waitAttackTime());
-				anim.SetFloat("Speed",0.0f);
-				anim.SetTrigger("Attack");
+		if(!isDead){
+			if(Input.GetButtonDown(Controller+"Fire1")) {
+				if(!isAtk){
+					StartCoroutine(waitAttackTime());
+					anim.SetFloat("Speed",0.0f);
+					anim.SetTrigger("Attack");
+				}
 			}
-		}
-		if(Input.GetButtonDown(Controller+"Fire2")) {
-			if(!isSpe){
-				StartCoroutine(waitSpecialTime());
-				anim.SetFloat("Speed",0.0f);
-				anim.SetTrigger("Special");
-				Special();
+			if(Input.GetButtonDown(Controller+"Fire2")) {
+				if(!isSpe){
+					StartCoroutine(waitSpecialTime());
+					anim.SetFloat("Speed",0.0f);
+					anim.SetTrigger("Special");
+					Special();
+				}
 			}
-		}
-		if(Input.GetButtonDown(Controller+"Fire3")) {
-			if(!isDog){
-				anim.SetTrigger("Dodge");
-				StartCoroutine(RollTime());
+			if(Input.GetButtonDown(Controller+"Fire3")) {
+				if(!isDog){
+					anim.SetTrigger("Dodge");
+					StartCoroutine(RollTime());
+				}
 			}
+			ControlPlayer();
 		}
-		ControlPlayer();
 	}
 
 	private IEnumerator waitAttackTime() {

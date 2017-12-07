@@ -47,11 +47,16 @@ public class HazFireController : MonoBehaviour {
 	}
 
 	void OnTriggerStay (Collider col){
-		if(col.tag != "Enemy" || col.GetType() != typeof(SphereCollider)){
+		if(col.CompareTag("Enemy") && col.GetType()!=typeof(SphereCollider)){
 			HealthController tgtHealth = col.gameObject.GetComponent<HealthController> ();
 			if (tgtHealth != null) {
 				tgtHealth.takeDamage (damage);
 			}
+		}
+		else if(col.CompareTag("Player")){
+			Movement M = col.gameObject.GetComponent<GetParentCol>().Get();
+			if(M!=null)
+				M.takeDamage(damage);
 		}
 	}
 }
