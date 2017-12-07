@@ -3609,6 +3609,7 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
@@ -3687,6 +3688,9 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114030398516049690, guid: 6ecdcd3ae2b651548971aa65ae187ebe,
+=======
+    - target: {fileID: 135085304753752250, guid: 8259497a9681aab4e8b5904468eb5e0a,
+>>>>>>> master
 =======
     - target: {fileID: 135085304753752250, guid: 8259497a9681aab4e8b5904468eb5e0a,
 >>>>>>> master
@@ -5367,6 +5371,7 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 843511814}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f5083ace915e7b479b8d6963cc8f2f2, type: 3}
@@ -5380,6 +5385,8 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 843511814}
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 --- !u!4 &850612737 stripped
