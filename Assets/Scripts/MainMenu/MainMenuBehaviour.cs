@@ -58,6 +58,16 @@ public class MainMenuBehaviour : Utilities {
         }
     }
 
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(5-qualityIndex);
+    }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
+
     public void OpenPanel(GameObject window)
     {
         for(int i = 0; i < PanelList.Count; i++)

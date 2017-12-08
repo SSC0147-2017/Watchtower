@@ -32,10 +32,6 @@ public class InventoryController : MonoBehaviour
 	[Header("Arquebus")]
 	public bool hasArquebus;
 
-    public int currBread;
-    public int currBombs;
-    public bool hasArquebus;
-
 	void Start(){
 
 		if (playerBehav == null)
