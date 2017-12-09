@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 1975870703521806}
   damage: 10
-  cooldownTime: 1
+  cooldownTime: 1.5
 --- !u!114 &114361307176815180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1335,6 +1335,7 @@ MonoBehaviour:
   LevandoDano: 0
   entityRigidBody: {fileID: 0}
   animator: {fileID: 0}
+  isDead: 0
 --- !u!135 &135193321269482604
 SphereCollider:
   m_ObjectHideFlags: 1

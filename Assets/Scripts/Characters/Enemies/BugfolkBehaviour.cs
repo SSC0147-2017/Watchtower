@@ -5,12 +5,18 @@ using UnityEngine.AI;
 
 public class BugfolkBehaviour : EnemyBehaviour{
 
+	private HealthController HP;
+
 	#region Monobehaviour methods
 	void Start () {
 		base.Start ();
+		HP=gameObject.GetComponent<HealthController>();
 	}
 
 	void Update () {
+		if(HP.isDead){
+			Destroy(this);
+		}
 		//PERSEGUINDO/ATACANDO
 		if (CurrTarget != null) {
 

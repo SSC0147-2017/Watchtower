@@ -35,7 +35,7 @@ public class HealthController : MonoBehaviour {
 
 
 	//Verificando se o objeto está morto
-	private bool isDead;
+	public bool isDead;
 
     #endregion variables
 
@@ -99,6 +99,13 @@ public class HealthController : MonoBehaviour {
 	 * @return void
 	 */
 	private void die (){
+		isDead=true;
+		this.gameObject.GetComponent<Animator>().SetBool("IsAlive",false);
+		StartCoroutine(Destroi());
+	}
+
+	private IEnumerator Destroi(){
+		yield return new WaitForSeconds (5.0f);
 		Destroy(this.gameObject);
 	}
 
