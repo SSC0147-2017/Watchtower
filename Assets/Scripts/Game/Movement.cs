@@ -191,7 +191,8 @@ public class Movement : MonoBehaviour {
 		//isMovable=false;
 		isDog=true;
 		anim.SetBool("CanAttack",false);
-		Physics.IgnoreLayerCollision(ColLayer,13,true);
+		if(ColLayer!=9)
+			Physics.IgnoreLayerCollision(ColLayer,13,true);
 		yield return new WaitForSeconds (rollTime);
 		defense = 1.0f;
 		isDog=false;
