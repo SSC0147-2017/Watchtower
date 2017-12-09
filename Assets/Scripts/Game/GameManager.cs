@@ -15,7 +15,7 @@ public class GameManager : Utilities {
 	int NumPlayers;
 	List<int> PlayerCharacters = new List<int>();
 	
-    [HideInInspector]
+    //[HideInInspector]
 	public List<GameObject> PlayerRefs = new List<GameObject>();
 
     public GameObject TargetGroup;
@@ -50,8 +50,7 @@ public class GameManager : Utilities {
 			}
 			
 			InstantiatePrefabs(csm);
-			SetCamera();			
-			
+
 			GameObject.Destroy(csm.gameObject);
 		}
 		else{
@@ -83,22 +82,24 @@ public class GameManager : Utilities {
 				PlayerRefs.Add(obj);
 				Destroy(transform.GetChild(i).gameObject);
 				SetController(obj, i+1, csm);
-                SetUI(i, obj);
+				SetCamera(i, obj);
+				SetUI(i, obj);
 			}
+			else
+				Destroy(transform.GetChild(i).gameObject);
 		}
 		
-		for(int i = 0; i < 4; i++)
+		for(int i = 0; i < 4; i++) {
+			Debug.Log("Entrou");
 			if(transform.GetChild(i) != null) Destroy(transform.GetChild(i).gameObject);
+		}
 	}
 	
-	void SetCamera()
+	void SetCamera(int index, GameObject obj)
 	{
-		for(int i = 0; i < NumPlayers; i++)
-        {
-            TargetGroup.GetComponent<CinemachineTargetGroup>().m_Targets[i].target = PlayerRefs[i].transform;
-            TargetGroup.GetComponent<CinemachineTargetGroup>().m_Targets[i].weight = 1f;
-            TargetGroup.GetComponent<CinemachineTargetGroup>().m_Targets[i].radius = 0.5f;
-        }
+		TargetGroup.GetComponent<CinemachineTargetGroup>().m_Targets[index].target = obj.transform;
+        TargetGroup.GetComponent<CinemachineTargetGroup>().m_Targets[index].weight = 1f;
+        TargetGroup.GetComponent<CinemachineTargetGroup>().m_Targets[index].radius = 0.5f;
 	}
 	
 	void SetController(GameObject obj, int index, CharacterSelectManager csm)
