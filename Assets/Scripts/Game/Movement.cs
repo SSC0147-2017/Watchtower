@@ -191,9 +191,11 @@ public class Movement : MonoBehaviour {
 		//isMovable=false;
 		isDog=true;
 		anim.SetBool("CanAttack",false);
+		Physics.IgnoreLayerCollision(ColLayer,13,true);
 		yield return new WaitForSeconds (rollTime);
 		defense = 1.0f;
 		isDog=false;
+		Physics.IgnoreLayerCollision(ColLayer,13,false);
 		//isMovable=true;
 		anim.SetBool("CanAttack",true);
 	}
