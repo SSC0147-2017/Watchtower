@@ -82,7 +82,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
         if (transform.GetComponent<CharacterSelect>().Moving == false)
         {
 
-            if (Input.GetAxisRaw("Joystick1Horizontal") == 1)
+            if (Input.GetAxisRaw("Joystick1Horizontal") > 0.5f)
             {
                 if (AnalogInUse == false)
                 {
@@ -91,7 +91,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
                     CanSelect = false;
                 }
             }
-            if (Input.GetAxisRaw("Joystick1Horizontal") == -1)
+            if (Input.GetAxisRaw("Joystick1Horizontal") < -0.5f)
             {
                 if (AnalogInUse == false)
                 {
@@ -138,7 +138,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
 
         if (transform.GetComponent<CharacterSelect>().Moving == false)
         {
-            if (Input.GetAxisRaw("Joystick2Horizontal") == 1)
+            if (Input.GetAxisRaw("Joystick2Horizontal") > 0.5f)
             {
                 if (AnalogInUse == false)
                 {
@@ -147,7 +147,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
                     CanSelect = false;
                 }
             }
-            if (Input.GetAxisRaw("Joystick2Horizontal") == -1)
+            if (Input.GetAxisRaw("Joystick2Horizontal") < -0.5f)
             {
                 if (AnalogInUse == false)
                 {
@@ -193,7 +193,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
 
         if (transform.GetComponent<CharacterSelect>().Moving == false)
         {
-            if (Input.GetAxisRaw("Joystick3Horizontal") == 1)
+            if (Input.GetAxisRaw("Joystick3Horizontal") > 0.5f)
             {
                 if (AnalogInUse == false)
                 {
@@ -202,7 +202,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
                     CanSelect = false;
                 }
             }
-            if (Input.GetAxisRaw("Joystick3Horizontal") == -1)
+            if (Input.GetAxisRaw("Joystick3Horizontal") < -0.5f)
             {
                 if (AnalogInUse == false)
                 {
@@ -249,7 +249,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
 
         if (transform.GetComponent<CharacterSelect>().Moving == false)
         {
-            if (Input.GetAxisRaw("Joystick4Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == 1)
+            if (Input.GetAxisRaw("Joystick4Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") == 1)
             {
                 if (AnalogInUse == false)
                 {
@@ -258,7 +258,7 @@ public class SelectScreenBehaviour : MonoBehaviour {
                     CanSelect = false;
                 }
             }
-            if (Input.GetAxisRaw("Joystick4Horizontal") == -1 || Input.GetAxisRaw("Horizontal") == -1)
+            if (Input.GetAxisRaw("Joystick4Horizontal") < -0.5f || Input.GetAxisRaw("Horizontal") == -1)
             {
                 if (AnalogInUse == false)
                 {

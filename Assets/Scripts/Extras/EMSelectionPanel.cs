@@ -27,6 +27,8 @@ public class EMSelectionPanel : MonoBehaviour {
 	public EMContentPanel contentPanelScript;
 	
 	public EventSystem EventSys;
+
+    bool TriggerInUse = false;
 	
 	public void Start()
     {
@@ -39,12 +41,19 @@ public class EMSelectionPanel : MonoBehaviour {
 		//print(currentActiveLP);
 
 		if (!insideTab) {
-			if (Input.GetKeyDown (KeyCode.Joystick1Button5) || Input.GetAxis ("Joystick1Triggers") < 0) {
+			if ((Input.GetKeyDown (KeyCode.Joystick1Button5) || Input.GetAxisRaw ("Joystick1Triggers") < 0) && TriggerInUse == false) {
+                TriggerInUse = true;
 				nextTab ();
 			}
-			if (Input.GetKeyDown (KeyCode.Joystick1Button4) || Input.GetAxis ("Joystick1Triggers") > 0) {
+			if ((Input.GetKeyDown (KeyCode.Joystick1Button4) || Input.GetAxisRaw ("Joystick1Triggers") > 0) && TriggerInUse == false) {
+                TriggerInUse = true;
 				prevTab ();
 			}
+
+            if(Input.GetAxisRaw("Joystick1Triggers") == 0)
+            {
+                TriggerInUse = false;
+            }
 
 
 			//Enter the tab
