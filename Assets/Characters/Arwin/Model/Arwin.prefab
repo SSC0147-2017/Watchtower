@@ -945,7 +945,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819715347530290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 135.12862, y: 0.00000011920929, z: 124.01101}
+  m_LocalPosition: {x: 140.43776, y: 0.00000017881393, z: 119.55104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4865405580757764}
@@ -1384,6 +1384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 90
+  CurrentHP: 0
   isDead: 0
   invicibilityTime: 1.23
   RevivalTime: 1.37
@@ -1395,9 +1396,9 @@ MonoBehaviour:
   ProjSpd: 0
   ColLayer: 10
   SpecialTime: 1.93
-  rollTime: 1.47
+  rollTime: 0.83
   rollDmgRed: 0
-  AttackTime: 2.23
+  AttackTime: 1.83
   outsiderAtk: 0
   outsiderSP: 0
   Controller: 
@@ -1702,8 +1703,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.00000011920929, y: 0.00029969215, z: 0.008476028}
-    m_Extent: {x: 0.0028840636, y: 0.0009365095, z: 0.005261829}
+    m_Center: {x: -0.00000011920929, y: 0.00029981136, z: 0.008476028}
+    m_Extent: {x: 0.0028840636, y: 0.0009365095, z: 0.0052618287}
   m_DirtyAABB: 0
 --- !u!137 &137973135716874916
 SkinnedMeshRenderer:

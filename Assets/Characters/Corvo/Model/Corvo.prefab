@@ -1150,6 +1150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 80
+  CurrentHP: 0
   isDead: 0
   invicibilityTime: 1.63
   RevivalTime: 5.17
@@ -1161,9 +1162,9 @@ MonoBehaviour:
   ProjSpd: 20
   ColLayer: 8
   SpecialTime: 1.23
-  rollTime: 1.6
+  rollTime: 0.83
   rollDmgRed: 0
-  AttackTime: 1.77
+  AttackTime: 0.77
   outsiderAtk: 0
   outsiderSP: 0
   Controller: 

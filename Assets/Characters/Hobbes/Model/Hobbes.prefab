@@ -845,7 +845,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595417321565934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 131.20062, y: -0.7199996, z: 127.096535}
+  m_LocalPosition: {x: 131.20062, y: 0, z: 127.096535}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4018747813847498}
@@ -1094,6 +1094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 130
+  CurrentHP: 0
   isDead: 0
   invicibilityTime: 1.67
   RevivalTime: 5.4
@@ -1106,7 +1107,7 @@ MonoBehaviour:
   SpecialTime: 4.3
   rollTime: 2.27
   rollDmgRed: 0.5
-  AttackTime: 3.57
+  AttackTime: 1.6
   outsiderAtk: 0
   outsiderSP: 0
   Controller: 
