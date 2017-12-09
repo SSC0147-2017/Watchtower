@@ -30,7 +30,7 @@ public class GameManager : Utilities {
 			GM = this;
 		}
 		if(GM != this){
-			Destroy(GM);
+			Destroy(GM.gameObject);
 		}
 
         StartCoroutine(FadeOut(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
