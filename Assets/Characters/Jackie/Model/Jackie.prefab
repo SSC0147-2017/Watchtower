@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 95974132133178658}
   - component: {fileID: 54278546510699234}
   - component: {fileID: 114582515770674730}
+  - component: {fileID: 114932829573023996}
   m_Layer: 11
   m_Name: Jackie
   m_TagString: Player
@@ -1171,6 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 100
+  CurrentHP: 0
   isDead: 0
   invicibilityTime: 0.87
   RevivalTime: 3.5
@@ -1249,6 +1251,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parente: {fileID: 114582515770674730}
+--- !u!114 &114932829573023996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1361226966930994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500166903c506f04bb11e8a9a8c6be6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBehav: {fileID: 0}
+  selectedItem: 0
+  itemCooldownTime: 1
+  hpInc: 0
+  maxBread: 0
+  currBread: 0
+  maxBombs: 0
+  currBombs: 0
+  bombPrefab: {fileID: 1369543657732698, guid: 9c2a41c108aefe24da91394ef2bbca88, type: 2}
+  hasArquebus: 0
 --- !u!114 &114954478873351936
 MonoBehaviour:
   m_ObjectHideFlags: 1

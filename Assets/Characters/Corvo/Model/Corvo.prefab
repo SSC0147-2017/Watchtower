@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 95970387366606262}
   - component: {fileID: 114154319956978640}
   - component: {fileID: 54692479535660098}
+  - component: {fileID: 114626861923864934}
   m_Layer: 8
   m_Name: Corvo
   m_TagString: Player
@@ -1241,6 +1242,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dano: 17
   P: {fileID: 114154319956978640}
+--- !u!114 &114626861923864934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114954814395604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500166903c506f04bb11e8a9a8c6be6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBehav: {fileID: 0}
+  selectedItem: 0
+  itemCooldownTime: 1
+  hpInc: 0
+  maxBread: 0
+  currBread: 0
+  maxBombs: 0
+  currBombs: 0
+  bombPrefab: {fileID: 1369543657732698, guid: 9c2a41c108aefe24da91394ef2bbca88, type: 2}
+  hasArquebus: 0
 --- !u!114 &114642904960650248
 MonoBehaviour:
   m_ObjectHideFlags: 1

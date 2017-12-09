@@ -89,10 +89,9 @@ public class GameManager : Utilities {
 				Destroy(transform.GetChild(i).gameObject);
 		}
 		
-		for(int i = 0; i < 4; i++) {
-			Debug.Log("Entrou");
+		/*for(int i = 0; i < 4; i++) {
 			if(transform.GetChild(i) != null) Destroy(transform.GetChild(i).gameObject);
-		}
+		}*/
 	}
 	
 	void SetCamera(int index, GameObject obj)
@@ -116,8 +115,9 @@ public class GameManager : Utilities {
 		GameObject ui = Canvas.transform.GetChild(index).gameObject;
 			
         ui.SetActive(true);
+        print("entrou");
         ui.GetComponent<UIBehaviour>().player = obj;
-            
+        print(ui.GetComponent<UIBehaviour>().player);   
 	}
 
     void GameOver()
