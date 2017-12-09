@@ -28,7 +28,7 @@ public class CloneArwin : MonoBehaviour {
 					tgtHealth.takeDamage (damage);
 				}
 			}
-			else if(col.CompareTag("Player")){
+			else if(col.CompareTag("Player") && col.GetType()!=typeof(SphereCollider)){
 				Debug.Log("Stay");
 				Movement M = col.gameObject.GetComponent<GetParentCol>().Get();
 				if(M!=null)

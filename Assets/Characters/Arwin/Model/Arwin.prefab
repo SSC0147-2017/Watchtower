@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 54983074605941696}
   - component: {fileID: 114577613917056182}
   - component: {fileID: 114978638438873270}
+  - component: {fileID: 135479308229887804}
   m_Layer: 10
   m_Name: Arwin
   m_TagString: Player
@@ -1390,6 +1391,8 @@ MonoBehaviour:
   rollTime: 1.13
   rollDmgRed: 0
   AttackTime: 1.83
+  RevivePts: 1
+  Range: {fileID: 135479308229887804}
   outsiderAtk: 0
   outsiderSP: 0
   Controller: 
@@ -1439,6 +1442,18 @@ MonoBehaviour:
   currBombs: 0
   bombPrefab: {fileID: 1369543657732698, guid: 9c2a41c108aefe24da91394ef2bbca88, type: 2}
   hasArquebus: 0
+--- !u!135 &135479308229887804
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819715347530290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!136 &136061010672635434
 CapsuleCollider:
   m_ObjectHideFlags: 1

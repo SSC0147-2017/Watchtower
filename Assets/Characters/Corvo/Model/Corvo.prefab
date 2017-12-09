@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 114154319956978640}
   - component: {fileID: 54692479535660098}
   - component: {fileID: 114626861923864934}
+  - component: {fileID: 135536453544927330}
   m_Layer: 8
   m_Name: Corvo
   m_TagString: Player
@@ -569,7 +570,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1114954814395604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 132.11, y: 0.00000017881393, z: 126.33}
+  m_LocalPosition: {x: 135.57106, y: 0.00000017881393, z: 119.104546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4491870021868182}
@@ -1156,6 +1157,8 @@ MonoBehaviour:
   rollTime: 1.13
   rollDmgRed: 0
   AttackTime: 0.77
+  RevivePts: 1
+  Range: {fileID: 135536453544927330}
   outsiderAtk: 0
   outsiderSP: 0
   Controller: 
@@ -1289,6 +1292,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parente: {fileID: 114154319956978640}
+--- !u!135 &135536453544927330
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114954814395604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!136 &136078466541047686
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 54278546510699234}
   - component: {fileID: 114582515770674730}
   - component: {fileID: 114932829573023996}
+  - component: {fileID: 135283131437987778}
   m_Layer: 11
   m_Name: Jackie
   m_TagString: Player
@@ -714,7 +715,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361226966930994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 130.99895, y: 0, z: 129.26546}
+  m_LocalPosition: {x: 134.46, y: 0, z: 122.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4902899109825252}
@@ -1247,6 +1248,8 @@ MonoBehaviour:
   rollTime: 1.13
   rollDmgRed: 0
   AttackTime: 1.27
+  RevivePts: 2
+  Range: {fileID: 135283131437987778}
   outsiderAtk: 0
   outsiderSP: 0
   Controller: 
@@ -1368,6 +1371,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parente: {fileID: 114582515770674730}
+--- !u!135 &135283131437987778
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1361226966930994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!136 &136024019679449032
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1541,7 +1556,7 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.0000988245, y: 0.00012910366, z: 0.006791498}
+    m_Center: {x: 0.0000988245, y: 0.00012922287, z: 0.0067914985}
     m_Extent: {x: 0.0024335939, y: 0.0010383626, z: 0.0037270181}
   m_DirtyAABB: 0
 --- !u!137 &137622011726846512

@@ -9,13 +9,13 @@ public class Virote : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider Col){
-		if(Col.gameObject.CompareTag("Enemy")){
+		if(Col.gameObject.CompareTag("Enemy") && Col.GetType()!=typeof(SphereCollider)){
 			HealthController H = Col.gameObject.GetComponent<HealthController>();
 			if(H!=null)
 				H.takeDamage(Dano);
 		}
 		else
-			if(Col.gameObject.CompareTag("Player")){
+			if(Col.gameObject.CompareTag("Player") && Col.GetType()!=typeof(SphereCollider)){
 				Debug.Log("Melee");
 				Movement M = Col.gameObject.GetComponent<GetParentCol>().Get();
 				if(M!=null)

@@ -37,6 +37,13 @@ public class Movement : MonoBehaviour {
 	private bool isAtk;
 	//Attack
 
+	private int RevivePool=0;
+	private int RevivePoolMax=100;
+	public int RevivePts;
+	private bool isHelp;
+	public Collider Range;
+	//Revive
+
 	public bool outsiderAtk=false;
 	public bool outsiderSP=false;
 
@@ -55,6 +62,7 @@ public class Movement : MonoBehaviour {
 		isSpe=false;
 		defense=1.0f;
 		anim.SetBool("CanAttack",true);
+		Range.enabled=false;
 	}
 
 	public void Initiate(string Con){
@@ -64,18 +72,26 @@ public class Movement : MonoBehaviour {
 
 	void FixedUpdate () {
 		if(!isDead){
+			if(Input.GetButtonDown(Controller+"Fire0")) {
+				if(!isHelp){
+					anim.SetFloat("Speed",0.0f);
+					anim.SetTrigger("Help");
+					Range.enabled=true;
+					StartCoroutine(waitHelpTime());
+				}
+			}
 			if(Input.GetButtonDown(Controller+"Fire1")) {
 				if(!isAtk){
-					StartCoroutine(waitAttackTime());
 					anim.SetFloat("Speed",0.0f);
 					anim.SetTrigger("Attack");
+					StartCoroutine(waitAttackTime());
 				}
 			}
 			if(Input.GetButtonDown(Controller+"Fire2")) {
 				if(!isSpe){
-					StartCoroutine(waitSpecialTime());
 					anim.SetFloat("Speed",0.0f);
 					anim.SetTrigger("Special");
+					StartCoroutine(waitSpecialTime());
 					Special();
 				}
 			}
@@ -87,6 +103,45 @@ public class Movement : MonoBehaviour {
 			}
 			ControlPlayer();
 		}
+		else {
+			if(RevivePool>=RevivePoolMax){
+				Revive();
+			}
+			RevivePool-=1;
+			if(RevivePool<0)
+				RevivePool=0;
+		}
+	}
+
+	public void Help(int Pts){
+		RevivePool+=Pts;
+	}
+
+	void OnTriggerStay (Collider Col){
+		if(isHelp){
+			if(Input.GetButton(Controller+"Fire0")){
+				if(Col.gameObject.CompareTag("Player")){
+					Movement M = Col.gameObject.GetComponent<GetParentCol>().Get();
+					if(M!=null)
+						M.Help(RevivePts);
+				}
+			}
+		}
+	}
+
+	private IEnumerator waitHelpTime(){
+		isMovable=false;
+		isAtk=true;
+		isDog=true;
+		isSpe=true;
+		isHelp=true;
+		yield return new WaitForSeconds(2.0f);
+		isHelp=false;
+		isMovable=true;
+		isAtk=false;
+		isDog=false;
+		isSpe=false;
+		Range.enabled=false;
 	}
 
 	private IEnumerator waitAttackTime() {
