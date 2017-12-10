@@ -79,8 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6f0f85c0b9b9049b1862cee8e7d427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy1: {fileID: 1732745046387244, guid: 97e994677b7d9384dbcfd9429fb5fad3, type: 2}
-  Enemy2: {fileID: 1258013720832092, guid: 14add30083ae8fd4a80887228aca9b4d, type: 2}
+  Enemy1: {fileID: 1975870703521806, guid: 07c210fc526862241991d90a27842fa6, type: 2}
+  Enemy2: {fileID: 1592110953101344, guid: adb6614142aa1fa4f8fef7a019c3af54, type: 2}
   enemies: 
   spawnDelays: []
   SpawnPosition: {x: 0, y: 0, z: 0}

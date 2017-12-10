@@ -1037,8 +1037,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggroRadius: 5
-  claws: {fileID: 0}
+  claws: {fileID: 114155816528851730}
   Multiplier: 5
+  col: {fileID: 65378953685234586}
 --- !u!114 &114155816528851730
 MonoBehaviour:
   m_ObjectHideFlags: 1

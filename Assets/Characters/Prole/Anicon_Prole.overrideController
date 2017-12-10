@@ -6,5 +6,17 @@ AnimatorOverrideController:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Anicon_Prole
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 6d3d3712a256e86489152f4e5ca7c98f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 27dcc9b950aab6a40940d88beb3579c5, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: b824d4d37b4b99446a3dd90e42bf77dc, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: f47eaccdf5297a64a98451a2c3aed838, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: aaa187ac7fe582042b47e0a42c3aec15, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: c6948f7663b08f44bbfea41909c8d306, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 5bba1e780e00c694cbffc6bd6a2c7680, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: b6af131945549b249bd77664c9a32f8a, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 395d6b632f244234cb75fb75215c6e6d, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: dd5cb9583a3aed741aed275710ec33bb, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 32981375f5ede7e429b7680be95929cc, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 0c81204bf836aeb43a0ab35f11b0dd2c, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: c541829ad80a7af4bab00311aa058c3e, type: 3}
