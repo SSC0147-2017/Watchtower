@@ -16,6 +16,8 @@ public class AchievementBehaviour : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
+        SoundManager.SM.PlayAchievement();
+
         InitialPosition = transform.position;
 
         iTween.MoveTo(
