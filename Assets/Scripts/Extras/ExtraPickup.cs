@@ -10,6 +10,8 @@ public class ExtraPickup : MonoBehaviour {
 	[Header("Index do vetor para desbloquear")]
 	public int index;
 
+    public GameObject AchievementPanel;
+
 	void OnTriggerStay (Collider col){
 		//Player pegou
 		if (col.tag == "Player") {
@@ -20,8 +22,8 @@ public class ExtraPickup : MonoBehaviour {
 				print ("You unlocked a new " + type + " Entry!");
 			else
 				print ("Save failed");
-			//MOSTRAR NO HUD QUE DEU BOM
 
+            AchievementPanel.SetActive(true);
 
 			Destroy (this.gameObject);
 		}
