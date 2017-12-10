@@ -930,7 +930,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 148475971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -640, z: 0}
+  m_LocalPosition: {x: 0, y: -537.4828, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2083071278}
@@ -1217,7 +1217,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 249945560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -300, y: 420, z: 0}
+  m_LocalPosition: {x: -300, y: 317.48282, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480258529}
@@ -1689,12 +1689,12 @@ Prefab:
     - target: {fileID: 114489094134527742, guid: c07c04d41ed3cb3479b62f336cf8dd8a,
         type: 2}
       propertyPath: spawnDelays.Array.data[5]
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114489094134527742, guid: c07c04d41ed3cb3479b62f336cf8dd8a,
         type: 2}
       propertyPath: spawnDelays.Array.data[10]
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114489094134527742, guid: c07c04d41ed3cb3479b62f336cf8dd8a,
         type: 2}
@@ -1800,12 +1800,12 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  - 10
+  - 2
   - 0
   - 0
   - 0
   - 0
-  - 10
+  - 3
   - 0
   - 0
   - 0
@@ -1829,20 +1829,20 @@ MonoBehaviour:
   enemies: 010000000100000001000000010000000100000000000000000000000000000000000000000000000100000001000000010000000000000000000000
   spawnDelays:
   - 0
-  - 1
-  - 1
-  - 1
-  - 1
-  - 10
-  - 1
-  - 1
-  - 1
-  - 1
-  - 10
-  - 1
-  - 1
-  - 1
-  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 2
+  - 0
+  - 0
+  - 0
+  - 0
+  - 3
+  - 0
+  - 0
+  - 0
+  - 0
   SpawnPosition: {x: 97.8, y: 0, z: 131.1}
   SpawnRange: 2
   allDead: 0
@@ -3089,12 +3089,12 @@ Prefab:
     - target: {fileID: 114489094134527742, guid: c07c04d41ed3cb3479b62f336cf8dd8a,
         type: 2}
       propertyPath: enemies.Array.size
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114489094134527742, guid: c07c04d41ed3cb3479b62f336cf8dd8a,
         type: 2}
       propertyPath: spawnDelays.Array.size
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4320895951096732, guid: c07c04d41ed3cb3479b62f336cf8dd8a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3384,17 +3384,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy1: {fileID: 1975870703521806, guid: 07c210fc526862241991d90a27842fa6, type: 2}
   Enemy2: {fileID: 1592110953101344, guid: adb6614142aa1fa4f8fef7a019c3af54, type: 2}
-  enemies: 0100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  enemies: 010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   spawnDelays:
   - 0
   - 0
   - 0
   - 0.5
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   - 0
   - 0
   - 0
@@ -3422,7 +3417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy1: {fileID: 1975870703521806, guid: 07c210fc526862241991d90a27842fa6, type: 2}
   Enemy2: {fileID: 1592110953101344, guid: adb6614142aa1fa4f8fef7a019c3af54, type: 2}
-  enemies: 0100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  enemies: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   spawnDelays:
   - 0
   - 0
@@ -3444,31 +3439,6 @@ MonoBehaviour:
   - 0
   - 0
   - 1
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   - 0
   - 0
   - 0
@@ -3700,7 +3670,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 505617939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -800, y: 420, z: 0}
+  m_LocalPosition: {x: -800, y: 317.48282, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 914731596}
@@ -4931,7 +4901,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 726418519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 200, y: 420, z: 0}
+  m_LocalPosition: {x: 200, y: 317.48282, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1956143204}
@@ -6928,8 +6898,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 967213670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 441.5, y: 163, z: 0}
+  m_LocalScale: {x: 0.37258607, y: 0.37258607, z: 0.37258607}
   m_Children:
   - {fileID: 505617940}
   - {fileID: 249945561}
@@ -8100,7 +8070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy1: {fileID: 1975870703521806, guid: 07c210fc526862241991d90a27842fa6, type: 2}
   Enemy2: {fileID: 1592110953101344, guid: adb6614142aa1fa4f8fef7a019c3af54, type: 2}
-  enemies: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  enemies: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   spawnDelays:
   - 0
   - 0
@@ -8118,21 +8088,6 @@ MonoBehaviour:
   - 0
   - 0
   - 1
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 5
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   - 0
   - 0
   - 0
@@ -16743,7 +16698,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2110572409}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 700, y: 420, z: 0}
+  m_LocalPosition: {x: 700, y: 317.48282, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1285236192}
