@@ -28,7 +28,7 @@ public class UIBehaviour : MonoBehaviour {
         /*if (player.GetComponent<Movement>().CurrentHP < 0)
             transform.Find("HealthBar").GetComponent<Image>().fillAmount = 0;
         else*/
-        transform.Find("HealthBar").GetComponent<Image>().fillAmount = player.GetComponent<Movement>().CurrentHP / player.GetComponent<Movement>().MaxHP;
+        transform.Find("HealthBar").GetComponent<Image>().fillAmount = (float)player.GetComponent<Movement>().CurrentHP / (float)player.GetComponent<Movement>().MaxHP;
 
         CurrentItem = player.GetComponent<InventoryController>().selectedItem;
         if (CurrentItem == InventoryController.itemType.bomb)
