@@ -1387,7 +1387,7 @@ MonoBehaviour:
   spread: 0
   ProjSpd: 0
   ColLayer: 10
-  SpecialTime: 1.93
+  SpecialTime: 1.1
   rollTime: 1.13
   rollDmgRed: 0
   AttackTime: 1.83
