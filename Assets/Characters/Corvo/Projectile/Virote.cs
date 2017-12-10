@@ -21,6 +21,8 @@ public class Virote : MonoBehaviour {
 				if(M!=null)
 					M.takeDamage(Dano);
 			}
-		Destroy(this.gameObject);
+
+        if(Col.tag != "Spawner" && !(Col.gameObject.CompareTag("Enemy") && Col.GetType() == typeof(SphereCollider)) && !(Col.gameObject.CompareTag("Player") && Col.GetType() == typeof(SphereCollider)))
+		    Destroy(this.gameObject);
 	}
 }

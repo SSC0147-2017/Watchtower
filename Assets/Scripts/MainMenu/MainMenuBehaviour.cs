@@ -37,6 +37,7 @@ public class MainMenuBehaviour : Utilities {
 
 	public void StartSceneTransition(string SceneName)
     {
+        SoundManager.SM.PlayButton();
         SwooshSound.Play();
         StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
 		StartCoroutine(ChangeScene(SceneName));
@@ -44,33 +45,35 @@ public class MainMenuBehaviour : Utilities {
 
     public void MuteSound()
     {
+        SoundManager.SM.PlayButton();
+
         for (int i = 0; i < AudioList.Count; i++)
         {
             AudioSource source = AudioList[i];
-            if (source.mute == false)
-            {
-                source.mute = true;
-            }
-            else
-            {
-                source.mute = false;
-            }
+
+            source.mute = !source.mute;
         }
     }
 
     public void SetQuality(int qualityIndex)
     {
+        SoundManager.SM.PlayButton();
+
         QualitySettings.SetQualityLevel(5-qualityIndex);
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
+        SoundManager.SM.PlayButton();
+
         Screen.fullScreen = isFullscreen;
     }
 
     public void OpenPanel(GameObject window)
     {
-        for(int i = 0; i < PanelList.Count; i++)
+        SoundManager.SM.PlayButton();
+
+        for (int i = 0; i < PanelList.Count; i++)
         {
             if(window.name == PanelList[i].name)
             {
@@ -87,6 +90,8 @@ public class MainMenuBehaviour : Utilities {
 
     public void ClosePanel(GameObject window)
     {
+        SoundManager.SM.PlayButton();
+
         PanelList[0].GetComponent<PanelBehaviour>().ActivateButtons();
         for (int i = 1; i < PanelList.Count; i++)
         {
@@ -98,12 +103,16 @@ public class MainMenuBehaviour : Utilities {
 
     public void ExitGame()
     {
+        SoundManager.SM.PlayButton();
+
         Application.Quit();
     }
 
 	public IEnumerator ChangeScene(string SceneName)
     {
-		yield return new WaitForSeconds(SceneTransitionTimer);
+        SoundManager.SM.PlayButton();
+
+        yield return new WaitForSeconds(SceneTransitionTimer);
 		SceneManager.LoadScene(SceneName);
     }
 }

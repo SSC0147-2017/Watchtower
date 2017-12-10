@@ -122,20 +122,33 @@ public class GameManager : Utilities {
 
     void GameOver()
     {
-		//StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
+		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 		StartCoroutine(PanelDelay(2f, "GameOverPanel"));
         isGameOver = true;
     }
 
 	public void RestartGame(){
-		SceneManager.LoadScene ("CharacterSelect");
-	}
+        Time.timeScale = 1;
+        SoundManager.SM.PlayButton();
+        SwooshSound.Play();
+        if (!Canvas.transform.Find("BlackScreen").gameObject.activeSelf)
+            StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 1f, 1f));
 
+        if (GameObject.Find("Music") != null)
+            GameObject.Find("Music").name = "RealMusic";
+        StartCoroutine(RestartDelay(1.3f));
+    }
 
-	/**
+    IEnumerator RestartDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("CharacterSelect");
+    }
+
+    /**
 	 * Função chamada quando os jogadores chegarem no Floofy
 	 */
-	public void Victory(){
+    public void Victory(){
 		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 		StartCoroutine(PanelDelay(2f, "VictoryPanel"));
 		isGameOver = true;
@@ -158,7 +171,8 @@ public class GameManager : Utilities {
 	
 	public void BackToMainMenu(){
 		Time.timeScale = 1;
-		SwooshSound.Play();
+        SoundManager.SM.PlayButton();
+        SwooshSound.Play();
         if(!Canvas.transform.Find("BlackScreen").gameObject.activeSelf)
             StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 1f, 1f));
 		

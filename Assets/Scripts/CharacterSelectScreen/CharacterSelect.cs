@@ -62,6 +62,8 @@ public class CharacterSelect : MonoBehaviour {
     //also skips any character that is not available (i.e. already chosen)
     public string NextCharacter()
     {
+        SoundManager.SM.PlayCharSwoosh();
+
         if (CurrentIndex == CSM.Models.Count - 1)
         {
             Speed *= 2;
@@ -101,6 +103,8 @@ public class CharacterSelect : MonoBehaviour {
     //also skips any character that is not available (i.e. already chosen)
     public string PreviousCharacter()
     {
+        SoundManager.SM.PlayCharSwoosh();
+
         if (CurrentIndex == 0)
         {
             Speed *= 2;

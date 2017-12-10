@@ -61,6 +61,7 @@ public class CharacterSelectManager : Utilities {
 
     public void StartGame()
     {
+
         int ready = 0;
         for (int i = 0; i < ReadyPlayers.Count; i++)
         {
@@ -72,6 +73,7 @@ public class CharacterSelectManager : Utilities {
         if (ready == NumPlayers && ready != 0)
         {
             hasStarted = true;
+            SoundManager.SM.PlayButton();
             SwooshSound.Play();
             StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
             StartCoroutine(StartGameDelay(2.3f));
@@ -90,6 +92,7 @@ public class CharacterSelectManager : Utilities {
 
     public void BackToMenu()
     {
+        SoundManager.SM.PlayButton();
         SwooshSound.Play();
         StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
 
