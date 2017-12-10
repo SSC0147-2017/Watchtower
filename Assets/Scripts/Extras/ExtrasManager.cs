@@ -22,7 +22,7 @@ public class ExtrasManager : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
 		if (extrasManager == null) {
 			extrasManager = this;
 
