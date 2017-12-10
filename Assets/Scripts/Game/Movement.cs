@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour {
 	//Attack
 
 	private int RevivePool=0;
-	private int RevivePoolMax=100;
+	private int RevivePoolMax=2000;
 	public int RevivePts;
 	private bool isHelp;
 	public Collider Range;
@@ -238,6 +238,7 @@ public class Movement : MonoBehaviour {
 			anim.SetTrigger("Revive");
 			StartCoroutine(waitReviveTime());
 			CurrentHP=MaxHP/2;
+			isDead=false;
 		}
 	}
 
