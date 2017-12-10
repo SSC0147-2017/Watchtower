@@ -27,6 +27,8 @@ public class CharacterSelectManager : Utilities {
 	[HideInInspector] public int NumPlayers;
 	[HideInInspector] public bool isKeyboardActive = false;
 
+    bool hasStarted = false;
+
     // Use this for initialization
     void Start () {
         //makes the object not destroyable between scenes, to pass info
@@ -50,27 +52,40 @@ public class CharacterSelectManager : Utilities {
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7) || Input.GetKeyDown(KeyCode.Joystick3Button7) || Input.GetKeyDown(KeyCode.Joystick4Button7)|| Input.GetKeyDown(KeyCode.Return))
+        if ((Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7) || Input.GetKeyDown(KeyCode.Joystick3Button7) || Input.GetKeyDown(KeyCode.Joystick4Button7)|| Input.GetKeyDown(KeyCode.Return)) && !hasStarted)
         {
-            int ready = 0;
-            for (int i = 0; i < ReadyPlayers.Count; i++)
-            {
-                if (ReadyPlayers[i] == true)
-                {
-                    ready++;
-                }
-            }
-            if (ready == NumPlayers && ready != 0)
-            {
-				SwooshSound.Play();
-                StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
-                StartCoroutine(StartGameDelay(2.3f));
-            }
-            else{
-                print("Wait for everybody to be ready");
-            }
+            StartGame();
         }
 
+    }
+
+    public void StartGame()
+    {
+        int ready = 0;
+        for (int i = 0; i < ReadyPlayers.Count; i++)
+        {
+            if (ReadyPlayers[i] == true)
+            {
+                ready++;
+            }
+        }
+        if (ready == NumPlayers && ready != 0)
+        {
+            hasStarted = true;
+            SwooshSound.Play();
+            StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
+            StartCoroutine(StartGameDelay(2.3f));
+        }
+        else
+        {
+            print("Wait for everybody to be ready");
+        }
+    }
+
+    IEnumerator StartGameDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("Game");
     }
 
     public void BackToMenu()
@@ -90,10 +105,5 @@ public class CharacterSelectManager : Utilities {
         SceneManager.LoadScene("MainMenu");
         Destroy(gameObject);
     }
-	
-	IEnumerator StartGameDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("Game");
-    }
+
 }
