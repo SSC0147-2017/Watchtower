@@ -78,7 +78,7 @@ public class GameManager : Utilities {
 		
 		for (int i = 0 ; i < 4; i++){
 			if(PlayerCharacters[i] != -1){
-				GameObject obj = Instantiate(CharPrefabs[PlayerCharacters[i]], transform.GetChild(0).position, transform.GetChild(0).rotation);
+				GameObject obj = Instantiate(CharPrefabs[PlayerCharacters[i]], transform.GetChild(i).position, transform.GetChild(0).rotation);
 				PlayerRefs.Add(obj);
 				Destroy(transform.GetChild(i).gameObject);
 				SetController(obj, i+1, csm);
