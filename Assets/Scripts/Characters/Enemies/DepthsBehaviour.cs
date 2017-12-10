@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,12 +11,17 @@ public class DepthsBehaviour : EnemyBehaviour {
 	GameObject ClosestTarget;
 
 	public float Multiplier;
+
+	private HealthController HP;
+	public Collider col;
+
 	#endregion
 
 	#region Monobehaviour Methods
 	void Start()
 	{
 		base.Start ();
+		HP=gameObject.GetComponent<HealthController>();
 		for(int i = 0; i < GameManager.GM.PlayerRefs.Count; i++){
 			Targets.Add(GameManager.GM.PlayerRefs[i]);
 		}
@@ -24,6 +29,10 @@ public class DepthsBehaviour : EnemyBehaviour {
 		
 	void Update()
 	{
+		if(HP.isDead){
+			col.enabled=false;
+			Destroy(this);
+		}
 		//print("tgt " + target);
 		CurrTarget = CalculateTarget();
 
@@ -36,7 +45,7 @@ public class DepthsBehaviour : EnemyBehaviour {
 				//Raio de ataque
 				if((CurrTarget.transform.position - transform.position).magnitude <= navAgent.stoppingDistance) {
 					Stop ();
-					claws.Attack ();
+					claws.Attack();
 				}
 				else
 					Chase ();
