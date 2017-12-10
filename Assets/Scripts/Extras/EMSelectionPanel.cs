@@ -10,8 +10,15 @@ public class EMSelectionPanel : MonoBehaviour {
 
 	//Current Active List Panel
 	private string currentActiveLP;
-	//True if inside a tab and navigating its contents. False if navigating between tabs.
-	private bool insideTab = false;
+
+	/**
+	 * Possible states on the extras menu:
+	 * Outside the Tab, navigating between tabs
+	 * Inside the Tab, navigating between their contents
+	 * Exiting the menu, selecting the Back button
+	 */
+	private enum EMstate {outsideTab, insideTab, readingText, exiting};
+	private EMstate currState;
 
 	public GameObject listPanelLore;
 	public GameObject listPanelJournal;
@@ -21,43 +28,60 @@ public class EMSelectionPanel : MonoBehaviour {
 	public GameObject buttonJournal;
 	public GameObject buttonBios;
 
+	public GameObject buttonBack;
+
 	public ScrollRect buttonsScrollView;
 	public Scrollbar buttonsScrollbar;
+	public Scrollbar textScrollbar;
 
 	public EMContentPanel contentPanelScript;
 	
 	public EventSystem EventSys;
 
-    bool TriggerInUse = false;
-	
+    private bool TriggerInUse = false;
+	//Used to go back and forth from the text to the button list
+	private GameObject lastButton = null;
+
 	public void Start()
     {
-
+		currState = EMstate.outsideTab;
 		currentActiveLP = "lore";
-        StartCoroutine(PanelHighlightDelay(buttonLore));
+		switchPanel (currentActiveLP);
+		StartCoroutine(ButtonHighlightDelay(buttonLore));
     }
 	
 	public void Update(){
-		//print(currentActiveLP);
 
-		if (!insideTab) {
+		//OUTSIDE=================================================
+		if (currState == EMstate.outsideTab) {
+
+			//NEXT TAB
 			if ((Input.GetKeyDown (KeyCode.Joystick1Button5) || Input.GetAxisRaw ("Joystick1Triggers") < 0) && TriggerInUse == false) {
-                TriggerInUse = true;
+				TriggerInUse = true;
 				nextTab ();
 			}
+
+			//PREVIOUS TAB
 			if ((Input.GetKeyDown (KeyCode.Joystick1Button4) || Input.GetAxisRaw ("Joystick1Triggers") > 0) && TriggerInUse == false) {
-                TriggerInUse = true;
+				TriggerInUse = true;
 				prevTab ();
 			}
+			if (Input.GetAxisRaw ("Joystick1Triggers") == 0) {
+				TriggerInUse = false;
+			}
 
-            if(Input.GetAxisRaw("Joystick1Triggers") == 0)
-            {
-                TriggerInUse = false;
-            }
 
+			//GO TO EXIT BUTTON
+			if (Input.GetButtonDown ("Joystick1Fire3")) {
+				currState = EMstate.exiting;
+				StartCoroutine (ButtonHighlightDelay (buttonBack));
+			}
 
 			//Enter the tab
-			if (Input.GetButton ("Joystick1Fire0")) {
+			if (Input.GetButtonDown ("Joystick1Fire0")) {
+
+				//Puts the scrollbar on the top
+				buttonsScrollbar.value = 1;
 
 				EMListPanelManager ListPanelScr = null;
 
@@ -71,31 +95,65 @@ public class EMSelectionPanel : MonoBehaviour {
 				
 				StartCoroutine (ButtonHighlightDelay (ListPanelScr.getFirstActiveButton ()));
 
-				insideTab = true;
+				currState = EMstate.insideTab;
 			}
 		} 
 
-		//Inside a tab
-		else {
+		//INSIDE A TAB=================================================
+		else if (currState == EMstate.insideTab) {
+
+
+			//Read Text
+			if (Input.GetButtonDown ("Joystick1Fire0")) {
+				lastButton = EventSys.currentSelectedGameObject;
+				currState = EMstate.readingText;
+				textScrollbar.value = 1;
+				EventSys.SetSelectedGameObject (textScrollbar.gameObject);
+			}
+
 			//Exit the tab
-			if (Input.GetButton ("Joystick1Fire1")) {
-				insideTab = false;
+			if (Input.GetButtonDown ("Joystick1Fire3")) {
+				currState = EMstate.outsideTab;
 				highlightCurrentTab ();
 			}
 
-			//Lowers the Scrollbar
+			//Controlls scrollbar
 			if (Input.GetAxis ("Joystick1Vertical") < 0) {
-				buttonsScrollbar.value -= 0000.1f;
+				StartCoroutine (ScrollDelay (buttonsScrollbar, false));
+			}
+			if (Input.GetAxis ("Joystick1Vertical") > 0) {
+				StartCoroutine (ScrollDelay (buttonsScrollbar, true));
+			}
+		} 
+
+		//READING TEXT=====================================================
+		else if (currState == EMstate.readingText) {
+			//Controlls scrollbar
+			if (Input.GetAxis ("Joystick1Vertical") < 0) {
+				StartCoroutine (ScrollDelay (textScrollbar, false));
+			}
+			if (Input.GetAxis ("Joystick1Vertical") > 0) {
+				StartCoroutine (ScrollDelay (textScrollbar, true));
 			}
 
-			if (Input.GetAxis ("Joystick1Vertical") > 0) {
-				buttonsScrollbar.value += 0000.1f;
+			if (Input.GetButtonDown ("Joystick1Fire3")) {
+				currState = EMstate.insideTab;
+				EventSys.SetSelectedGameObject (lastButton);
 			}
 		}
 
+		//EXITING THE MENU=================================================
+		else {
+			if (Input.GetButtonDown ("Joystick1Fire3") || Input.GetAxis ("Joystick1Vertical") > 0) {
+				currState = EMstate.outsideTab;
+				highlightCurrentTab ();
+			}
+		}
 	}
 
-
+	/**
+	 * Tab Navigation
+	 */
 	void nextTab(){
 		if (currentActiveLP == "lore") {
 			EventSys.SetSelectedGameObject (buttonJournal);
@@ -122,16 +180,6 @@ public class EMSelectionPanel : MonoBehaviour {
 		}
 	}
 
-
-	void highlightCurrentTab(){
-		if (currentActiveLP == "lore") {
-			EventSys.SetSelectedGameObject (buttonLore);
-		} else if (currentActiveLP == "journal") {
-			EventSys.SetSelectedGameObject (buttonJournal);
-		} else if (currentActiveLP == "bios") {
-			EventSys.SetSelectedGameObject (buttonBios);
-		}
-	}
 
 
 	/***
@@ -185,13 +233,19 @@ public class EMSelectionPanel : MonoBehaviour {
 		}
 
 	}
-	
-	IEnumerator PanelHighlightDelay(GameObject obj)
-    {
-        yield return new WaitForSeconds(0.3f);
-        EventSys.SetSelectedGameObject(obj);
-    }
 
+
+
+	void highlightCurrentTab(){
+		if (currentActiveLP == "lore") {
+			EventSys.SetSelectedGameObject (buttonLore);
+		} else if (currentActiveLP == "journal") {
+			EventSys.SetSelectedGameObject (buttonJournal);
+		} else if (currentActiveLP == "bios") {
+			EventSys.SetSelectedGameObject (buttonBios);
+		}
+	}
+		
 
 	IEnumerator ButtonHighlightDelay(GameObject btn)
 	{
@@ -199,4 +253,15 @@ public class EMSelectionPanel : MonoBehaviour {
 		EventSys.SetSelectedGameObject(btn);
 	}
 
+	IEnumerator ScrollDelay (Scrollbar bar, bool up) {
+		if(up){
+			bar.value+=0.05f;
+			yield return new WaitForSeconds(1f);
+		}else{
+			bar.value-=0.05f;
+			yield return new WaitForSeconds(1f);
+		}
+
+
+	}
 }

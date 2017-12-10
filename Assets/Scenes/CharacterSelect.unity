@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 97637a2a763b7f24b8da4e139e4144ca, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1775,7 +1775,7 @@ Camera:
   m_GameObject: {fileID: 239776347}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.43382353, g: 0.43382353, b: 0.43382353, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -9457,7 +9457,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1022475668}
   m_LocalRotation: {x: -0.4997074, y: -0.46147156, z: -0.5121207, w: 0.5244701}
-  m_LocalPosition: {x: 2495.6, y: 4.5, z: 18.7}
+  m_LocalPosition: {x: 2494.5, y: -34.2, z: 15.8}
   m_LocalScale: {x: 22.35118, y: 6.386877, z: 6.386877}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9664,6 +9664,21 @@ Prefab:
         type: 2}
       propertyPath: m_AABB.m_Center.z
       value: 0.008476026
+      objectReference: {fileID: 0}
+    - target: {fileID: 137716168847849030, guid: 08729c1fc87dba04982d6e7dd5c34eda,
+        type: 2}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.0003004074
+      objectReference: {fileID: 0}
+    - target: {fileID: 137716168847849030, guid: 08729c1fc87dba04982d6e7dd5c34eda,
+        type: 2}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.002893541
+      objectReference: {fileID: 0}
+    - target: {fileID: 137716168847849030, guid: 08729c1fc87dba04982d6e7dd5c34eda,
+        type: 2}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.0009652781
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08729c1fc87dba04982d6e7dd5c34eda, type: 2}
@@ -10018,7 +10033,7 @@ Camera:
   m_GameObject: {fileID: 1126028046}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.43382353, g: 0.43382353, b: 0.43382353, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -10535,6 +10550,10 @@ Prefab:
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: InitialModule.startSize.minScalar
@@ -14083,7 +14102,7 @@ Camera:
   m_GameObject: {fileID: 1639261495}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.43382353, g: 0.43382353, b: 0.43382353, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -15623,7 +15642,7 @@ Camera:
   m_GameObject: {fileID: 1838842891}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.43382353, g: 0.43382353, b: 0.43382353, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -15754,6 +15773,10 @@ Prefab:
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: InitialModule.startSize.minScalar

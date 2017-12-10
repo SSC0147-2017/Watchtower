@@ -27,22 +27,21 @@ public class EMListPanelManager : MonoBehaviour {
 	void Start () {
 
 		arrUnlocked = null;
-
+		txtNumUnlocked.text = "";
 		switch (type){
 			case ExtrasManager.extrasType.lore:{
-				arrUnlocked = ExtrasManager.extrasManager.arrLore;
+				if(ExtrasManager.extrasManager.arrLore!=null)
+					arrUnlocked = ExtrasManager.extrasManager.arrLore;
 				break;
 			}
 			case ExtrasManager.extrasType.journal:{
-				arrUnlocked = ExtrasManager.extrasManager.arrJournal;
+				if(ExtrasManager.extrasManager.arrJournal!=null)
+					arrUnlocked = ExtrasManager.extrasManager.arrJournal;
 				break;
 			}
 			case ExtrasManager.extrasType.bios:{
-				arrUnlocked = ExtrasManager.extrasManager.arrBios;
-				break;
-			}
-			default:{
-				arrUnlocked = ExtrasManager.extrasManager.arrJournal;
+				if(ExtrasManager.extrasManager.arrBios!=null)
+					arrUnlocked = ExtrasManager.extrasManager.arrBios;
 				break;
 			}
 		}
