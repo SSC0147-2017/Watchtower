@@ -34,17 +34,14 @@ public class UIBehaviour : MonoBehaviour {
         if (CurrentItem == InventoryController.itemType.bomb)
         {
             transform.Find("Item").GetComponent<Image>().sprite = BombSprite;
-            print("bomb");
         }
         else if (CurrentItem == InventoryController.itemType.bread)
         {
             transform.Find("Item").GetComponent<Image>().sprite = BreadSprite;
-            print("bread");
         }
         else if (CurrentItem == InventoryController.itemType.arquebus)
         {
             transform.Find("Item").GetComponent<Image>().sprite = ArquebusSprite;
-            print("arq");
         }
     }
 

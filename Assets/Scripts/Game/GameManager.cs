@@ -136,7 +136,7 @@ public class GameManager : Utilities {
 	 * Função chamada quando os jogadores chegarem no Floofy
 	 */
 	public void Victory(){
-		//StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
+		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 		StartCoroutine(PanelDelay(2f, "VictoryPanel"));
 		isGameOver = true;
 	}
@@ -159,12 +159,12 @@ public class GameManager : Utilities {
 	public void BackToMainMenu(){
 		Time.timeScale = 1;
 		SwooshSound.Play();
-        if(Canvas.transform.Find("BlackScreen").gameObject.activeSelf)
-            StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
+        if(!Canvas.transform.Find("BlackScreen").gameObject.activeSelf)
+            StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 1f, 1f));
 		
 		if(GameObject.Find("Music") != null)
             GameObject.Find("Music").name = "RealMusic";
-		StartCoroutine(BackToMenuDelay(2f));
+		StartCoroutine(BackToMenuDelay(1.3f));
 	}
 	
 	IEnumerator BackToMenuDelay(float delay)
@@ -176,6 +176,5 @@ public class GameManager : Utilities {
 	IEnumerator PanelDelay(float delay, string name){
 		yield return new WaitForSeconds(delay);
 		Canvas.transform.Find(name).gameObject.SetActive(true);
-		//Canvas.transform.Find(name).GetComponent<EndGameBehaviour>().SelectFirstButton();
 	}
 }

@@ -64,7 +64,7 @@ public class CharacterSelectManager : Utilities {
             {
 				SwooshSound.Play();
                 StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
-                StartCoroutine(StartGameDelay(2f));
+                StartCoroutine(StartGameDelay(2.3f));
             }
             else{
                 print("Wait for everybody to be ready");

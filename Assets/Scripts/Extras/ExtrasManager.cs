@@ -10,7 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 /***
  * ExtrasManager implementa singleton, acessível por extrasManager
  */
-public class ExtrasManager : MonoBehaviour {
+public class ExtrasManager : MonoBehaviour{
 
 
 	public enum extrasType{lore,journal,bios};
@@ -19,7 +19,6 @@ public class ExtrasManager : MonoBehaviour {
 	public bool [] arrLore ;
 	public bool [] arrJournal ;
 	public bool [] arrBios ;
-
 
 	// Use this for initialization
 	void Start () {

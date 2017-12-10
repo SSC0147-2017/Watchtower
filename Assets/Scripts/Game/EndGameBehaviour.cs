@@ -13,11 +13,6 @@ public class EndGameBehaviour : MonoBehaviour {
     void Start () {
         StartCoroutine(ButtonHighlightDelay());
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void Restart()
     {
