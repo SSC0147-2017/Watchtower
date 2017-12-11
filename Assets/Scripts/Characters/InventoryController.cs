@@ -37,9 +37,6 @@ public class InventoryController : MonoBehaviour
 		if (playerBehav == null)
 			playerBehav = gameObject.GetComponent<Movement> ();
 		selectedItem = itemType.bread;
-		currBread = 1;
-		currBread = 0;
-		hasArquebus = false;
 
 	}
 
@@ -56,7 +53,7 @@ public class InventoryController : MonoBehaviour
 			usingItem = false;
 		}
 
-		if (Input.GetAxis (playerBehav.Controller + "Triggers") < 0 && !usingItem) {
+		if (Input.GetAxis (playerBehav.Controller + "Triggers") < 0  && !usingItem) {
 			useCurrentItem ();
 		}
 		if (Input.GetAxis (playerBehav.Controller + "Triggers") > 0  && !usingItem) {

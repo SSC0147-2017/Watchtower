@@ -112,7 +112,7 @@ public class EMSelectionPanel : MonoBehaviour {
 			}
 
 			//Exit the tab
-			if (Input.GetButtonDown ("Joystick1Fire3")) {
+			if (Input.GetButtonDown ("Joystick1Fire1")) {
 				currState = EMstate.outsideTab;
 				highlightCurrentTab ();
 			}

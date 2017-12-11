@@ -18,12 +18,14 @@ public class ExtraPickup : MonoBehaviour {
 
 			bool saveResult = ExtrasManager.extrasManager.unlockExtra (type, index);
 
-			if (saveResult)
+			if (saveResult) {
 				print ("You unlocked a new " + type + " Entry!");
+				AchievementPanel.SetActive(true);
+				SoundManager.SM.PlayAchievement ();
+			}
 			else
 				print ("Save failed");
 
-            AchievementPanel.SetActive(true);
 
 			Destroy (this.gameObject);
 		}

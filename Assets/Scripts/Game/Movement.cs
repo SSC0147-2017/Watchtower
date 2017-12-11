@@ -80,14 +80,14 @@ public class Movement : MonoBehaviour {
 					StartCoroutine(waitHelpTime());
 				}
 			}
-			if(Input.GetButtonDown(Controller+"Fire1")) {
+			if(Input.GetButtonDown(Controller+"Fire2")) {
 				if(!isAtk){
 					anim.SetTrigger("Attack");
 					anim.SetFloat("Speed",0.0f);
 					StartCoroutine(waitAttackTime());
 				}
 			}
-			if(Input.GetButtonDown(Controller+"Fire2")) {
+			if(Input.GetButtonDown(Controller+"Fire3")) {
 				if(!isSpe){
 					anim.SetTrigger("Special");
 					anim.SetFloat("Speed",0.0f);
@@ -95,7 +95,7 @@ public class Movement : MonoBehaviour {
 					Special();
 				}
 			}
-			if(Input.GetButtonDown(Controller+"Fire3")) {
+			if(Input.GetButtonDown(Controller+"Fire1")) {
 				if(!isDog){
 					anim.SetTrigger("Dodge");
 					StartCoroutine(RollTime());
