@@ -9,21 +9,22 @@ public class GameManager : Utilities {
 	public static GameManager GM;
 	
 	public AudioSource SwooshSound;
-	
 	public List<GameObject> CharPrefabs = new List<GameObject>();
 	
 	int NumPlayers;
+	//Stores numbers of players still alive.
+	int NumLivePlayers;
+
 	List<int> PlayerCharacters = new List<int>();
-	
     //[HideInInspector]
 	public List<GameObject> PlayerRefs = new List<GameObject>();
 
     public GameObject TargetGroup;
-
     public GameObject Canvas;
 
     private bool isGameOver = false;
     private bool isGamePaused = false;
+
 
 	void Awake(){
 		if(GM == null){
@@ -39,7 +40,7 @@ public class GameManager : Utilities {
 	
 	// Use this for initialization
 	void Start () {
-		
+		NumPlayers = 0;
 		if(GameObject.Find("CharacterSelectManager") != null){
 			CharacterSelectManager csm = GameObject.Find("CharacterSelectManager").GetComponent<CharacterSelectManager>();
 			PlayerCharacters = csm.SelectedCharacters;
@@ -48,7 +49,9 @@ public class GameManager : Utilities {
 					NumPlayers++;
 				}
 			}
-			
+			NumLivePlayers = NumPlayers;
+			print ("Live: " + NumLivePlayers);
+
 			InstantiatePrefabs(csm);
 
 			GameObject.Destroy(csm.gameObject);
@@ -61,6 +64,8 @@ public class GameManager : Utilities {
 	// Update is called once per frame
 	void Update ()
 	{
+
+		//Pause Game
 		if(Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7) || Input.GetKeyDown(KeyCode.Joystick3Button7) || Input.GetKeyDown(KeyCode.Joystick4Button7) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (isGamePaused)
@@ -73,7 +78,9 @@ public class GameManager : Utilities {
             }
         }
 	}
-	
+
+	#region Initialization Methods
+
 	void InstantiatePrefabs(CharacterSelectManager csm){
 		
 		for (int i = 0 ; i < 4; i++){
@@ -120,40 +127,9 @@ public class GameManager : Utilities {
         print(ui.GetComponent<UIBehaviour>().player);   
 	}
 
-    void GameOver()
-    {
-		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
-		StartCoroutine(PanelDelay(2f, "GameOverPanel"));
-        isGameOver = true;
-    }
+	#endregion
 
-	public void RestartGame(){
-        Time.timeScale = 1;
-        SoundManager.SM.PlayButton();
-        SwooshSound.Play();
-        if (!Canvas.transform.Find("BlackScreen").gameObject.activeSelf)
-            StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 1f, 1f));
-
-        if (GameObject.Find("Music") != null)
-            GameObject.Find("Music").name = "RealMusic";
-        StartCoroutine(RestartDelay(1.3f));
-    }
-
-    IEnumerator RestartDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("CharacterSelect");
-    }
-
-    /**
-	 * Função chamada quando os jogadores chegarem no Floofy
-	 */
-    public void Victory(){
-		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
-		StartCoroutine(PanelDelay(2f, "VictoryPanel"));
-		isGameOver = true;
-	}
-
+	#region Pause Methods
     void PauseGame()
     {
         Canvas.transform.Find("PausePanel").gameObject.SetActive(true);
@@ -180,7 +156,67 @@ public class GameManager : Utilities {
             GameObject.Find("Music").name = "RealMusic";
 		StartCoroutine(BackToMenuDelay(1.3f));
 	}
-	
+
+	#endregion
+
+	#region player death/revive methods
+	// Method called by Movement.cs when a player "dies"
+	public void playerDown(){
+		NumLivePlayers--;
+		print ("Live: " + NumLivePlayers);
+		if (NumLivePlayers <= 0) {
+			GameOver ();
+		}
+	}
+
+	//Method called by Movement.cs when a player is revived
+	public void playerUp(){
+		if(NumLivePlayers+1 < NumPlayers)
+			NumLivePlayers++;
+		print ("Live: " + NumLivePlayers);
+	}
+
+	#endregion
+
+	#region Game Over / Victory methods
+	void GameOver()
+	{
+		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
+		StartCoroutine(PanelDelay(2f, "GameOverPanel"));
+		isGameOver = true;
+	}
+
+	public void RestartGame(){
+		Time.timeScale = 1;
+		SoundManager.SM.PlayButton();
+		SwooshSound.Play();
+		if (!Canvas.transform.Find("BlackScreen").gameObject.activeSelf)
+			StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 1f, 1f));
+
+		if (GameObject.Find("Music") != null)
+			GameObject.Find("Music").name = "RealMusic";
+		StartCoroutine(RestartDelay(1.3f));
+	}
+
+	/**
+	 * Função chamada quando os jogadores chegarem no Floofy
+	 */
+	public void Victory(){
+		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
+		StartCoroutine(PanelDelay(2f, "VictoryPanel"));
+		isGameOver = true;
+	}
+
+	#endregion
+
+	#region delay methods
+	IEnumerator RestartDelay(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		SceneManager.LoadScene("CharacterSelect");
+	}
+
+
 	IEnumerator BackToMenuDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -191,4 +227,5 @@ public class GameManager : Utilities {
 		yield return new WaitForSeconds(delay);
 		Canvas.transform.Find(name).gameObject.SetActive(true);
 	}
+	#endregion
 }

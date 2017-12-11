@@ -8,6 +8,7 @@ public class EnemyBehaviour : MonoBehaviour{
 	#region variables
 	protected NavMeshAgent navAgent;
 	protected GameObject CurrTarget;
+	protected Movement TgtScript;
 	Animator animator;
 
 	public float aggroRadius;
@@ -20,6 +21,13 @@ public class EnemyBehaviour : MonoBehaviour{
 	#endregion
 
 	#region Monobehaviour methods
+
+	protected void Update(){
+		if (this.transform.position.y < -10) {
+			Destroy (this.gameObject);
+		}
+	}
+
 	protected void Start () {
 		if (navAgent == null)
 			navAgent = GetComponent<NavMeshAgent>();
@@ -27,6 +35,7 @@ public class EnemyBehaviour : MonoBehaviour{
 			animator = GetComponent<Animator> ();
 		
 		CurrTarget = null;
+		TgtScript = null;
 		isAttacking = false;
 
 		GetComponent<SphereCollider> ().radius = aggroRadius;
