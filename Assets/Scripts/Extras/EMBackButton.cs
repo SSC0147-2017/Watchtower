@@ -16,6 +16,7 @@ public class EMBackButton : Utilities {
 
     public void backToMainMenu(){
 
+        SoundManager.SM.PlayButton();
         SwooshSound.Play();
         StartCoroutine(FadeIn(BlackScreen, 2f, 1f));
 

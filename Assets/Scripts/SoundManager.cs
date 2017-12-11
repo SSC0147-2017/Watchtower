@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour {
     public AudioClip[] Pistol;
     public AudioClip[] Crossbow;
     public AudioClip[] Button;
+    public AudioClip[] CharSwoosh;
 
     private void Start()
     {
@@ -98,5 +99,11 @@ public class SoundManager : MonoBehaviour {
     {
         int index = Random.Range(0, Button.Length);
         Source.PlayOneShot(Button[index]);
+    }
+
+    public void PlayCharSwoosh()
+    {
+        int index = Random.Range(0, CharSwoosh.Length);
+        Source.PlayOneShot(CharSwoosh[index]);
     }
 }

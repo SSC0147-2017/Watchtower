@@ -17,6 +17,7 @@ public class EMTextSwtichButton : MonoBehaviour {
 	private Button btn;
 
 	public void SwitchText(){
+        SoundManager.SM.PlayButton();
 		contentPanelScript.switchTextAsset (textAsset);
 	}
 
