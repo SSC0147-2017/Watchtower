@@ -187,11 +187,12 @@ public class Movement : MonoBehaviour {
 		else
 			return;
 
-		if (this.CurrentHP <= 0) {
+		if (this.CurrentHP <= 0 && !isDead) {
 			anim.SetTrigger("Dying");
 			isDead = true;
 			anim.SetBool("CanAttack",false);
-			//this.die ();
+
+			GameManager.GM.playerDown ();
 		}
 
 	}
@@ -242,6 +243,8 @@ public class Movement : MonoBehaviour {
 			StartCoroutine(waitReviveTime());
 			CurrentHP=MaxHP/2;
 			isDead=false;
+
+			GameManager.GM.playerUp ();
 		}
 	}
 
