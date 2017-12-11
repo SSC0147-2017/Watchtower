@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 54500823593103448}
   - component: {fileID: 114072444822118058}
   - component: {fileID: 135836466165105890}
+  - component: {fileID: 114755204773949084}
   m_Layer: 9
   m_Name: Hobbes
   m_TagString: Player
@@ -847,7 +848,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595417321565934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 134.66168, y: 0, z: 119.87108}
+  m_LocalPosition: {x: 139.31937, y: 0.00000023841858, z: 119.1088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4018747813847498}
@@ -1021,8 +1022,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.99215686, g: 0.85882354, b: 0.5686275, a: 1}
-  m_Intensity: 0.5
-  m_Range: 20
+  m_Intensity: 0.7
+  m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1105,7 +1106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 130
-  CurrentHP: 0
+  CurrentHP: 130
   isDead: 0
   invicibilityTime: 1.67
   RevivalTime: 5.4
@@ -1118,7 +1119,7 @@ MonoBehaviour:
   SpecialTime: 4.3
   rollTime: 2.27
   rollDmgRed: 0.5
-  AttackTime: 1.6
+  AttackTime: 1.33
   RevivePts: 1
   Range: {fileID: 135836466165105890}
   outsiderAtk: 0
@@ -1185,6 +1186,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dano: 50
   P: {fileID: 114420385486182732}
+--- !u!114 &114755204773949084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595417321565934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a559f9d0d4653ae4ea97af09e8fe32c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HobbesM: {fileID: 114420385486182732}
+  CorvoT: {fileID: 4184216919365770, guid: 968519f3dd652294f95fe2e16d82c88f, type: 2}
+  ArwinT: {fileID: 4809313349817288, guid: 08780ba2dc47ff548b092183c1a4d1e0, type: 2}
+  JackieT: {fileID: 4425516713381966, guid: e57deb4086d2bf4439242f7a0da41174, type: 2}
 --- !u!114 &114814962068751018
 MonoBehaviour:
   m_ObjectHideFlags: 1

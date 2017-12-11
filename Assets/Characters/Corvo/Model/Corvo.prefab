@@ -88,6 +88,8 @@ GameObject:
   - component: {fileID: 54692479535660098}
   - component: {fileID: 114626861923864934}
   - component: {fileID: 135536453544927330}
+  - component: {fileID: 114223662605476484}
+  - component: {fileID: 114841547294777290}
   m_Layer: 8
   m_Name: Corvo
   m_TagString: Player
@@ -570,7 +572,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1114954814395604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 135.57106, y: 0.00000017881393, z: 119.104546}
+  m_LocalPosition: {x: 137.22182, y: 0.00000029802322, z: 122.28804}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4491870021868182}
@@ -1092,8 +1094,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.99215686, g: 0.85882354, b: 0.5686275, a: 1}
-  m_Intensity: 0.5
-  m_Range: 20
+  m_Intensity: 0.7
+  m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1186,6 +1188,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parente: {fileID: 114154319956978640}
+--- !u!114 &114223662605476484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114954814395604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cca2cb1a8368f48883b756a90c62b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CorvoM: {fileID: 114154319956978640}
+  HobbesM: {fileID: 114420385486182732, guid: 9434eb38da154af40bf8b1a79bb9f53a, type: 2}
+  ArwinM: {fileID: 114867959214938326, guid: 08780ba2dc47ff548b092183c1a4d1e0, type: 2}
+  JackieM: {fileID: 114582515770674730, guid: e57deb4086d2bf4439242f7a0da41174, type: 2}
+  HobbesT: {fileID: 4721195560229498, guid: 9434eb38da154af40bf8b1a79bb9f53a, type: 2}
+  ArwinT: {fileID: 4809313349817288, guid: 08780ba2dc47ff548b092183c1a4d1e0, type: 2}
+  JackieT: {fileID: 4425516713381966, guid: e57deb4086d2bf4439242f7a0da41174, type: 2}
 --- !u!114 &114245208180709344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1280,6 +1300,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parente: {fileID: 114154319956978640}
+--- !u!114 &114841547294777290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114954814395604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3501981ef92a2df459c4bd16fae2f486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  D: {fileID: 114564476848446884}
+  E: {fileID: 0}
 --- !u!114 &114940608522687156
 MonoBehaviour:
   m_ObjectHideFlags: 1

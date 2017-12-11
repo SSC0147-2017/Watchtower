@@ -74,23 +74,23 @@ public class Movement : MonoBehaviour {
 		if(!isDead){
 			if(Input.GetButtonDown(Controller+"Fire0")) {
 				if(!isHelp){
-					anim.SetFloat("Speed",0.0f);
 					anim.SetTrigger("Help");
+					anim.SetFloat("Speed",0.0f);
 					Range.enabled=true;
 					StartCoroutine(waitHelpTime());
 				}
 			}
 			if(Input.GetButtonDown(Controller+"Fire1")) {
 				if(!isAtk){
-					anim.SetFloat("Speed",0.0f);
 					anim.SetTrigger("Attack");
+					anim.SetFloat("Speed",0.0f);
 					StartCoroutine(waitAttackTime());
 				}
 			}
 			if(Input.GetButtonDown(Controller+"Fire2")) {
 				if(!isSpe){
-					anim.SetFloat("Speed",0.0f);
 					anim.SetTrigger("Special");
+					anim.SetFloat("Speed",0.0f);
 					StartCoroutine(waitSpecialTime());
 					Special();
 				}
@@ -106,6 +106,7 @@ public class Movement : MonoBehaviour {
 		else {
 			if(RevivePool>=RevivePoolMax){
 				Revive();
+				RevivePool=0;
 			}
 			RevivePool-=1;
 			if(RevivePool<0)
@@ -177,9 +178,9 @@ public class Movement : MonoBehaviour {
 			float netDamage = damage * defense;
 			if (netDamage > 0) {
 				CurrentHP -= (int)netDamage;
-				StartCoroutine(waitInvinciTime());
-				anim.SetFloat("Speed",0.0f);
 				anim.SetTrigger("Hit");
+				anim.SetFloat("Speed",0.0f);
+				StartCoroutine(waitInvinciTime());
 			}
 			Debug.Log(ColLayer+" HP:"+CurrentHP);
 		}
@@ -228,7 +229,9 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void GainHP(int gain){
-		CurrentHP+=gain;
+		Debug.Log("Danke Corvo!");
+		if(!isDead)
+			CurrentHP+=gain;
 		if (CurrentHP>MaxHP)
 			CurrentHP=MaxHP;
 	}

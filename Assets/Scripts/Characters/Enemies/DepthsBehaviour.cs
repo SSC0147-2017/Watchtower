@@ -13,7 +13,6 @@ public class DepthsBehaviour : EnemyBehaviour {
 	public float Multiplier;
 
 	private HealthController HP;
-	public Collider col;
 
 	#endregion
 
@@ -30,7 +29,6 @@ public class DepthsBehaviour : EnemyBehaviour {
 	void Update()
 	{
 		if(HP.isDead){
-			col.enabled=false;
 			Destroy(this);
 		}
 		//print("tgt " + target);

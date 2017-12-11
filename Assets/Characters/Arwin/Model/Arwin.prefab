@@ -442,6 +442,7 @@ GameObject:
   - component: {fileID: 114577613917056182}
   - component: {fileID: 114978638438873270}
   - component: {fileID: 135479308229887804}
+  - component: {fileID: 114350845357752918}
   m_Layer: 10
   m_Name: Arwin
   m_TagString: Player
@@ -947,7 +948,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819715347530290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 140.43776, y: 0.00000017881393, z: 119.55104}
+  m_LocalPosition: {x: 136.88385, y: 0.00000011920929, z: 124.1941}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4865405580757764}
@@ -1194,8 +1195,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.99215686, g: 0.85882354, b: 0.5686275, a: 1}
-  m_Intensity: 0.5
-  m_Range: 25
+  m_Intensity: 0.7
+  m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1268,6 +1269,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parente: {fileID: 114867959214938326}
+--- !u!114 &114350845357752918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819715347530290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3501981ef92a2df459c4bd16fae2f486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  D: {fileID: 114714729454603954}
+  E: {fileID: 114969820112666670}
 --- !u!114 &114552766153389052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1326,7 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d878d43044a8dec458dcae95f22be786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dano: 10
+  Dano: 70
   P: {fileID: 114867959214938326}
 --- !u!114 &114804083006243430
 MonoBehaviour:
@@ -1376,7 +1390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 90
-  CurrentHP: 0
+  CurrentHP: 90
   isDead: 0
   invicibilityTime: 1.23
   RevivalTime: 1.37
@@ -1419,7 +1433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d878d43044a8dec458dcae95f22be786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dano: 10
+  Dano: 70
   P: {fileID: 114867959214938326}
 --- !u!114 &114978638438873270
 MonoBehaviour:
@@ -1734,8 +1748,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.00000011920929, y: 0.00029981136, z: 0.008476028}
-    m_Extent: {x: 0.0028840636, y: 0.0009365095, z: 0.0052618287}
+    m_Center: {x: -0.00000011920929, y: 0.00029981136, z: 0.008476027}
+    m_Extent: {x: 0.0028840636, y: 0.0009365095, z: 0.005261829}
   m_DirtyAABB: 0
 --- !u!137 &137973135716874916
 SkinnedMeshRenderer:

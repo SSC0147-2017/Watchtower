@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 114582515770674730}
   - component: {fileID: 114932829573023996}
   - component: {fileID: 135283131437987778}
+  - component: {fileID: 114503061900482808}
   m_Layer: 11
   m_Name: Jackie
   m_TagString: Player
@@ -715,7 +716,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361226966930994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 134.46, y: 0, z: 122.04}
+  m_LocalPosition: {x: 131.97566, y: -0.000000059604645, z: 117.41738}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4902899109825252}
@@ -1171,8 +1172,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.99215686, g: 0.85882354, b: 0.5686275, a: 1}
-  m_Intensity: 0.5
-  m_Range: 20
+  m_Intensity: 0.7
+  m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1221,6 +1222,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parente: {fileID: 114582515770674730}
+--- !u!114 &114503061900482808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1361226966930994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3501981ef92a2df459c4bd16fae2f486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  D: {fileID: 114771919849356624}
+  E: {fileID: 0}
 --- !u!114 &114582515770674730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1233,7 +1247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 100
-  CurrentHP: 0
+  CurrentHP: 100
   isDead: 0
   invicibilityTime: 0.87
   RevivalTime: 3.5
@@ -1276,7 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d878d43044a8dec458dcae95f22be786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dano: 30
+  Dano: 40
   P: {fileID: 114582515770674730}
 --- !u!114 &114842399493582466
 MonoBehaviour:
@@ -1556,8 +1570,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.0000988245, y: 0.00012922287, z: 0.0067914985}
-    m_Extent: {x: 0.0024335939, y: 0.0010383626, z: 0.0037270181}
+    m_Center: {x: 0.0000988245, y: 0.00012910366, z: 0.006791498}
+    m_Extent: {x: 0.0024335939, y: 0.0010383626, z: 0.0037270177}
   m_DirtyAABB: 0
 --- !u!137 &137622011726846512
 SkinnedMeshRenderer:
