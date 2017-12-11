@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,6 +43,7 @@ public class Bomb : MonoBehaviour {
 
 	private IEnumerator Explode(){
 		yield return new WaitForSeconds(timeToBlow);
+		SoundManager.SM.PlayExplosion();
 		Instantiate(Explosion,this.transform.position,this.transform.rotation);
 		explode=true;
 	}

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,6 +7,14 @@ public class Virote : MonoBehaviour {
 
 	public float Dano;
 
+	void Start(){
+		if(this.gameObject.name == "Bullet(Clone)"){
+			SoundManager.SM.PlayPistol();
+		}
+		else if(this.gameObject.name == "Virote(Clone)"){
+			SoundManager.SM.PlayCrossbow();
+		}
+	}
 
 	void OnTriggerEnter(Collider Col){
 		if(Col.gameObject.CompareTag("Enemy") && Col.GetType()!=typeof(SphereCollider)){

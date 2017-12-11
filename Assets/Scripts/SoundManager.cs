@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +12,9 @@ public class SoundManager : MonoBehaviour {
     public AudioClip[] Clone;
     public AudioClip[] Explosion;
     public AudioClip[] Attack;
-    public AudioClip[] PlayerGrunt;
+    public AudioClip[] HobbesGrunt;
+	public AudioClip[] CorJackGrunt;
+	public AudioClip[] ArwinGrunt;
     public AudioClip[] Hit;
     public AudioClip[] Monster;
     public AudioClip[] MonsterGrunt;
@@ -59,10 +61,22 @@ public class SoundManager : MonoBehaviour {
         Source.PlayOneShot(Attack[index]);
     }
 
-    public void PlayPlayerGrunt()
+    public void PlayHobbesGrunt()
     {
-        int index = Random.Range(0, PlayerGrunt.Length);
-        Source.PlayOneShot(PlayerGrunt[index]);
+        int index = Random.Range(0, HobbesGrunt.Length);
+        Source.PlayOneShot(HobbesGrunt[index]);
+    }
+	
+	public void PlayCorJackGrunt()
+    {
+        int index = Random.Range(0, CorJackGrunt.Length);
+        Source.PlayOneShot(CorJackGrunt[index]);
+    }
+	
+	public void PlayArwinGrunt()
+    {
+        int index = Random.Range(0, ArwinGrunt.Length);
+        Source.PlayOneShot(ArwinGrunt[index]);
     }
 
     public void PlayHit()

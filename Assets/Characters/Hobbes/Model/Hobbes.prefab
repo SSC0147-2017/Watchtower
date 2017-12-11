@@ -1067,7 +1067,7 @@ MonoBehaviour:
   currBread: 0
   maxBombs: 0
   currBombs: 0
-  bombPrefab: {fileID: 1369543657732698, guid: 9c2a41c108aefe24da91394ef2bbca88, type: 2}
+  bombPrefab: {fileID: 1720806034021904, guid: 513787c538b8efb4a8694444985af1ca, type: 2}
   hasArquebus: 0
 --- !u!114 &114317733188227062
 MonoBehaviour:
