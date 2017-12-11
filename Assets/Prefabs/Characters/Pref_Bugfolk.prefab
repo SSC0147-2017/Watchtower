@@ -1305,8 +1305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 1975870703521806}
-  damage: 10
-  cooldownTime: 1.5
+  damage: 25
+  cooldownTime: 1.7
 --- !u!114 &114361307176815180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1320,7 +1320,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggroRadius: 15
   claws: {fileID: 114095001276212468}
-  col: {fileID: 136652460208428788}
 --- !u!114 &114851258953513828
 MonoBehaviour:
   m_ObjectHideFlags: 1

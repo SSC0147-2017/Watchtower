@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class BugfolkBehaviour : EnemyBehaviour{
 
 	private HealthController HP;
-	public Collider col;
 
 	#region Monobehaviour methods
 	void Start () {
@@ -16,7 +15,6 @@ public class BugfolkBehaviour : EnemyBehaviour{
 
 	void Update () {
 		if(HP.isDead){
-			col.enabled=false;
 			Destroy(this);
 		}
 		//PERSEGUINDO/ATACANDO
