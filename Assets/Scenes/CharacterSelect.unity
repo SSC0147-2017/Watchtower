@@ -11684,6 +11684,10 @@ Prefab:
       propertyPath: InitialModule.startSize.minScalar
       value: 0.4500
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
   m_IsPrefabParent: 0
@@ -17304,62 +17308,6 @@ Prefab:
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4500
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: InitialModule.startSize.minScalar
