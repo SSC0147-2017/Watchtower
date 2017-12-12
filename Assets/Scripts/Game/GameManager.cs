@@ -50,7 +50,7 @@ public class GameManager : Utilities {
 				}
 			}
 			NumLivePlayers = NumPlayers;
-			print ("Live: " + NumLivePlayers);
+//			print ("Live: " + NumLivePlayers);
 
 			InstantiatePrefabs(csm);
 
@@ -207,8 +207,17 @@ public class GameManager : Utilities {
 		isGameOver = true;
 
 		//Unlocks all bios
-		for(int i=0; i<4; i++)
-			ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, i);
+		for (int i = 0; i < PlayerRefs.Count; i++) {
+			
+			if(PlayerRefs[i].layer== LayerMask.NameToLayer("Corvo"))
+				ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, 1);
+			else if (PlayerRefs[i].layer==LayerMask.NameToLayer("Hobbes"))
+				ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, 2);
+			else if (PlayerRefs[i].layer==LayerMask.NameToLayer("Jackie"))
+				ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, 3);		
+			else
+				ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, 3);		
+		}
 	}
 
 	#endregion
