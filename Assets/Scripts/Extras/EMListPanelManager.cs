@@ -25,43 +25,43 @@ public class EMListPanelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-		arrUnlocked = null;
-		txtNumUnlocked.text = "";
-		switch (type){
-			case ExtrasManager.extrasType.lore:{
-				if(ExtrasManager.extrasManager.arrLore!=null)
+		if (ExtrasManager.extrasManager != null) {
+			arrUnlocked = null;
+			txtNumUnlocked.text = "";
+			switch (type) {
+			case ExtrasManager.extrasType.lore:
+				{
 					arrUnlocked = ExtrasManager.extrasManager.arrLore;
-				break;
-			}
-			case ExtrasManager.extrasType.journal:{
-				if(ExtrasManager.extrasManager.arrJournal!=null)
+					break;
+				}
+			case ExtrasManager.extrasType.journal:
+				{
 					arrUnlocked = ExtrasManager.extrasManager.arrJournal;
-				break;
-			}
-			case ExtrasManager.extrasType.bios:{
-				if(ExtrasManager.extrasManager.arrBios!=null)
+					break;
+				}
+			case ExtrasManager.extrasType.bios:
+				{
 					arrUnlocked = ExtrasManager.extrasManager.arrBios;
-				break;
-			}
-		}
-
-		unlockedCount = arrUnlocked.Length;
-
-		try{
-			//Ativa os botões dos textos desbloqueados
-			for (int i = 0; i < arrUnlocked.Length; i++) {
-				if (arrUnlocked [i] == false){
-					textSwitchButtons [i].SetActive(false);
-					unlockedCount--;
+					break;
 				}
 			}
-			if(txtNumUnlocked != null)
-				txtNumUnlocked.text = unlockedCount + " of " + arrUnlocked.Length + " Discovered";
-		}
-		catch(IndexOutOfRangeException e){
-			print ("Arrays de tamanho incompatível");
-			Debug.LogError (e, this);
+
+			unlockedCount = arrUnlocked.Length;
+
+			try {
+				//Ativa os botões dos textos desbloqueados
+				for (int i = 0; i < arrUnlocked.Length; i++) {
+					if (arrUnlocked [i] == false) {
+						textSwitchButtons [i].SetActive (false);
+						unlockedCount--;
+					}
+				}
+				if (txtNumUnlocked != null)
+					txtNumUnlocked.text = unlockedCount + " of " + arrUnlocked.Length + " Discovered";
+			} catch (IndexOutOfRangeException e) {
+				print ("Arrays de tamanho incompatível");
+				Debug.LogError (e, this);
+			}
 		}
 
 	}

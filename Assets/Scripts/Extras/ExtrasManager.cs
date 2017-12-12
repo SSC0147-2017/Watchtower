@@ -12,6 +12,10 @@ using System.Runtime.Serialization.Formatters.Binary;
  */
 public class ExtrasManager : MonoBehaviour{
 
+	//Numero de fragmentos de Lore
+	public int numLore = 6;
+	//Numero de fragmento de Journal
+	public int numJournal = 9;
 
 	public enum extrasType{lore,journal,bios};
 
@@ -25,8 +29,8 @@ public class ExtrasManager : MonoBehaviour{
 		if (extrasManager == null) {
 			extrasManager = this;
 
-			this.arrLore = new bool[3];
-			this.arrJournal = new bool[9];
+			this.arrLore = new bool[numLore];
+			this.arrJournal = new bool[numJournal];
 			this.arrBios = new bool[4];
 
 			Load ();
@@ -53,7 +57,6 @@ public class ExtrasManager : MonoBehaviour{
 
 		file.Close ();
 
-		print ("Saved at: " + Application.persistentDataPath + "/UnlockedExtras.dat");
 		return true;
 	}
 
@@ -80,16 +83,26 @@ public class ExtrasManager : MonoBehaviour{
 		} else
 			return false;
 	}
+
+
+	public bool Delete(){
+		if (File.Exists (Application.persistentDataPath + "/UnlockedExtras.dat")) {
+			File.Delete (Application.persistentDataPath + "/UnlockedExtras.dat");
+			print ("All deleted");
+			return true;
+		} else
+			return false;
+	}
 		
 	/*Método para Setar todos os extras para falso ou verdadeiro
 	Isso desbloqueia ou bloqueia todos os extras obtidos
 	*/
 	public bool SetAllExtras( bool value){
-		for (int i = 0; i < arrLore.Length; i++) {
+		for (int i = 0; i < numLore; i++) {
 			arrLore [i] = value;
 		}
 
-		for (int i = 0; i < arrJournal.Length; i++) {
+		for (int i = 0; i < numJournal; i++) {
 			arrJournal [i] = value;
 		}
 
@@ -135,14 +148,13 @@ public class ExtrasManager : MonoBehaviour{
 	}
 
 	void Update(){
-		if (Input.GetKeyDown (KeyCode.KeypadEnter))
-			Save ();
-		if (Input.GetKeyDown (KeyCode.Backspace))
-			Load ();
-		if (Input.GetKeyDown (KeyCode.KeypadMinus))
+
+		if (Input.GetKeyDown (KeyCode.KeypadMinus) && Input.GetKey(KeyCode.LeftControl))
 			SetAllExtras (false);
-		if (Input.GetKeyDown (KeyCode.KeypadPlus))
+		if (Input.GetKeyDown (KeyCode.KeypadPlus)  && Input.GetKey(KeyCode.LeftControl)) 
 			SetAllExtras (true);		
+		if (Input.GetKeyDown (KeyCode.KeypadEnter) && Input.GetKey(KeyCode.LeftControl))
+			Delete ();
 	}
 }
 

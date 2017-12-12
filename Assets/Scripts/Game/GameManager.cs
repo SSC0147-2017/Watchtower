@@ -205,6 +205,10 @@ public class GameManager : Utilities {
 		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 		StartCoroutine(PanelDelay(2f, "VictoryPanel"));
 		isGameOver = true;
+
+		//Unlocks all bios
+		for(int i=0; i<4; i++)
+			ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, i);
 	}
 
 	#endregion

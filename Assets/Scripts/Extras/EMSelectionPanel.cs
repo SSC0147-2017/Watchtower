@@ -45,8 +45,8 @@ public class EMSelectionPanel : MonoBehaviour {
 	public void Start()
     {
 		currState = EMstate.outsideTab;
-		currentActiveLP = "lore";
-		switchPanel (currentActiveLP);
+		//currentActiveLP = "lore";
+		//switchPanel (currentActiveLP);
 		StartCoroutine(ButtonHighlightDelay(buttonLore));
     }
 	
@@ -107,7 +107,7 @@ public class EMSelectionPanel : MonoBehaviour {
 			if (Input.GetButtonDown ("Joystick1Fire0")) {
 				lastButton = EventSys.currentSelectedGameObject;
 				currState = EMstate.readingText;
-				textScrollbar.value = 1;
+				//textScrollbar.value = 1;
 				EventSys.SetSelectedGameObject (textScrollbar.gameObject);
 			}
 

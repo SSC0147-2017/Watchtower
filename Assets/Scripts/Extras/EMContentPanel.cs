@@ -15,6 +15,10 @@ public class EMContentPanel : MonoBehaviour {
 
 	//Refência ao asset de texto a ser carregado
 	public TextAsset textAsset;
+
+	//Referencia à scrollbar da area de texto
+	public Scrollbar textScrollbar;
+
 	//Referencia ao gameobject com o titulo
 	private GameObject title;
 	//Referencia ao gameobject dentro do scrollview 
@@ -34,6 +38,8 @@ public class EMContentPanel : MonoBehaviour {
 
 			txtComp.text = textAsset.text;
 			titleTxtComp.text = textAsset.name;
+
+			textScrollbar.value = 1;
 		} else {//Se nulo, impla
 			txtComp.text = "";
 			titleTxtComp.text = "";
