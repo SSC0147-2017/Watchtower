@@ -101,6 +101,12 @@ public class MainMenuBehaviour : Utilities {
         StartCoroutine(FadeOut(window, 0.5f, 0.4f));
     }
 
+    public void ResetProgress(GameObject obj)
+    {
+        ExtrasManager.extrasManager.Delete();
+        ClosePanel(obj);
+    }
+
     public void ExitGame()
     {
         SoundManager.SM.PlayButton();
