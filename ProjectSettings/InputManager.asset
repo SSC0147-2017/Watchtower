@@ -793,9 +793,9 @@ InputManager:
     m_Name: Triggers
     descriptiveName: Use/Drop Items
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: g
-    altNegativeButton: h
+    negativeButton: g
+    positiveButton: h
+    altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
     dead: 0.001

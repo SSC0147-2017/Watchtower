@@ -12,10 +12,12 @@ public class ItemPickUp : MonoBehaviour {
 		//Player pegou
 		if (col.tag == "Player") {
 
-			InventoryController ic = col.GetComponent<InventoryController> ();
+			InventoryController ic = col.GetComponentInParent<InventoryController> ();
 
-			if (ic.addItem (type))
+			if (ic.addItem (type)) {
 				Destroy (this.gameObject);
+				SoundManager.SM.PlayItemPickup ();
+			}
 		}
 	}
 }

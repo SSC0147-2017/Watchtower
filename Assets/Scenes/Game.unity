@@ -1253,6 +1253,8 @@ MonoBehaviour:
   Button:
   - {fileID: 8300000, guid: 28fda50060e40ba478f2cea7944526ce, type: 3}
   CharSwoosh: []
+  ItemPickup:
+  - {fileID: 8300000, guid: d97dec4379dec1947a8740c8a6b81d15, type: 3}
 --- !u!4 &118028620
 Transform:
   m_ObjectHideFlags: 0
@@ -20665,12 +20667,27 @@ Prefab:
     - target: {fileID: 137954573864806386, guid: faf9fd6771e2a144881b81351bc98eb7,
         type: 2}
       propertyPath: m_AABB.m_Center.z
-      value: -0.006048821
+      value: -0.006048822
       objectReference: {fileID: 0}
     - target: {fileID: 137954573864806386, guid: faf9fd6771e2a144881b81351bc98eb7,
         type: 2}
       propertyPath: m_AABB.m_Extent.x
-      value: 0.009999999
+      value: 0.009999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 137954573864806386, guid: faf9fd6771e2a144881b81351bc98eb7,
+        type: 2}
+      propertyPath: m_AABB.m_Center.y
+      value: -0.0067996597
+      objectReference: {fileID: 0}
+    - target: {fileID: 137954573864806386, guid: faf9fd6771e2a144881b81351bc98eb7,
+        type: 2}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.019338243
+      objectReference: {fileID: 0}
+    - target: {fileID: 137954573864806386, guid: faf9fd6771e2a144881b81351bc98eb7,
+        type: 2}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0009398242
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: faf9fd6771e2a144881b81351bc98eb7, type: 2}

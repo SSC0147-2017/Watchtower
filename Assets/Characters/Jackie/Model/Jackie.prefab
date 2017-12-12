@@ -1345,10 +1345,14 @@ MonoBehaviour:
   hpInc: 30
   maxBread: 3
   currBread: 3
+  breadPickup: {fileID: 1405295509584090, guid: 72947f71bc4347c4993469c9a8233733,
+    type: 2}
   maxBombs: 3
-  currBombs: 3
+  currBombs: 1
+  bombPickup: {fileID: 1720806034021904, guid: f0781d022be9a2e4a996c56c462b3203, type: 2}
   bombPrefab: {fileID: 1720806034021904, guid: 513787c538b8efb4a8694444985af1ca, type: 2}
-  hasArquebus: 1
+  hasArquebus: 0
+  arquebusPickup: {fileID: 0}
 --- !u!114 &114954478873351936
 MonoBehaviour:
   m_ObjectHideFlags: 1

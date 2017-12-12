@@ -21,16 +21,24 @@ public class InventoryController : MonoBehaviour
 	public int maxBread;
 	[Tooltip("Current number of Bread")]
 	public int currBread;
+	[Tooltip("Prefab of Bread Pickup")]
+	public GameObject breadPickup;
 
 	[Header("Bombs")]
 	[Tooltip("Maximum number of Bombs")]
 	public int maxBombs;
 	[Tooltip("Current number of Bombs")]
 	public int currBombs;
+	[Tooltip("Prefab of Bomb Pickup")]
+	public GameObject bombPickup;
+
 	public GameObject bombPrefab;
 
 	[Header("Arquebus")]
+	[HideInInspector]
 	public bool hasArquebus;
+	[HideInInspector]
+	public GameObject arquebusPickup;
 
 	void Start(){
 
@@ -107,17 +115,20 @@ public class InventoryController : MonoBehaviour
 	 * Drops current selected item
 	 */
 	public bool dropCurrentItem(){
+		usingItem = true;
 		switch (selectedItem) {
 		case itemType.bread:
 			if (currBread > 0) {
 				currBread--;
-				//INSTANTIATE BREAD PICKUP PREFAB
+				GameObject obj = GameObject.Instantiate(breadPickup, transform.position + transform.forward, 
+					Quaternion.AngleAxis(-90, Vector3.right));
 			}
 			break;
 		case itemType.bomb:
 			if (currBombs > 0) {
 				currBombs--;
-				//INSTANTIATE BOMB PICKUP PREFAB
+				GameObject obj = GameObject.Instantiate(bombPickup, transform.position + transform.forward, 
+					Quaternion.AngleAxis(-90, Vector3.right));
 			}
 			break;
 		case itemType.arquebus:
@@ -127,6 +138,7 @@ public class InventoryController : MonoBehaviour
 			}
 			break;
 		}
+		StartCoroutine (itemCooldown ());
 		return true;
 	}
 
@@ -146,20 +158,17 @@ public class InventoryController : MonoBehaviour
 		StartCoroutine (itemCooldown ());
 		return true;
 	}
-
-
-	IEnumerator itemCooldown(){
-		yield return new WaitForSeconds(itemCooldownTime);
-		usingItem = false;
-	}
-
+		
 	/**
 	 *Decrements bread, increases HP
 	 */
 	public void useBread(){
-		if (currBread > 0) {
+		if (currBread > 0 && playerBehav.CurrentHP < playerBehav.MaxHP) {
 			playerBehav.GainHP (hpInc);
 			currBread--;
+
+			if (currBread == 0)
+				nextItem ();
 		}
 	}
 
@@ -172,6 +181,9 @@ public class InventoryController : MonoBehaviour
 			Rigidbody rb = bomb.GetComponent<Rigidbody> ();
 			rb.AddForce (transform.forward*5, ForceMode.Impulse);
 			currBombs--;
+
+			if (currBombs == 0)
+				nextItem ();
 		}
 	}
 
@@ -183,8 +195,6 @@ public class InventoryController : MonoBehaviour
 		Apertou o outro tigger = Cancela
 		*/
 	}
-
-
 
 	/**
 	 * Função para incremento dos itens
@@ -222,6 +232,12 @@ public class InventoryController : MonoBehaviour
 		default:
 			return false;
 		}
+	}
+
+
+	IEnumerator itemCooldown(){
+		yield return new WaitForSeconds(itemCooldownTime);
+		usingItem = false;
 	}
 
 }

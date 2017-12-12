@@ -1446,16 +1446,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500166903c506f04bb11e8a9a8c6be6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBehav: {fileID: 0}
+  playerBehav: {fileID: 114867959214938326}
   selectedItem: 0
   itemCooldownTime: 1
-  hpInc: 0
-  maxBread: 0
-  currBread: 0
-  maxBombs: 0
-  currBombs: 0
+  hpInc: 30
+  maxBread: 3
+  currBread: 3
+  breadPickup: {fileID: 1405295509584090, guid: 72947f71bc4347c4993469c9a8233733,
+    type: 2}
+  maxBombs: 3
+  currBombs: 1
+  bombPickup: {fileID: 1720806034021904, guid: f0781d022be9a2e4a996c56c462b3203, type: 2}
   bombPrefab: {fileID: 1720806034021904, guid: 513787c538b8efb4a8694444985af1ca, type: 2}
   hasArquebus: 0
+  arquebusPickup: {fileID: 0}
 --- !u!135 &135479308229887804
 SphereCollider:
   m_ObjectHideFlags: 1
