@@ -10,6 +10,8 @@ public class HazFireController : MonoBehaviour {
 	public float activeTime;
 	public float damage; //Dano dado enquanto a entidade ficar no fogo
 
+	public AudioSource audioSource;
+
 	private bool isHazardActive;	//Estado booleano de fogo ativo ou não
 	private float currTimer;
 
@@ -37,6 +39,7 @@ public class HazFireController : MonoBehaviour {
 		isHazardActive = true;
 		damageZone.enabled = true;
 		fireObject.ParticleSystemsPlay();
+		audioSource.PlayOneShot (audioSource.clip);
 	}
 
 	void DeactivateHazard(){
@@ -44,6 +47,7 @@ public class HazFireController : MonoBehaviour {
 		isHazardActive = false;
 		damageZone.enabled = false;
 		fireObject.ParticleSystemsStop();
+//		audioSource.Stop ();
 	}
 
 	void OnTriggerStay (Collider col){
