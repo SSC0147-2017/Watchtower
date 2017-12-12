@@ -7,7 +7,7 @@ public class UIBehaviour : MonoBehaviour {
 
     public GameObject player;
 
-    float Cooldown;
+    //float Cooldown;
     InventoryController.itemType CurrentItem;
 
     public Sprite BombSprite;
@@ -16,10 +16,10 @@ public class UIBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(player != null)
+		/*if(player != null)
         {
             Cooldown = player.GetComponent<Movement>().SpecialTime;
-        }
+        }*/
 	}
 	
 	// Update is called once per frame
@@ -45,8 +45,8 @@ public class UIBehaviour : MonoBehaviour {
         }
     }
 
-    void UseSkill()
+    /*void UseSkill()
     {
         //transform.Find("SkillBar").GetComponent<Image>().fillAmount = player.GetComponent<Movement>().SpecialTime;
-    }
+    }*/
 }
