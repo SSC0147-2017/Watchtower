@@ -1,91 +1,79 @@
 fileFormatVersion: 2
-guid: cf675b54ed68b5b4c9ea09039481e460
-timeCreated: 1513039844
+guid: 4d609c17bb49bfe458d7b33d435f8204
+timeCreated: 1513043344
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: BackFoot.L
-    100002: BackFoot.L_end
-    100004: BackFoot.R
-    100006: BackFoot.R_end
-    100008: Cube
-    100010: Ear.L
-    100012: Ear.L_end
-    100014: Ear.R
-    100016: Ear.R_end
-    100018: //RootNode
-    100020: FrontFoot.L
-    100022: FrontFoot.L_end
-    100024: FrontFoot.R
-    100026: FrontFoot.R_end
-    100028: Head
-    100030: Hip
-    100032: LowerBackLeg.L
-    100034: LowerBackLeg.R
-    100036: LowerFrontLeg.L
-    100038: LowerFrontLeg.R
-    100040: Neck
-    100042: Skeleton
-    100044: Spine
-    100046: Tail.1
-    100048: Tail.2
-    100050: Tail.3
-    100052: Tail.3_end
-    100054: UpperBackLeg.L
-    100056: UpperBackLeg.R
-    100058: UpperFrontLeg.L
-    100060: UpperFrontLeg.R
-    100062: UpperUpperBackLeg.L
-    100064: UpperUpperBackLeg.R
-    100066: UpperUpperFrontLeg.L
-    100068: UpperUpperFrontLeg.R
-    400000: BackFoot.L
-    400002: BackFoot.L_end
-    400004: BackFoot.R
-    400006: BackFoot.R_end
-    400008: Cube
-    400010: Ear.L
-    400012: Ear.L_end
-    400014: Ear.R
-    400016: Ear.R_end
-    400018: //RootNode
-    400020: FrontFoot.L
-    400022: FrontFoot.L_end
-    400024: FrontFoot.R
-    400026: FrontFoot.R_end
-    400028: Head
-    400030: Hip
-    400032: LowerBackLeg.L
-    400034: LowerBackLeg.R
-    400036: LowerFrontLeg.L
-    400038: LowerFrontLeg.R
-    400040: Neck
-    400042: Skeleton
-    400044: Spine
-    400046: Tail.1
-    400048: Tail.2
-    400050: Tail.3
-    400052: Tail.3_end
-    400054: UpperBackLeg.L
-    400056: UpperBackLeg.R
-    400058: UpperFrontLeg.L
-    400060: UpperFrontLeg.R
-    400062: UpperUpperBackLeg.L
-    400064: UpperUpperBackLeg.R
-    400066: UpperUpperFrontLeg.L
-    400068: UpperUpperFrontLeg.R
+    100000: BackFoot_L
+    100002: BackFoot_R
+    100004: Cube
+    100006: Ear_L
+    100008: Ear_R
+    100010: //RootNode
+    100012: FrontFoot_L
+    100014: FrontFoot_R
+    100016: Head
+    100018: Hip
+    100020: LowerBackLeg_L
+    100022: LowerBackLeg_R
+    100024: LowerFrontLeg_L
+    100026: LowerFrontLeg_R
+    100028: Neck
+    100030: Skeleton
+    100032: Spine
+    100034: Tail_1
+    100036: Tail_2
+    100038: Tail_3
+    100040: UpperBackLeg_L
+    100042: UpperBackLeg_R
+    100044: UpperFrontLeg_L
+    100046: UpperFrontLeg_R
+    100048: UpperUpperBackLeg_L
+    100050: UpperUpperBackLeg_R
+    100052: UpperUpperFrontLeg_L
+    100054: UpperUpperFrontLeg_R
+    400000: BackFoot_L
+    400002: BackFoot_R
+    400004: Cube
+    400006: Ear_L
+    400008: Ear_R
+    400010: //RootNode
+    400012: FrontFoot_L
+    400014: FrontFoot_R
+    400016: Head
+    400018: Hip
+    400020: LowerBackLeg_L
+    400022: LowerBackLeg_R
+    400024: LowerFrontLeg_L
+    400026: LowerFrontLeg_R
+    400028: Neck
+    400030: Skeleton
+    400032: Spine
+    400034: Tail_1
+    400036: Tail_2
+    400038: Tail_3
+    400040: UpperBackLeg_L
+    400042: UpperBackLeg_R
+    400044: UpperFrontLeg_L
+    400046: UpperFrontLeg_R
+    400048: UpperUpperBackLeg_L
+    400050: UpperUpperBackLeg_R
+    400052: UpperUpperFrontLeg_L
+    400054: UpperUpperFrontLeg_R
     4300000: Cube
-    7400000: Skeleton|Action
-    7400002: Skeleton|Dog_Bark
+    7400000: Default Take
+    7400002: Dog_Bark
+    7400004: Dog_Walk
+    7400006: Dog_Idle
     9500000: //RootNode
     13700000: Cube
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: dd7c1e9a24d07554f8562eae95017946, type: 2}
+      name: Material__FluffyTexture_png
+    second: {fileID: 2100000, guid: e2dd6b85cbe167c40af7935dffd7386d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
