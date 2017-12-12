@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 114851258953513828}
   - component: {fileID: 82654778424565948}
   m_Layer: 13
-  m_Name: Pref_Bugfolk
+  m_Name: Bugfolk
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

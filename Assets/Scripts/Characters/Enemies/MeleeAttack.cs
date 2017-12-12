@@ -30,6 +30,7 @@ public class MeleeAttack : MonoBehaviour {
 	 */
 	public void Attack(){
 		if (!behav.getIsAttacking()) {
+            SoundManager.SM.PlayAttack();
 			hitbox.enabled = true;
 			StartCoroutine (attackCooldown ());
 			//TODO - Animações e coisas chiques
@@ -41,8 +42,10 @@ public class MeleeAttack : MonoBehaviour {
 
 		if (behav.getIsAttacking() && col.gameObject.tag == "Player" && col.GetType()!=typeof(SphereCollider)) {//Só da dano se ele estiver atacando.
 			Movement M = col.gameObject.GetComponent<GetParentCol>().Get();
-			if(M!=null)
-				M.takeDamage(damage);
+            if (M != null)
+            {
+                M.takeDamage(damage);
+            }
 		}
 	}
 

@@ -12,6 +12,9 @@ public class CloneArwin : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        SoundManager.SM.PlayClone();
+
 		if(!C.addClone()){
 			Destroy(this.gameObject);
 		}

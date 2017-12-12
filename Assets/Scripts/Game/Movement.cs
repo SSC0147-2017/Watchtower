@@ -82,6 +82,7 @@ public class Movement : MonoBehaviour {
 			}
 			if(Input.GetButtonDown(Controller+"Fire2")) {
 				if(!isAtk){
+                    SoundManager.SM.PlayAttack();
 					anim.SetTrigger("Attack");
 					anim.SetFloat("Speed",0.0f);
 					StartCoroutine(waitAttackTime());
@@ -175,7 +176,22 @@ public class Movement : MonoBehaviour {
 
 	public void takeDamage(float damage){
 		if (canBeHurt) {
-			float netDamage = damage * defense;
+            
+            if(gameObject.name == "Arwin(Clone)")
+            {
+                SoundManager.SM.PlayArwinGrunt();
+            }
+            else if(gameObject.name == "Hobbes(Clone)")
+            {
+                SoundManager.SM.PlayHobbesGrunt();
+            }
+            else if(gameObject.name == "Corvo(Clone)" || gameObject.name == "Jackie(Clone)")
+            {
+                SoundManager.SM.PlayCorJackGrunt();
+            }
+            SoundManager.SM.PlayHit();
+
+            float netDamage = damage * defense;
 			if (netDamage > 0) {
 				CurrentHP -= (int)netDamage;
 				anim.SetTrigger("Hit");

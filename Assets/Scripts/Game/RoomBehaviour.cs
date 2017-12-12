@@ -65,7 +65,8 @@ public class RoomBehaviour : MonoBehaviour {
 
     void SpawnFlag()
     {
-        GameObject obj = Instantiate(FlagPrefab, transform.position + new Vector3(0, 10, 0), Quaternion.identity);
+        GameObject obj = Instantiate(FlagPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+        obj.transform.Rotate(0, 180, 0);
 		obj.transform.GetChild(0).GetComponent<Light>().range = FlagRadius;
     }
 	

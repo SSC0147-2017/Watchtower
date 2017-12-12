@@ -16,8 +16,10 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip[] CorJackGrunt;
 	public AudioClip[] ArwinGrunt;
     public AudioClip[] Hit;
-    public AudioClip[] Monster;
-    public AudioClip[] MonsterGrunt;
+    public AudioClip[] Bugfolk;
+    public AudioClip[] BugfolkGrunt;
+    public AudioClip[] Depths;
+    public AudioClip[] DepthsGrunt;
     public AudioClip[] Pistol;
     public AudioClip[] Crossbow;
     public AudioClip[] Button;
@@ -40,84 +42,96 @@ public class SoundManager : MonoBehaviour {
     public void PlayAchievement()
     {
         int index = Random.Range(0, Achievement.Length);
-        Source.PlayOneShot(Achievement[index]);
+        Source.PlayOneShot(Achievement[index], 0.5f);
     }
 
     public void PlayClone()
     {
         int index = Random.Range(0, Clone.Length);
-        Source.PlayOneShot(Clone[index]);
+        Source.PlayOneShot(Clone[index], 0.5f);
     }
 
     public void PlayExplosion()
     {
         int index = Random.Range(0, Explosion.Length);
-        Source.PlayOneShot(Explosion[index]);
+        Source.PlayOneShot(Explosion[index], 0.5f);
     }
 
     public void PlayAttack()
     {
         int index = Random.Range(0, Attack.Length);
-        Source.PlayOneShot(Attack[index]);
+        Source.PlayOneShot(Attack[index], 0.5f);
     }
 
     public void PlayHobbesGrunt()
     {
         int index = Random.Range(0, HobbesGrunt.Length);
-        Source.PlayOneShot(HobbesGrunt[index]);
+        Source.PlayOneShot(HobbesGrunt[index], 0.5f);
     }
 	
 	public void PlayCorJackGrunt()
     {
         int index = Random.Range(0, CorJackGrunt.Length);
-        Source.PlayOneShot(CorJackGrunt[index]);
+        Source.PlayOneShot(CorJackGrunt[index], 0.5f);
     }
 	
 	public void PlayArwinGrunt()
     {
         int index = Random.Range(0, ArwinGrunt.Length);
-        Source.PlayOneShot(ArwinGrunt[index]);
+        Source.PlayOneShot(ArwinGrunt[index], 0.5f);
     }
 
     public void PlayHit()
     {
         int index = Random.Range(0, Hit.Length);
-        Source.PlayOneShot(Hit[index]);
+        Source.PlayOneShot(Hit[index], 0.5f);
     }
 
-    public void PlayMonster()
+    public AudioClip GetBugfolk()
     {
-        int index = Random.Range(0, Monster.Length);
-        Source.PlayOneShot(Monster[index]);
+        int index = Random.Range(0, Bugfolk.Length);
+        return Bugfolk[index];
     }
 
-    public void PlayMonsterGrunt()
+    public AudioClip GetBugfolkGrunt()
     {
-        int index = Random.Range(0, MonsterGrunt.Length);
-        Source.PlayOneShot(MonsterGrunt[index]);
+        int index = Random.Range(0, BugfolkGrunt.Length);
+        return BugfolkGrunt[index];
+    }
+
+    public AudioClip GetDepths()
+    {
+        int index = Random.Range(0, Depths.Length);
+        return Depths[index];
+    }
+
+    public AudioClip GetDepthsGrunt()
+    {
+        int index = Random.Range(0, DepthsGrunt.Length);
+        return DepthsGrunt[index];
     }
 
     public void PlayPistol()
     {
         int index = Random.Range(0, Pistol.Length);
-        Source.PlayOneShot(Pistol[index]);
+        Source.PlayOneShot(Pistol[index], 0.5f);
     }
 
     public void PlayCrossbow()
     {
         int index = Random.Range(0, Crossbow.Length);
-        Source.PlayOneShot(Crossbow[index]);
+        Source.PlayOneShot(Crossbow[index], 0.5f);
     }
 
     public void PlayButton()
     {
         int index = Random.Range(0, Button.Length);
-        Source.PlayOneShot(Button[index]);
+        Source.PlayOneShot(Button[index], 0.5f);
     }
 
     public void PlayCharSwoosh()
     {
         int index = Random.Range(0, CharSwoosh.Length);
-        Source.PlayOneShot(CharSwoosh[index]);
+        Source.PlayOneShot(CharSwoosh[index], 0.5f);
     }
 }

@@ -57,6 +57,18 @@ public class HealthController : MonoBehaviour {
 	public void takeDamage(float damage){
 
         if (canBeHurt) {
+
+            if (gameObject.name == "Bugfolk(Clone)")
+            {
+                GetComponent<AudioSource>().PlayOneShot(SoundManager.SM.GetBugfolkGrunt());
+                SoundManager.SM.PlayHit();
+            }
+            else if (gameObject.name == "Prole(Clone)")
+            {
+                GetComponent<AudioSource>().PlayOneShot(SoundManager.SM.GetDepthsGrunt());
+                SoundManager.SM.PlayHit();
+            }
+
             float netDamage = damage * this.defense;
 			if (netDamage > 0) {
                 this.currentHp -= netDamage;

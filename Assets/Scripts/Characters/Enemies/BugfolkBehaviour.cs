@@ -10,6 +10,7 @@ public class BugfolkBehaviour : EnemyBehaviour{
 	#region Monobehaviour methods
 	void Start () {
 		base.Start ();
+        GetComponent<AudioSource>().PlayOneShot(SoundManager.SM.GetBugfolk());
 		HP=gameObject.GetComponent<HealthController>();
 	}
 
@@ -44,9 +45,11 @@ public class BugfolkBehaviour : EnemyBehaviour{
 		else
 			Stop ();
 	}
+#endregion
 
 
-	void OnTriggerStay(Collider col){
+    #region Class methods
+    void OnTriggerStay(Collider col){
 
 		if (col.gameObject.tag == "Player") {
 

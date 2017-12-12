@@ -20,7 +20,8 @@ public class DepthsBehaviour : EnemyBehaviour {
 	void Start()
 	{
 		base.Start ();
-		HP=gameObject.GetComponent<HealthController>();
+        GetComponent<AudioSource>().PlayOneShot(SoundManager.SM.GetDepths());
+        HP =gameObject.GetComponent<HealthController>();
 		for(int i = 0; i < GameManager.GM.PlayerRefs.Count; i++){
 			Targets.Add(GameManager.GM.PlayerRefs[i]);
 		}
