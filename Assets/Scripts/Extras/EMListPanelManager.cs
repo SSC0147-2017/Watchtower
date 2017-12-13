@@ -15,13 +15,17 @@ public class EMListPanelManager : MonoBehaviour {
 
 	//Número de extras desbloqueados
 	private int unlockedCount;
-	private bool[] arrUnlocked;
+	private bool[] arrUnlocked = null;
 
 
 	void OnEnable(){
 		this.Start ();
 	}
 
+	void Update(){
+		if (ExtrasManager.extrasManager != null && arrUnlocked == null)
+			Start ();
+	}
 
 	// Use this for initialization
 	void Start () {

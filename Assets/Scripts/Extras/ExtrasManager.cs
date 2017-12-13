@@ -149,12 +149,15 @@ public class ExtrasManager : MonoBehaviour{
 
 	void Update(){
 
-		if (Input.GetKeyDown (KeyCode.KeypadMinus) && Input.GetKey(KeyCode.LeftControl))
+		/*if (Input.GetKeyDown (KeyCode.KeypadMinus) && Input.GetKey(KeyCode.LeftControl)
+			|| Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown (KeyCode.KeypadMinus))
 			SetAllExtras (false);
-		if (Input.GetKeyDown (KeyCode.KeypadPlus)  && Input.GetKey(KeyCode.LeftControl)) 
+		if (Input.GetKeyDown (KeyCode.KeypadPlus)  && Input.GetKey(KeyCode.LeftControl)
+			|| Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown (KeyCode.KeypadPlus)) 
 			SetAllExtras (true);		
-		if (Input.GetKeyDown (KeyCode.KeypadEnter) && Input.GetKey(KeyCode.LeftControl))
-			Delete ();
+		if (Input.GetKeyDown (KeyCode.KeypadEnter) && Input.GetKey(KeyCode.LeftControl)
+			|| Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown (KeyCode.KeypadEnter))
+			Delete ();*/
 	}
 }
 

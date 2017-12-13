@@ -47,6 +47,20 @@ public class EMSelectionPanel : MonoBehaviour {
 		currState = EMstate.outsideTab;
 		//currentActiveLP = "lore";
 		//switchPanel (currentActiveLP);
+
+
+		currentActiveLP = "lore";
+		listPanelLore.SetActive (true);
+		listPanelBios.SetActive (false);
+		listPanelJournal.SetActive (false);
+
+		buttonsScrollView.content = listPanelLore.GetComponent<RectTransform>();
+
+		//Limpa o texto e o titulo 
+		contentPanelScript.switchTextAsset (null);
+
+
+		EventSys.SetSelectedGameObject(buttonLore);
 		StartCoroutine(ButtonHighlightDelay(buttonLore));
     }
 	
@@ -72,7 +86,7 @@ public class EMSelectionPanel : MonoBehaviour {
 
 
 			//GO TO EXIT BUTTON
-			if (Input.GetButtonDown ("Joystick1Fire3")) {
+			if (Input.GetButtonDown ("Joystick1Fire1")) {
 				currState = EMstate.exiting;
 				StartCoroutine (ButtonHighlightDelay (buttonBack));
 			}
@@ -136,7 +150,7 @@ public class EMSelectionPanel : MonoBehaviour {
 				StartCoroutine (ScrollDelay (textScrollbar, true));
 			}
 
-			if (Input.GetButtonDown ("Joystick1Fire3")) {
+			if (Input.GetButtonDown ("Joystick1Fire1")) {
 				currState = EMstate.insideTab;
 				EventSys.SetSelectedGameObject (lastButton);
 			}
@@ -144,7 +158,7 @@ public class EMSelectionPanel : MonoBehaviour {
 
 		//EXITING THE MENU=================================================
 		else {
-			if (Input.GetButtonDown ("Joystick1Fire3") || Input.GetAxis ("Joystick1Vertical") > 0) {
+			if (Input.GetButtonDown ("Joystick1Fire1") || Input.GetAxis ("Joystick1Vertical") > 0) {
 				currState = EMstate.outsideTab;
 				highlightCurrentTab ();
 			}

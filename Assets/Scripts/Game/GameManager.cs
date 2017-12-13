@@ -199,7 +199,7 @@ public class GameManager : Utilities {
 
 	//Method called by Movement.cs when a player is revived
 	public void playerUp(){
-		if(NumLivePlayers+1 < NumPlayers)
+		if(NumLivePlayers+1 <= NumPlayers)
 			NumLivePlayers++;
 		print ("Live: " + NumLivePlayers);
 	}
