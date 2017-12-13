@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -92,7 +92,11 @@ public class MainMenuBehaviour : Utilities {
     {
         SoundManager.SM.PlayButton();
 
-        PanelList[0].GetComponent<PanelBehaviour>().ActivateButtons();
+		if(window.name == "ConfirmPanel")
+			PanelList[2].GetComponent<PanelBehaviour>().ActivateButtons();
+		else
+        	PanelList[0].GetComponent<PanelBehaviour>().ActivateButtons();
+			
         for (int i = 1; i < PanelList.Count; i++)
         {
             PanelList[i].GetComponent<PanelBehaviour>().DeactivateButtons();
