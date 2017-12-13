@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AchievementBehaviour : MonoBehaviour {
 
     Vector3 InitialPosition;
-    public Vector3 TargetPosition;
+    Vector3 TargetPosition;
     public float EntryTime;
     public float ExitTime;
     public float StayDelay;
@@ -19,6 +19,7 @@ public class AchievementBehaviour : MonoBehaviour {
         SoundManager.SM.PlayAchievement();
 
         InitialPosition = transform.position;
+		TargetPosition = new Vector3(Screen.width/2, Screen.height/6, 0);
 
         iTween.MoveTo(
             gameObject,
