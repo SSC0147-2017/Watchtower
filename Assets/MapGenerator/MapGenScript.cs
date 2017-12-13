@@ -37,12 +37,13 @@ public class MapGenScript : MonoBehaviour {
                 { 
                     GameObject inst = GameObject.Instantiate(randomPrefab(prefabR), trans);
                     inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
-					//inst.transform.Rotate(new Vector3(0, 0, FindRotation(pixels, i, j)));
+					//inst.transform.Rotate(new Vector3(0, FindRotationR(pixels, i, j), 0));
                 }
                 if (pixelColor == Color.green) //Curva L regular
                 {
                     GameObject inst = GameObject.Instantiate(randomPrefab(prefabL), trans);
                     inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
+					//inst.transform.Rotate(new Vector3(0, FindRotationL(pixels, i, j), 0));
                 }
                 if (pixelColor == Color.blue) //Diagonal
                 {
@@ -54,46 +55,57 @@ public class MapGenScript : MonoBehaviour {
 				{
 					GameObject inst = GameObject.Instantiate(randomPrefab(prefabC), trans);
 					inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
+					//inst.transform.Rotate(new Vector3(0, FindRotationC(pixels, i, j), 0));
 				}
             }
         }
     }
 
     //Find wall rotation for a given wall at i and j
-    private float FindRotation(Color[] pixels, int i, int j)
-    {
-        //Floor is in the left
+	private float FindRotationR(Color[] pixels, int i, int j) {
+        //Floor is in the Right
         float rotation = 0;
-        //Floor is in the right
-        if ((j + 1 < width) && (pixels[i * height + j + 1] == Color.yellow))
+        //Floor is in the Left
+        if ((pixels[i * height + j - 1] == Color.yellow))
             rotation = 180;
         //Floor is below
-        if ((i + 1 < height) && (pixels[(i+1) * height + j] == Color.yellow))
+        if ((pixels[(i+1) * height + j] == Color.yellow))
             rotation = 90;
-        if ((i - 1 > 0) && (pixels[(i - 1) * height + j] == Color.yellow))
+        if ((pixels[(i - 1) * height + j] == Color.yellow))
             rotation = -90;
         return rotation;
     }
 
     //Find a diagonal wall rotation
-    private float FindDiagonalRotation(Color[] pixels, int i, int j) {
-        float rotation = 0;
+    private float FindRotationC(Color[] pixels, int i, int j) {
+		//Floor is in the Left and Bellow
+		float rotation = 0;
+		//Floor is in the Right And Bellow
+		if (((pixels[i * height + j - 1] == Color.black)||(pixels[i * height + j - 1] == Color.white))&&((pixels[(i - 1) * height + j] == Color.black)||(pixels[(i - 1) * height + j] == Color.white)))
+			rotation = 90;
+		//Floor is Up And Left
+		if (((pixels[i * height + j + 1] == Color.black)||(pixels[i * height + j + 1] == Color.white))&&((pixels[(i + 1) * height + j] == Color.black)||(pixels[(i + 1) * height + j] == Color.white)))
+			rotation = -90;
+		//Floor is Up And Right
+		if (((pixels[i * height + j + 1] == Color.black)||(pixels[i * height + j + 1] == Color.white))&&((pixels[(i + 1) * height + j] == Color.black)||(pixels[(i + 1) * height + j] == Color.white)))
+			rotation = 180;
+		return rotation;
+	}
 
-        if ((j + 1 < width) && (i + 1 < height)) {
-            Color digColor = pixels[(i + 1) * height + j + 1];
-            if (digColor != Color.black && digColor != Color.white)
-                rotation = 90;
-        }
+	private float FindRotationL(Color[] pixels, int i, int j) {
+		//Floor is in the Right And Bellow
+		float rotation = 0;
+		//Floor is in the Left And Up
+		if ((pixels[i * height + j - 1] == Color.yellow) && (pixels[(i - 1) * height + j] == Color.yellow))
+			rotation = 180;
+		//Floor is below And Left
+		if ((pixels[i * height + j - 1] == Color.yellow) && (pixels[(i+1) * height + j] == Color.yellow))
+			rotation = 90;
+		if ((pixels[i * height + j + 1] == Color.yellow) && (pixels[(i - 1) * height + j] == Color.yellow))
+			rotation = -90;
+		return rotation;
+	}
 
-        if ((j - 1 > 0) && (i - 1 > 0))
-        {
-            Color digColor = pixels[(i - 1) * height + j - 1];
-            if (digColor != Color.black && digColor != Color.white)
-                rotation = 90;
-        }
-
-        return rotation;
-    }
 
     //Return a random prefab from a given array of prefabs
     private GameObject randomPrefab(GameObject[] prefabArray) {
