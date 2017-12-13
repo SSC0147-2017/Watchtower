@@ -77,8 +77,14 @@ public class GameManager : Utilities {
 	void Update ()
 	{
 
+		bool joystick1 = Input.GetKeyDown (KeyCode.Joystick1Button7);
+		bool joystick2 = Input.GetKeyDown (KeyCode.Joystick2Button7);
+		bool joystick3 = Input.GetKeyDown (KeyCode.Joystick3Button7);
+		bool joystick4 = Input.GetKeyDown (KeyCode.Joystick3Button7);
+		bool keyboard = Input.GetKeyDown (KeyCode.Escape);
+
 		//Pause Game
-		if(Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7) || Input.GetKeyDown(KeyCode.Joystick3Button7) || Input.GetKeyDown(KeyCode.Joystick4Button7) || Input.GetKeyDown(KeyCode.Escape))
+		if(joystick1 || joystick2 || joystick3 || joystick4 || keyboard)
         {
             if (isGamePaused)
             {
@@ -86,7 +92,16 @@ public class GameManager : Utilities {
             }
             else
             {
-                PauseGame();
+				if (joystick1)
+					PauseGame ("Joystick1");
+				else if (joystick2)
+					PauseGame ("Joystick2");
+				else if (joystick3)
+					PauseGame ("Joystick3");
+				else if (joystick4)
+					PauseGame ("Joystick4");
+				else if (keyboard)
+					PauseGame ("");
             }
         }
 	}
@@ -142,10 +157,11 @@ public class GameManager : Utilities {
 	#endregion
 
 	#region Pause Methods
-    void PauseGame()
+	void PauseGame(string controller)
     {
         Canvas.transform.Find("PausePanel").gameObject.SetActive(true);
-		Canvas.transform.Find("PausePanel").GetComponent<PauseMenuBehaviour>().SelectFirstButton();
+		//Canvas.transform.Find("PausePanel").GetComponent<PauseMenuBehaviour>().SelectFirstButton();
+		Canvas.transform.Find("PausePanel").GetComponent<PauseMenuBehaviour>().setController(controller);
         isGamePaused = true;
 		Time.timeScale = 0;
     }

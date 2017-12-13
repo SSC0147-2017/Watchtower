@@ -3791,19 +3791,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 7aa1ce1bbfd9d1342b035cc3b1113e31, type: 3}
+  - {fileID: 8300000, guid: 36f03cbd7c953e34992e7d94c857f4c5, type: 3}
+  - {fileID: 8300000, guid: 472a7f68689139b40b696c1bfc82203c, type: 3}
+  - {fileID: 8300000, guid: 772e9fcc81d9f9d46949d1b428c227ea, type: 3}
+  - {fileID: 8300000, guid: c415bf699a0669b4199932306984f031, type: 3}
+  - {fileID: 8300000, guid: 283cee85fcbf0374c8da82177cd73293, type: 3}
+  - {fileID: 8300000, guid: cf32d07b0815d6643ac6b8f74c607d4e, type: 3}
+  - {fileID: 8300000, guid: e5bda16ef8961ff468f2e0b08581cc60, type: 3}
+  - {fileID: 8300000, guid: ee8afa7121bf85d4580b66f8e57e49a0, type: 3}
+  - {fileID: 8300000, guid: 884529fc35f72fe4aa11f845cbe6c6fd, type: 3}
+  - {fileID: 8300000, guid: bb2c0f040db54164f9649481e6810731, type: 3}
   source: {fileID: 439710241}
 --- !u!4 &454666142 stripped
 Transform:
@@ -7039,6 +7037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventSys: {fileID: 941702418}
   FirstButton: {fileID: 1363284519}
+  btns: []
 --- !u!222 &843511817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8431,6 +8430,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventSys: {fileID: 941702418}
   FirstButton: {fileID: 832617327}
+  btns:
+  - {fileID: 832617327}
+  - {fileID: 1725737936}
 --- !u!1001 &999347906
 Prefab:
   m_ObjectHideFlags: 0
@@ -14284,6 +14286,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventSys: {fileID: 941702418}
+  btns:
+  - {fileID: 278341063}
+  - {fileID: 2076736247}
+  - {fileID: 832661709}
+  AudioList:
+  - {fileID: 439710241}
+  - {fileID: 118028618}
 --- !u!1 &1285236191
 GameObject:
   m_ObjectHideFlags: 0
