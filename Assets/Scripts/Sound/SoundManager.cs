@@ -25,6 +25,7 @@ public class SoundManager : MonoBehaviour {
     public AudioClip[] Button;
     public AudioClip[] CharSwoosh;
 	public AudioClip[] ItemPickup;
+	public AudioClip[] Flag;
 
     private void Start()
     {
@@ -141,4 +142,11 @@ public class SoundManager : MonoBehaviour {
 		int index = Random.Range(0, ItemPickup.Length);
 		Source.PlayOneShot(ItemPickup[index], 0.5f);
 	}
+
+	public void PlayFlag()
+	{
+		int index = Random.Range(0, Flag.Length);
+		Source.PlayOneShot(Flag[index], 0.5f);
+	}
+
 }

@@ -40,6 +40,14 @@ public class GameManager : Utilities {
 	
 	// Use this for initialization
 	void Start () {
+
+		if (GameObject.Find ("Music") != null)
+			GameObject.Destroy (GameObject.Find ("Music"));
+
+		if (GameObject.Find ("RealMusic") != null)
+			GameObject.Destroy (GameObject.Find ("RealMusic"));
+
+
 		NumPlayers = 0;
 		if(GameObject.Find("CharacterSelectManager") != null){
 			CharacterSelectManager csm = GameObject.Find("CharacterSelectManager").GetComponent<CharacterSelectManager>();
@@ -55,6 +63,8 @@ public class GameManager : Utilities {
 			InstantiatePrefabs(csm);
 
 			GameObject.Destroy(csm.gameObject);
+
+		
 		}
 		else{
 			print("deu merda");

@@ -36,6 +36,7 @@ public class RoomBehaviour : MonoBehaviour {
         {
             SpawnFlag();
             FlagSpawned = true;
+			GameObject.Destroy (this.gameObject);
         }
         
     }
@@ -65,9 +66,10 @@ public class RoomBehaviour : MonoBehaviour {
 
     void SpawnFlag()
     {
-        GameObject obj = Instantiate(FlagPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+		GameObject obj = Instantiate(FlagPrefab,transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform.parent);
         obj.transform.Rotate(0, 180, 0);
 		obj.transform.GetChild(0).GetComponent<Light>().range = FlagRadius;
+		SoundManager.SM.PlayAchievement ();
     }
 	
 	void OnDrawGizmosSelected() {

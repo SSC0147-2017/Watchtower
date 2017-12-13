@@ -38,8 +38,8 @@ public class DepthsBehaviour : EnemyBehaviour {
 		//print("tgt " + target);
 		CurrTarget = CalculateTarget();
 
-		if(CurrTarget != null)
-			TgtScript = CurrTarget.GetComponent<Movement> ();
+		if(CurrTarget != null && TgtScript == null)
+			TgtScript = CurrTarget.GetComponent<Movement>();
 
 		//PERSEGUINDO/ATACANDO
 		if (CurrTarget != null && TgtScript != null) {
@@ -73,6 +73,7 @@ public class DepthsBehaviour : EnemyBehaviour {
 
 			//Get possible target script
 			Movement possTgtScript = col.GetComponent<GetParentCol>().Get();
+
 
 			//No current target and possible target is alive
 			if (ClosestTarget == null && !possTgtScript.isDead) {

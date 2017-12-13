@@ -72,22 +72,23 @@ public class WaveSpawner : MonoBehaviour {
 	
 	public IEnumerator Spawn(){
 		//delay before each spawn
-		yield return new WaitForSeconds(spawnDelays[count]);
+		if (spawnDelays.Count > 0) {
+			yield return new WaitForSeconds (spawnDelays [count]);
 
-        //generates a random position for spawning, inside a range
-        Vector3 pos = SpawnPosition + new Vector3(Random.Range(-SpawnRange, SpawnRange), transform.position.y, Random.Range(-SpawnRange, SpawnRange));
+			//generates a random position for spawning, inside a range
+			Vector3 pos = SpawnPosition + new Vector3 (Random.Range (-SpawnRange, SpawnRange), transform.position.y, Random.Range (-SpawnRange, SpawnRange));
 
-        //instantiates the next enemy
-		GameObject obj = Instantiate(prefabs[count], pos, Quaternion.identity);
+			//instantiates the next enemy
+			GameObject obj = Instantiate (prefabs [count], pos, Quaternion.identity);
 
-        refs.Add(obj);
-		count++;
+			refs.Add (obj);
+			count++;
 
-        //detects if it's the last enemy. if it's not, calls the coroutine again. if it is, destroys the spawner
-        if (count < enemies.Count && count < spawnDelays.Count)
-        {
-            StartCoroutine(Spawn());
-        }
+			//detects if it's the last enemy. if it's not, calls the coroutine again. if it is, destroys the spawner
+			if (count < enemies.Count && count < spawnDelays.Count) {
+				StartCoroutine (Spawn ());
+			}
+		}
 	}
 	
 	//draws a cube for reference of where the spawn area is in the scene
