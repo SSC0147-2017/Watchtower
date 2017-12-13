@@ -2,17 +2,63 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PauseMenuBehaviour : MonoBehaviour {
 
 	public EventSystem EventSys;
+	public Button[] btns;
+
+	private string controller = null;
+
+	public List<AudioSource> AudioList = new List<AudioSource>();
+
+	bool isChangingBtn;
+	int currentBtn = 0;
+
 	GameObject FirstButton;
 
 	void Start()
     {
-		FirstButton = transform.Find("ResumeButton").gameObject;
-        SelectFirstButton();
+		/*FirstButton = transform.Find("ResumeButton").gameObject;
+        SelectFirstButton();*/
     }
+
+	void OnEnable(){
+		StartCoroutine( ButtonHighlightDelay ());
+	}
+
+	void Update(){
+
+		if (controller != null) {
+
+			if (Input.GetAxis (controller + "Vertical") == 0) {
+				isChangingBtn = false;
+			}
+
+			if(Input.GetAxis(controller+"Vertical") < 0 && !isChangingBtn){
+				isChangingBtn = true;
+				currentBtn = (currentBtn + 1) % btns.Length;
+				btns[currentBtn].Select ();
+			}
+			if(Input.GetAxis(controller+"Vertical") > 0 && !isChangingBtn){
+				isChangingBtn = true;
+				currentBtn = ((currentBtn - 1) + btns.Length )% btns.Length;
+				btns[currentBtn].Select ();
+			}
+
+			if(Input.GetButton(controller+"Fire0")){
+				SoundManager.SM.PlayButton ();
+				btns[currentBtn].onClick.Invoke();
+			}
+		}
+
+	}
+		
+	public void setController(string str){
+		controller = str;
+	} 
+
 
     public void SelectFirstButton()
     {
@@ -20,8 +66,13 @@ public class PauseMenuBehaviour : MonoBehaviour {
     }
 	
 	public void MuteMusic(){
-		//pega referencia pro audio source
-		//audio source.mute
+
+		for (int i = 0; i < AudioList.Count; i++)
+		{
+			AudioSource source = AudioList[i];
+
+			source.mute = !source.mute;
+		}
 	}
 	
 	public void QuitGame(){
@@ -34,7 +85,8 @@ public class PauseMenuBehaviour : MonoBehaviour {
 	
 	IEnumerator ButtonHighlightDelay()
     {
-        yield return new WaitForSeconds(0.1f);
-        EventSys.SetSelectedGameObject(FirstButton.gameObject);
+        yield return new WaitForSeconds(0.2f);
+		btns[currentBtn].Select ();
+		//EventSys.SetSelectedGameObject(FirstButton.gameObject);
     }
 }

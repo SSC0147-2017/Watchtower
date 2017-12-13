@@ -8,6 +8,8 @@ public class GameManager : Utilities {
 
 	public static GameManager GM;
 	
+	public BattleMusicManager MusicRef;
+	
 	public AudioSource SwooshSound;
 	public List<GameObject> CharPrefabs = new List<GameObject>();
 	
@@ -40,6 +42,14 @@ public class GameManager : Utilities {
 	
 	// Use this for initialization
 	void Start () {
+
+		if (GameObject.Find ("Music") != null)
+			GameObject.Destroy (GameObject.Find ("Music"));
+
+		if (GameObject.Find ("RealMusic") != null)
+			GameObject.Destroy (GameObject.Find ("RealMusic"));
+
+
 		NumPlayers = 0;
 		if(GameObject.Find("CharacterSelectManager") != null){
 			CharacterSelectManager csm = GameObject.Find("CharacterSelectManager").GetComponent<CharacterSelectManager>();
@@ -55,6 +65,8 @@ public class GameManager : Utilities {
 			InstantiatePrefabs(csm);
 
 			GameObject.Destroy(csm.gameObject);
+
+		
 		}
 		else{
 			print("deu merda");
@@ -65,8 +77,14 @@ public class GameManager : Utilities {
 	void Update ()
 	{
 
+		bool joystick1 = Input.GetKeyDown (KeyCode.Joystick1Button7);
+		bool joystick2 = Input.GetKeyDown (KeyCode.Joystick2Button7);
+		bool joystick3 = Input.GetKeyDown (KeyCode.Joystick3Button7);
+		bool joystick4 = Input.GetKeyDown (KeyCode.Joystick3Button7);
+		bool keyboard = Input.GetKeyDown (KeyCode.Escape);
+
 		//Pause Game
-		if(Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7) || Input.GetKeyDown(KeyCode.Joystick3Button7) || Input.GetKeyDown(KeyCode.Joystick4Button7) || Input.GetKeyDown(KeyCode.Escape))
+		if(joystick1 || joystick2 || joystick3 || joystick4 || keyboard)
         {
             if (isGamePaused)
             {
@@ -74,7 +92,16 @@ public class GameManager : Utilities {
             }
             else
             {
-                PauseGame();
+				if (joystick1)
+					PauseGame ("Joystick1");
+				else if (joystick2)
+					PauseGame ("Joystick2");
+				else if (joystick3)
+					PauseGame ("Joystick3");
+				else if (joystick4)
+					PauseGame ("Joystick4");
+				else if (keyboard)
+					PauseGame ("");
             }
         }
 	}
@@ -130,10 +157,11 @@ public class GameManager : Utilities {
 	#endregion
 
 	#region Pause Methods
-    void PauseGame()
+	void PauseGame(string controller)
     {
         Canvas.transform.Find("PausePanel").gameObject.SetActive(true);
-		Canvas.transform.Find("PausePanel").GetComponent<PauseMenuBehaviour>().SelectFirstButton();
+		//Canvas.transform.Find("PausePanel").GetComponent<PauseMenuBehaviour>().SelectFirstButton();
+		Canvas.transform.Find("PausePanel").GetComponent<PauseMenuBehaviour>().setController(controller);
         isGamePaused = true;
 		Time.timeScale = 0;
     }
@@ -181,6 +209,8 @@ public class GameManager : Utilities {
 	#region Game Over / Victory methods
 	void GameOver()
 	{
+		//MusicRef.StopBattleMusic();
+		MusicRef.StartGameOverMusic();
 		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 		StartCoroutine(PanelDelay(2f, "GameOverPanel"));
 		isGameOver = true;
