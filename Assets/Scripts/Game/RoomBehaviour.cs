@@ -77,7 +77,7 @@ public class RoomBehaviour : MonoBehaviour {
 		GameObject obj = Instantiate(FlagPrefab,transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform.parent);
         obj.transform.Rotate(0, 180, 0);
 		obj.transform.GetChild(0).GetComponent<Light>().range = FlagRadius;
-		SoundManager.SM.PlayAchievement ();
+		SoundManager.SM.PlayFlag();
     }
 	
 	void OnDrawGizmosSelected() {
