@@ -9,23 +9,48 @@ ModelImporter:
     100002: Camera
     100004: Cube.000
     100006: Lamp
+    100008: FloorL
+    100010: FloorR
+    100012: Wall
     400000: //RootNode
     400002: Camera
     400004: Cube.000
     400006: Lamp
+    400008: FloorL
+    400010: FloorR
+    400012: Wall
     2000000: Camera
     2300000: //RootNode
     2300002: Cube.000
+    2300004: FloorL
+    2300006: FloorR
+    2300008: Wall
     3300000: //RootNode
     3300002: Cube.000
+    3300004: FloorL
+    3300006: FloorR
+    3300008: Wall
     4300000: Cube.000
+    4300002: FloorL
+    4300004: FloorR
+    4300006: Wall
     10800000: Lamp
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: bf4c23ea5a032a448a6c7e90b0b68d44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material.004
     second: {fileID: 2100000, guid: 3acbee7e2bd960a4ba6011dc7bbde8da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: f6e349b64db442740971d17dfeae9a9f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

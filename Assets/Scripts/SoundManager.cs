@@ -1,3 +1,4 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -142,3 +143,4 @@ public class SoundManager : MonoBehaviour {
 		Source.PlayOneShot(ItemPickup[index], 0.5f);
 	}
 }
+*/
