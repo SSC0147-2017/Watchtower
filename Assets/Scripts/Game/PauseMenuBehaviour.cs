@@ -32,6 +32,9 @@ public class PauseMenuBehaviour : MonoBehaviour {
 
 		if (controller != null) {
 
+			btns[currentBtn].Select ();
+
+
 			if (Input.GetAxis (controller + "Vertical") == 0) {
 				isChangingBtn = false;
 			}
@@ -39,17 +42,19 @@ public class PauseMenuBehaviour : MonoBehaviour {
 			if(Input.GetAxis(controller+"Vertical") < 0 && !isChangingBtn){
 				isChangingBtn = true;
 				currentBtn = (currentBtn + 1) % btns.Length;
-				btns[currentBtn].Select ();
 			}
 			if(Input.GetAxis(controller+"Vertical") > 0 && !isChangingBtn){
 				isChangingBtn = true;
 				currentBtn = ((currentBtn - 1) + btns.Length )% btns.Length;
-				btns[currentBtn].Select ();
 			}
 
 			if(Input.GetButton(controller+"Fire0")){
 				SoundManager.SM.PlayButton ();
 				btns[currentBtn].onClick.Invoke();
+			}
+
+			if(Input.GetButton(controller+"Fire1")){
+				Resume ();
 			}
 		}
 

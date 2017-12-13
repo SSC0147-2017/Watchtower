@@ -13,7 +13,7 @@ public class EndGameBehaviour : MonoBehaviour {
 
 	private string controller = "Joystick1";
     
-	bool isChangingBtn;
+	bool isChangingBtn=false;
 	int currentBtn = 0;
 
 	// Use this for initialization
@@ -29,6 +29,8 @@ public class EndGameBehaviour : MonoBehaviour {
 
 		if (controller != null) {
 
+			btns[currentBtn].Select ();
+
 			if (Input.GetAxis (controller + "Vertical") == 0) {
 				isChangingBtn = false;
 			}
@@ -36,12 +38,10 @@ public class EndGameBehaviour : MonoBehaviour {
 			if(Input.GetAxis(controller+"Vertical") < 0 && !isChangingBtn){
 				isChangingBtn = true;
 				currentBtn = (currentBtn + 1) % btns.Length;
-				btns[currentBtn].Select ();
 			}
 			if(Input.GetAxis(controller+"Vertical") > 0 && !isChangingBtn){
 				isChangingBtn = true;
 				currentBtn = ((currentBtn - 1) + btns.Length )% btns.Length;
-				btns[currentBtn].Select ();
 			}
 
 			if(Input.GetButton(controller+"Fire0")){
@@ -61,6 +61,9 @@ public class EndGameBehaviour : MonoBehaviour {
     {
         GameManager.GM.BackToMainMenu();
     }
+
+
+
 
     IEnumerator ButtonHighlightDelay()
     {
