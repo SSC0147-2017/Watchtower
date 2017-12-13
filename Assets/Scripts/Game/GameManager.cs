@@ -8,6 +8,8 @@ public class GameManager : Utilities {
 
 	public static GameManager GM;
 	
+	public BattleMusicManager MusicRef;
+	
 	public AudioSource SwooshSound;
 	public List<GameObject> CharPrefabs = new List<GameObject>();
 	
@@ -191,6 +193,8 @@ public class GameManager : Utilities {
 	#region Game Over / Victory methods
 	void GameOver()
 	{
+		//MusicRef.StopBattleMusic();
+		MusicRef.StartGameOverMusic();
 		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 		StartCoroutine(PanelDelay(2f, "GameOverPanel"));
 		isGameOver = true;

@@ -1,8 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomBehaviour : MonoBehaviour {
+	
+	public BattleMusicManager MusicRef;
 
     WaveSpawner[] SpawnerList;
     int SpawnCount = 0;
@@ -36,7 +38,12 @@ public class RoomBehaviour : MonoBehaviour {
         {
             SpawnFlag();
             FlagSpawned = true;
-			GameObject.Destroy (this.gameObject);
+			GameObject.Destroy (GetComponent<BoxCollider>());
+			for(int i = 0; i <SpawnerList.Length; i++){
+				GameObject.Destroy(SpawnerList[i]);
+			}
+			MusicRef.StopBattleMusic();
+			StartCoroutine(DestroyDelay(1f));
         }
         
     }
@@ -47,6 +54,7 @@ public class RoomBehaviour : MonoBehaviour {
         {
             StartCoroutine(Wave());
             StartedWaves = true;
+			MusicRef.PlayBattleMusic();
         }
     }
 
@@ -76,4 +84,9 @@ public class RoomBehaviour : MonoBehaviour {
         Gizmos.color = Color.green;	
         Gizmos.DrawCube(transform.position, new Vector3(1, 5, 1));
     }
+	
+	IEnumerator DestroyDelay(float delay){
+		yield return new WaitForSeconds(delay);
+		GameObject.Destroy(this);
+	}
 }

@@ -34,7 +34,7 @@ public class WaveSpawner : MonoBehaviour {
 
     //tracks if there are any enemies alive
     List<GameObject> refs = new List<GameObject>();
-    [HideInInspector]
+    //[HideInInspector]
 	public bool allDead = false;
 
     void Start(){
@@ -76,10 +76,10 @@ public class WaveSpawner : MonoBehaviour {
 			yield return new WaitForSeconds (spawnDelays [count]);
 
 			//generates a random position for spawning, inside a range
-			Vector3 pos = SpawnPosition + new Vector3 (Random.Range (-SpawnRange, SpawnRange), transform.position.y, Random.Range (-SpawnRange, SpawnRange));
+			Vector3 pos = SpawnPosition + new Vector3 (Random.Range (-SpawnRange/2, SpawnRange/2), transform.position.y, Random.Range (-SpawnRange/2, SpawnRange/2));
 
 			//instantiates the next enemy
-			GameObject obj = Instantiate (prefabs [count], pos, Quaternion.identity);
+			GameObject obj = Instantiate (prefabs [count], pos, Quaternion.identity, transform);
 
 			refs.Add (obj);
 			count++;
