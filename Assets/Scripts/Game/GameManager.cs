@@ -69,7 +69,7 @@ public class GameManager : Utilities {
 		
 		}
 		else{
-			print("deu merda");
+			print("Character Select manager is Null");
 		}		
 	}
 	
@@ -191,7 +191,7 @@ public class GameManager : Utilities {
 	// Method called by Movement.cs when a player "dies"
 	public void playerDown(){
 		NumLivePlayers--;
-		print ("Live: " + NumLivePlayers);
+		//print ("Live: " + NumLivePlayers);
 		if (NumLivePlayers <= 0) {
 			GameOver ();
 		}
@@ -201,7 +201,7 @@ public class GameManager : Utilities {
 	public void playerUp(){
 		if(NumLivePlayers+1 <= NumPlayers)
 			NumLivePlayers++;
-		print ("Live: " + NumLivePlayers);
+		//print ("Live: " + NumLivePlayers);
 	}
 
 	#endregion

@@ -177,7 +177,7 @@ public class InventoryController : MonoBehaviour
 	 */
 	public void useBomb(){
 		if (currBombs > 0) {
-			GameObject bomb = GameObject.Instantiate (bombPrefab, transform.position + transform.forward, transform.rotation);
+			GameObject bomb = GameObject.Instantiate (bombPrefab, transform.position + Vector3.up + transform.forward, transform.rotation);
 			Rigidbody rb = bomb.GetComponent<Rigidbody> ();
 			rb.AddForce (transform.forward*5, ForceMode.Impulse);
 			currBombs--;
