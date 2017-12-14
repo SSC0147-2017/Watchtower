@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class Movement : MonoBehaviour {
@@ -42,6 +43,7 @@ public class Movement : MonoBehaviour {
 	public int RevivePts;
 	private bool isHelp;
 	public Collider Range;
+	public Canvas HealthCanvas;
 	//Revive
 
 	public bool outsiderAtk=false;
@@ -105,7 +107,17 @@ public class Movement : MonoBehaviour {
 			ControlPlayer();
 		}
 		else {
+			if(!HealthCanvas.gameObject.activeSelf){
+				HealthCanvas.transform.Find("FrontReviveBar").GetComponent<Image>().fillAmount = 0;
+				HealthCanvas.gameObject.SetActive(true);
+			}
+			else{
+				HealthCanvas.transform.Find("FrontReviveBar").GetComponent<Image>().fillAmount = (float)RevivePool/(float)RevivePoolMax;
+			}
+			
 			if(RevivePool>=RevivePoolMax){
+				HealthCanvas.transform.Find("FrontReviveBar").GetComponent<Image>().fillAmount = 0;
+				HealthCanvas.gameObject.SetActive(false);
 				Revive();
 				RevivePool=0;
 			}
