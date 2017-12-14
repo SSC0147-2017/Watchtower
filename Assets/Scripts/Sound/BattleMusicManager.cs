@@ -11,7 +11,7 @@ public class BattleMusicManager : MonoBehaviour {
 	public void PlayBattleMusic (){
 		int index = Random.Range(0, BattleMusic.Length-1);
 		GetComponent<AudioSource>().clip = BattleMusic[index];
-		GetComponent<AudioSource>().volume = 0.5f;
+		GetComponent<AudioSource>().volume = 0.4f;
 		GetComponent<AudioSource>().Play();
 	}
 	
