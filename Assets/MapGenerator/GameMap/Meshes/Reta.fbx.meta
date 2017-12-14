@@ -3,17 +3,39 @@ guid: ea41fa3d6a035c7439de50852930b3ba
 timeCreated: 1509230627
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Floor
+    100004: Wall
     400000: //RootNode
+    400002: Floor
+    400004: Wall
     2300000: //RootNode
+    2300002: Floor
+    2300004: Wall
     3300000: //RootNode
+    3300002: Floor
+    3300004: Wall
     4300000: Cube
+    4300002: Wall
+    4300004: Floor
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: bf4c23ea5a032a448a6c7e90b0b68d44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: f6e349b64db442740971d17dfeae9a9f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -26,6 +48,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
