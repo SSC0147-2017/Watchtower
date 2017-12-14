@@ -90,7 +90,6 @@ public class EndGameBehaviour : MonoBehaviour {
             c.a = Mathf.Lerp(1f, 0f, time / delay);
 
             obj.GetComponent<Text>().color = c;
-            print("c " + c);
             yield return null;
             time += Time.deltaTime;
         }
