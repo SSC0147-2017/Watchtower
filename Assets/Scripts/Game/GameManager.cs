@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Utilities {
@@ -23,6 +24,9 @@ public class GameManager : Utilities {
 
     public GameObject TargetGroup;
     public GameObject Canvas;
+
+	public Sprite[] BackIcons;
+	public Sprite[] FrontIcons;
 
     private bool isGameOver = false;
     private bool isGamePaused = false;
@@ -128,7 +132,7 @@ public class GameManager : Utilities {
 				Destroy(transform.GetChild(i).gameObject);
 				SetController(obj, i+1, csm);
 				SetCamera(i, obj);
-				SetUI(i, obj);
+				SetUI(i, obj, PlayerCharacters[i]);
 			}
 			else
 				Destroy(transform.GetChild(i).gameObject);
@@ -154,15 +158,16 @@ public class GameManager : Utilities {
 		obj.GetComponent<Movement>().Initiate(str); 		
 	}
 	
-	void SetUI(int index, GameObject obj)
+	void SetUI(int index, GameObject obj, int character)
 	{
 	
 		GameObject ui = Canvas.transform.GetChild(index).gameObject;
+		Canvas.transform.GetChild (index).GetChild (0).GetComponent<Image> ().sprite = BackIcons [character];
+		Canvas.transform.GetChild (index).GetChild (1).GetComponent<Image> ().sprite = FrontIcons [character];
 			
         ui.SetActive(true);
-        print("entrou");
         ui.GetComponent<UIBehaviour>().player = obj;
-        print(ui.GetComponent<UIBehaviour>().player);   
+		   
 	}
 
 	#endregion
