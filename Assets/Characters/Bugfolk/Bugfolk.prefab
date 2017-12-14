@@ -874,7 +874,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975870703521806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 131.56514, y: 0, z: 114.99463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4670521023894624}
@@ -1386,8 +1386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 1975870703521806}
-  damage: 25
-  cooldownTime: 1.7
+  damage: 37
+  cooldownTime: 2.5
 --- !u!114 &114361307176815180
 MonoBehaviour:
   m_ObjectHideFlags: 1
