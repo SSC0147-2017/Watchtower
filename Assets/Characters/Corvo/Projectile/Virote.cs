@@ -9,10 +9,10 @@ public class Virote : MonoBehaviour {
 
 	void Start(){
 		if(this.gameObject.name == "Bullet(Clone)"){
-			SoundManager.SM.PlayPistol();
+			//SoundManager.SM.PlayPistol();
 		}
 		else if(this.gameObject.name == "Virote(Clone)"){
-			SoundManager.SM.PlayCrossbow();
+			//SoundManager.SM.PlayCrossbow();
 		}
 	}
 

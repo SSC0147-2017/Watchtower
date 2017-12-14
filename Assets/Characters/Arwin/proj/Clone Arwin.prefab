@@ -872,8 +872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc2e6396e631274f86953c181606173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 99
-  C: {fileID: 114577613917056182, guid: 08780ba2dc47ff548b092183c1a4d1e0, type: 2}
+  damage: 49
+  C: {fileID: 114098028955356588, guid: 44283cdc428b98443a15371c01af2676, type: 2}
   Explosion: {fileID: 1297710035452182, guid: 610c1163e4d6b6245af7b58fdad188d0, type: 2}
   Smoke: {fileID: 1318280100125624, guid: b3d8c6f2d6cdee54a8ca648941353c1c, type: 2}
 --- !u!135 &135644673366905692
@@ -897,6 +897,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -912,6 +913,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -945,6 +947,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -960,6 +963,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

@@ -10,23 +10,24 @@ public class Hobbes : MonoBehaviour {
 	private Melee ArwinME;
 	private Melee JackieM;
 
-	public Transform CorvoT;
-	public Transform ArwinT;
-	public Transform JackieT;
+	private Transform CorvoT;
+	private Transform ArwinT;
+	private Transform JackieT;
 
 	private float DA;
 	private float DC;
 	private float DJ;
 
-	void Start() {
-		CorvoM = CorvoT.gameObject.GetComponent<GetChildMelee>().GetD();
-		ArwinMD = ArwinT.gameObject.GetComponent<GetChildMelee>().GetD();
-		ArwinME = ArwinT.gameObject.GetComponent<GetChildMelee>().GetE();
-		JackieM = JackieT.gameObject.GetComponent<GetChildMelee>().GetD();
+	public Collider C;
+	public float B;
 
-		DA=ArwinMD.Dano;
-		DC=CorvoM.Dano;
-		DJ=JackieM.Dano;
+	void Start() {
+		StartCoroutine(ColOff());
+	}
+
+	IEnumerator ColOff() {
+		yield return new WaitForSeconds(1.0f);
+		C.enabled=false;
 	}
 
 	// Update is called once per frame
@@ -34,32 +35,57 @@ public class Hobbes : MonoBehaviour {
 		if(!HobbesM.isDead){
 			if(CorvoM!=null)
 			if(Vector3.Distance(CorvoT.position,transform.position)<=7.0f){
-				CorvoM.Dano=DC+10f;
+				CorvoM.Dano=DC+B;
 			}
 			else
 				CorvoM.Dano=DC;
 			if(ArwinMD!=null)
 			if(Vector3.Distance(ArwinT.position,transform.position)<=7.0f){
-				ArwinMD.Dano=DA+10f;
+				ArwinMD.Dano=DA+B;
 			}
 			else
 				ArwinMD.Dano=DA;
 			if(ArwinME!=null)
 			if(Vector3.Distance(ArwinT.position,transform.position)<=7.0f){
-				ArwinME.Dano=DA+10f;
+				ArwinME.Dano=DA+B;
 			}
 			else
 				ArwinME.Dano=DA;
 			if(JackieM!=null)
 			if(Vector3.Distance(JackieT.position,transform.position)<=7.0f){
-				JackieM.Dano=DJ+10f;
+				JackieM.Dano=DJ+B;
 			}
 			else
 				JackieM.Dano=DJ;
 		}
-		Debug.Log("Corvo: "+CorvoM.Dano);
-		Debug.Log("ArwinD: "+ArwinMD.Dano);
-		Debug.Log("ArwinE: "+ArwinME.Dano);
-		Debug.Log("Jackie: "+JackieM.Dano);
+	}
+
+	void OnTriggerEnter(Collider Col){
+		Movement M;
+		M=Col.GetComponent<GetParentCol>().Get();
+		if(Col.gameObject.layer==9){
+			if(CorvoM==null){
+				CorvoM=M.gameObject.GetComponent<GetChildMelee>().GetD();
+				CorvoT=M.transform;
+				DC=CorvoM.Dano;
+			}
+		}
+		if(Col.gameObject.layer==10){
+			if(ArwinMD==null){
+				ArwinMD=M.gameObject.GetComponent<GetChildMelee>().GetD();
+				ArwinT=M.transform;
+			}
+			if(ArwinME==null){
+				ArwinME=M.gameObject.GetComponent<GetChildMelee>().GetE();
+				DA=ArwinMD.Dano;
+			}
+		}
+		if(Col.gameObject.layer==11){
+			if(JackieM==null){
+				JackieM=M.gameObject.GetComponent<GetChildMelee>().GetD();
+				JackieT=M.transform;
+				DJ=JackieM.Dano;
+			}
+		}
 	}
 }

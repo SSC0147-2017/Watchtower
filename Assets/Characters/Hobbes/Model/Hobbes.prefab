@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 114072444822118058}
   - component: {fileID: 135836466165105890}
   - component: {fileID: 114755204773949084}
+  - component: {fileID: 135848319695366612}
   m_Layer: 9
   m_Name: Hobbes
   m_TagString: Player
@@ -901,7 +902,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595417321565934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 139.31937, y: 0.00000023841858, z: 119.1088}
+  m_LocalPosition: {x: 139.59204, y: 0, z: 117.151344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4018747813847498}
@@ -1222,7 +1223,7 @@ MonoBehaviour:
   spread: 0
   ProjSpd: 0
   ColLayer: 9
-  SpecialTime: 4.3
+  SpecialTime: 4
   rollTime: 2.27
   rollDmgRed: 0.5
   AttackTime: 1.33
@@ -1305,9 +1306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HobbesM: {fileID: 114420385486182732}
-  CorvoT: {fileID: 4184216919365770, guid: 968519f3dd652294f95fe2e16d82c88f, type: 2}
-  ArwinT: {fileID: 4809313349817288, guid: 08780ba2dc47ff548b092183c1a4d1e0, type: 2}
-  JackieT: {fileID: 4425516713381966, guid: e57deb4086d2bf4439242f7a0da41174, type: 2}
+  C: {fileID: 135848319695366612}
+  B: 10
 --- !u!114 &114789936415778118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1423,6 +1423,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!135 &135848319695366612
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595417321565934}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136101184408457346
 CapsuleCollider:
   m_ObjectHideFlags: 1
