@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Scripts/CameraFacingBillboard.cs.meta
 guid: 964e916d4927bfd4bb3cecb592e54494
 timeCreated: 1513253492
+=======
+guid: 7d6bc4004c7a87f44903f5e086f6b635
+timeCreated: 1513255960
+>>>>>>> Stashed changes:Assets/Scripts/SoundManager.cs.meta
 licenseType: Free
 MonoImporter:
   externalObjects: {}
