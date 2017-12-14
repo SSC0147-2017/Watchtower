@@ -56,7 +56,7 @@ public class HealthController : MonoBehaviour {
 	 */
 	public void takeDamage(float damage){
 
-        if (canBeHurt) {
+		if (canBeHurt && !isDead) {
 
             if (gameObject.name == "Bugfolk(Clone)")
             {
@@ -81,7 +81,6 @@ public class HealthController : MonoBehaviour {
 
 
 		if (this.currentHp <= 0) {
-			this.isDead = true;
 			this.die ();
 		} else {
 			
@@ -111,7 +110,8 @@ public class HealthController : MonoBehaviour {
 	 * @return void
 	 */
 	private void die (){
-		isDead=true;
+		this.isDead = true;		
+		this.canBeHurt = false;
 		this.gameObject.GetComponent<Animator>().SetBool("IsAlive",false);
 		StartCoroutine(Destroi());
 	}
