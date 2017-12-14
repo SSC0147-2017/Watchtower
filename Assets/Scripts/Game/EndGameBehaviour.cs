@@ -18,11 +18,18 @@ public class EndGameBehaviour : MonoBehaviour {
 
 	// Use this for initialization
     void Start () {
+        StartCoroutine(FadeInButtons(transform.GetChild(0).gameObject, 1f));
+        for (int i = 0; i < btns.Length; i++)
+            StartCoroutine(FadeInButtons(btns[i].gameObject, 1f));
         StartCoroutine(ButtonHighlightDelay());
     }
 
 	void OnEnable(){
-		Time.timeScale = 0;
+        StartCoroutine(FadeInButtons(transform.GetChild(0).gameObject, 1f));
+        for (int i = 0; i < btns.Length; i++)
+            StartCoroutine(FadeInButtons(btns[i].gameObject, 1f));
+        StartCoroutine(ButtonHighlightDelay());
+        StartCoroutine(TimeScaleDelay(1.5f));
 	}
 		
 	void Update(){
@@ -54,20 +61,71 @@ public class EndGameBehaviour : MonoBehaviour {
 
     public void Restart()
     {
-		GameManager.GM.RestartGame ();
+        StartCoroutine(FadeOutButtons(transform.GetChild(0).gameObject, 1f));
+        for (int i = 0; i < btns.Length; i++)
+            StartCoroutine(FadeOutButtons(btns[i].gameObject, 1f));
+        GameManager.GM.RestartGame ();
     }
 
     public void Quit()
     {
+        StartCoroutine(FadeOutButtons(transform.GetChild(0).gameObject, 1f));
+        for (int i = 0; i < btns.Length; i++)
+            StartCoroutine(FadeOutButtons(btns[i].gameObject, 1f));
         GameManager.GM.BackToMainMenu();
     }
 
+    IEnumerator FadeOutButtons(GameObject obj, float delay)
+    {
+        Color c = obj.GetComponent<Text>().color;
+        c.a = 1f;
+        obj.GetComponent<Text>().color = c;
 
+        obj.gameObject.SetActive(true);
 
+        float time = 0;
+
+        while (time < delay)
+        {
+            c.a = Mathf.Lerp(1f, 0f, time / delay);
+
+            obj.GetComponent<Text>().color = c;
+            print("c " + c);
+            yield return null;
+            time += Time.deltaTime;
+        }
+        obj.gameObject.SetActive(false);
+    }
+
+    IEnumerator FadeInButtons(GameObject obj, float delay)
+    {
+        Color c = obj.GetComponent<Text>().color;
+        c.a = 0f;
+        obj.GetComponent<Text>().color = c;
+
+        obj.gameObject.SetActive(true);
+
+        float time = 0;
+
+        while (time < delay)
+        {
+            c.a = Mathf.Lerp(0f, 1f, time / delay);
+
+            obj.GetComponent<Text>().color = c;
+            yield return null;
+            time += Time.deltaTime;
+        }
+    }
 
     IEnumerator ButtonHighlightDelay()
     {
         yield return new WaitForSeconds(0.3f);
         EventSys.SetSelectedGameObject(FirstButton.gameObject);
+    }
+
+    IEnumerator TimeScaleDelay(float f)
+    {
+        yield return new WaitForSeconds(f);
+        Time.timeScale = 0;
     }
 }

@@ -81,30 +81,41 @@ public class GameManager : Utilities {
 		bool joystick2 = Input.GetKeyDown (KeyCode.Joystick2Button7);
 		bool joystick3 = Input.GetKeyDown (KeyCode.Joystick3Button7);
 		bool joystick4 = Input.GetKeyDown (KeyCode.Joystick3Button7);
-		bool keyboard = Input.GetKeyDown (KeyCode.Escape);
+        bool keyboard = Input.GetKeyDown (KeyCode.Escape);
 
 		//Pause Game
-		if(joystick1 || joystick2 || joystick3 || joystick4 || keyboard)
+		if(joystick1 || joystick2 || joystick3 || joystick4 || Input.GetKeyDown(KeyCode.Escape))
         {
+
             if (isGamePaused)
             {
                 UnPauseGame();
             }
             else
             {
-				if (joystick1)
-					PauseGame ("Joystick1");
-				else if (joystick2)
-					PauseGame ("Joystick2");
-				else if (joystick3)
-					PauseGame ("Joystick3");
-				else if (joystick4)
-					PauseGame ("Joystick4");
-				else if (keyboard)
-					PauseGame ("");
+                if (joystick1)
+                {
+                    PauseGame("Joystick1");
+                }
+                else if (joystick2)
+                {
+                    PauseGame("Joystick2");
+                }
+                else if (joystick3)
+                {
+                    PauseGame("Joystick3");
+                }
+                else if (joystick4)
+                {
+                    PauseGame("Joystick4");
+                }
+                else if (keyboard)
+                {
+                    PauseGame("");
+                }
             }
         }
-	}
+    }
 
 	#region Initialization Methods
 
@@ -168,9 +179,10 @@ public class GameManager : Utilities {
 
     public void UnPauseGame()
     {
+        print("unpause");
+        Time.timeScale = 1;
         Canvas.transform.Find("PausePanel").gameObject.SetActive(false);
         isGamePaused = false;
-		Time.timeScale = 1;
     }
 	
 	public void BackToMainMenu(){

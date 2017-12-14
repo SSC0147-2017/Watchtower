@@ -48,12 +48,12 @@ public class PauseMenuBehaviour : MonoBehaviour {
 				currentBtn = ((currentBtn - 1) + btns.Length )% btns.Length;
 			}
 
-			if(Input.GetButton(controller+"Fire0")){
+			if(Input.GetButtonDown(controller+"Fire0")){
 				SoundManager.SM.PlayButton ();
 				btns[currentBtn].onClick.Invoke();
 			}
 
-			if(Input.GetButton(controller+"Fire1")){
+			if(Input.GetButtonDown(controller+"Fire1")){
 				Resume ();
 			}
 		}
@@ -85,6 +85,7 @@ public class PauseMenuBehaviour : MonoBehaviour {
 	}
 	
 	public void Resume(){
+        print("resume");
 		GameManager.GM.UnPauseGame();
 	}
 	
