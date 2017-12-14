@@ -84,7 +84,7 @@ public class Movement : MonoBehaviour {
 			}
 			if(Input.GetButtonDown(Controller+"Fire2")) {
 				if(!isAtk){
-                    //SoundManager.SM.PlayAttack();
+                    SoundManager.SM.PlayAttack();
 					anim.SetTrigger("Attack");
 					anim.SetFloat("Speed",0.0f);
 					StartCoroutine(waitAttackTime());
@@ -191,17 +191,17 @@ public class Movement : MonoBehaviour {
             
             if(gameObject.name == "Arwin(Clone)")
             {
-                //SoundManager.SM.PlayArwinGrunt();
+                SoundManager.SM.PlayArwinGrunt();
             }
             else if(gameObject.name == "Hobbes(Clone)")
             {
-                //SoundManager.SM.PlayHobbesGrunt();
+                SoundManager.SM.PlayHobbesGrunt();
             }
             else if(gameObject.name == "Corvo(Clone)" || gameObject.name == "Jackie(Clone)")
             {
-                //SoundManager.SM.PlayCorJackGrunt();
+                SoundManager.SM.PlayCorJackGrunt();
             }
-            //SoundManager.SM.PlayHit();
+            SoundManager.SM.PlayHit();
 
             float netDamage = damage * defense;
 			if (netDamage > 0) {
@@ -227,14 +227,12 @@ public class Movement : MonoBehaviour {
 
 	private IEnumerator waitInvinciTime() {
 		canBeHurt = false;
-		isMovable=false;
 		isAtk=true;
 		isDog=true;
 		isSpe=true;
 		anim.SetBool("CanAttack",false);
 		yield return new WaitForSeconds(invicibilityTime);
 		canBeHurt = true;
-		isMovable=true;
 		anim.SetBool("CanAttack",true);
 		isAtk=false;
 		isDog=false;
