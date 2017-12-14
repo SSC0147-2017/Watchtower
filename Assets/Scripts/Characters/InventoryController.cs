@@ -120,14 +120,14 @@ public class InventoryController : MonoBehaviour
 		case itemType.bread:
 			if (currBread > 0) {
 				currBread--;
-				GameObject obj = GameObject.Instantiate(breadPickup, transform.position + transform.forward, 
+				GameObject obj = GameObject.Instantiate(breadPickup, transform.position + 2*transform.forward, 
 					Quaternion.AngleAxis(-90, Vector3.right));
 			}
 			break;
 		case itemType.bomb:
 			if (currBombs > 0) {
 				currBombs--;
-				GameObject obj = GameObject.Instantiate(bombPickup, transform.position + transform.forward, 
+				GameObject obj = GameObject.Instantiate(bombPickup, transform.position + 2*transform.forward, 
 					Quaternion.AngleAxis(-90, Vector3.right));
 			}
 			break;
