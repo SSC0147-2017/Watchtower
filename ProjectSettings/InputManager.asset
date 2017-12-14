@@ -7,7 +7,7 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: Horizontal
-    descriptiveName: 
+    descriptiveName: Keyboard Horizontal Movement
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
@@ -23,7 +23,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Vertical
-    descriptiveName: 
+    descriptiveName: Keyboard Vertical Movement
     descriptiveNegativeName: 
     negativeButton: down
     positiveButton: up
@@ -39,7 +39,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
-    descriptiveName: Dodge
+    descriptiveName: Keyboard Dodge
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left shift
@@ -55,7 +55,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire2
-    descriptiveName: Attack
+    descriptiveName: Keyboard Attack
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: x
@@ -71,7 +71,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire3
-    descriptiveName: Special
+    descriptiveName: Keyboard Special
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: c
@@ -87,7 +87,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire0
-    descriptiveName: Revive
+    descriptiveName: Keyboard Revive
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: z
@@ -100,54 +100,6 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
-  - serializedVersion: 3
-    m_Name: Mouse X
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0
-    sensitivity: 0.1
-    snap: 0
-    invert: 0
-    type: 1
-    axis: 0
-    joyNum: 0
-  - serializedVersion: 3
-    m_Name: Mouse Y
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0
-    sensitivity: 0.1
-    snap: 0
-    invert: 0
-    type: 1
-    axis: 1
-    joyNum: 0
-  - serializedVersion: 3
-    m_Name: Mouse ScrollWheel
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0
-    sensitivity: 0.1
-    snap: 0
-    invert: 0
-    type: 1
-    axis: 2
     joyNum: 0
   - serializedVersion: 3
     m_Name: Joystick1Fire1
@@ -407,7 +359,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Joystick1Horizontal
-    descriptiveName: P1 Horizontal movement
+    descriptiveName: P1 Horizontal Movement
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -423,7 +375,7 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: Joystick2Horizontal
-    descriptiveName: P2 Horizontal movement
+    descriptiveName: P2 Horizontal Movement
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -439,7 +391,7 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: Joystick3Horizontal
-    descriptiveName: P3 Horizontal movement
+    descriptiveName: P3 Horizontal Movement
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -455,7 +407,7 @@ InputManager:
     joyNum: 3
   - serializedVersion: 3
     m_Name: Joystick4Horizontal
-    descriptiveName: P4 Horizontal movement
+    descriptiveName: P4 Horizontal Movement
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -471,7 +423,7 @@ InputManager:
     joyNum: 4
   - serializedVersion: 3
     m_Name: Joystick1Vertical
-    descriptiveName: P1 Vertical movement
+    descriptiveName: P1 Vertical Movement
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -487,7 +439,7 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: Joystick2Vertical
-    descriptiveName: P2 Vertical movement
+    descriptiveName: P2 Vertical Movement
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -503,7 +455,7 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: Joystick3Vertical
-    descriptiveName: P3 Vertical movement
+    descriptiveName: P3 Vertical Movement
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -519,7 +471,7 @@ InputManager:
     joyNum: 3
   - serializedVersion: 3
     m_Name: Joystick4Vertical
-    descriptiveName: P4 Vertical movement
+    descriptiveName: P4 Vertical Movement
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -535,7 +487,7 @@ InputManager:
     joyNum: 4
   - serializedVersion: 3
     m_Name: Submit
-    descriptiveName: 
+    descriptiveName: Keyboard Start
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: return
@@ -551,7 +503,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Cancel
-    descriptiveName: 
+    descriptiveName: Keyboard Cancel
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: escape
@@ -567,7 +519,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Joystick1Triggers
-    descriptiveName: 
+    descriptiveName: P1 Drop/Use Items
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -583,7 +535,7 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: Joystick2Triggers
-    descriptiveName: 
+    descriptiveName: P2 Drop/Use Items
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -599,7 +551,7 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: Joystick3Triggers
-    descriptiveName: 
+    descriptiveName: P3 Drop/Use Items
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -615,7 +567,7 @@ InputManager:
     joyNum: 3
   - serializedVersion: 3
     m_Name: Joystick4Triggers
-    descriptiveName: 
+    descriptiveName: P4 Drop/Use Items
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -631,7 +583,7 @@ InputManager:
     joyNum: 4
   - serializedVersion: 3
     m_Name: Joystick1RightBumper
-    descriptiveName: 
+    descriptiveName: P1 Cycle Item Right
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 1 button 5
@@ -647,7 +599,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Joystick1LeftBumper
-    descriptiveName: 
+    descriptiveName: P1 Cycle Item Left
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 1 button 4
@@ -663,7 +615,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Joystick2RightBumper
-    descriptiveName: 
+    descriptiveName: P2 Cycle Item Right
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 2 button 5
@@ -679,7 +631,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Joystick2LeftBumper
-    descriptiveName: 
+    descriptiveName: P2 Cycle Item Left
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 2 button 4
@@ -695,7 +647,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Joystick3RightBumper
-    descriptiveName: 
+    descriptiveName: P3 Cycle Item Right
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 3 button 5
@@ -710,8 +662,8 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Joystick3RightBumper
-    descriptiveName: 
+    m_Name: Joystick3LeftBumper
+    descriptiveName: P3 Cycle Item Left
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 3 button 4
@@ -727,7 +679,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Joystick4RightBumper
-    descriptiveName: 
+    descriptiveName: P4 Cycle Item Right
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 4 button 5
@@ -743,7 +695,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Joystick4LeftBumper
-    descriptiveName: 
+    descriptiveName: P4 Cycle Item Left
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 4 button 4
@@ -759,7 +711,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: LeftBumper
-    descriptiveName: 
+    descriptiveName: Keyboard Cycle Item Left
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: q
@@ -775,7 +727,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: RightBumper
-    descriptiveName: 
+    descriptiveName: Keyboard Cycle Item Right
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: e
@@ -791,7 +743,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Triggers
-    descriptiveName: Use/Drop Items
+    descriptiveName: Keyboard Drop/Use Items
     descriptiveNegativeName: 
     negativeButton: g
     positiveButton: h

@@ -33,16 +33,18 @@ public class EMContentPanel : MonoBehaviour {
 	 * @param null para "Limpar" o text area e o titulo
 	 */
 	public void switchTextAsset(TextAsset newTextAsset){
-		if (newTextAsset != null) {
-			this.textAsset = newTextAsset;
+		if (txtComp != null && titleTxtComp != null) {
+			if (newTextAsset != null) {
+				this.textAsset = newTextAsset;
 
-			txtComp.text = textAsset.text;
-			titleTxtComp.text = textAsset.name;
+				txtComp.text = textAsset.text;
+				titleTxtComp.text = textAsset.name;
 
-			textScrollbar.value = 1;
-		} else {//Se nulo, impla
-			txtComp.text = "";
-			titleTxtComp.text = "";
+				textScrollbar.value = 1;
+			} else {//Se nulo, impla
+				txtComp.text = "";
+				titleTxtComp.text = "";
+			}
 		}
 	}
 
