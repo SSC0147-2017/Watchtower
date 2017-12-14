@@ -7824,7 +7824,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 109c52a440a5f7a44b0696617effdada, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8297,9 +8297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  BombSprite: {fileID: 21300000, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-  BreadSprite: {fileID: 21300002, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-  ArquebusSprite: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
+  BombSprite: {fileID: 21300000, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
+  BreadSprite: {fileID: 21300002, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
 --- !u!1 &257981446
 GameObject:
   m_ObjectHideFlags: 0
@@ -12050,7 +12049,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 109c52a440a5f7a44b0696617effdada, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12643,7 +12642,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 109c52a440a5f7a44b0696617effdada, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12765,9 +12764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  BombSprite: {fileID: 21300000, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-  BreadSprite: {fileID: 21300002, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-  ArquebusSprite: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
+  BombSprite: {fileID: 21300000, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
+  BreadSprite: {fileID: 21300002, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
 --- !u!1001 &506018430
 Prefab:
   m_ObjectHideFlags: 0
@@ -15130,9 +15128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  BombSprite: {fileID: 21300000, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-  BreadSprite: {fileID: 21300002, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-  ArquebusSprite: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
+  BombSprite: {fileID: 21300000, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
+  BreadSprite: {fileID: 21300002, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
 --- !u!1001 &734271466
 Prefab:
   m_ObjectHideFlags: 0
@@ -22423,7 +22420,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 109c52a440a5f7a44b0696617effdada, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -37022,9 +37019,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  BombSprite: {fileID: 21300000, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-  BreadSprite: {fileID: 21300002, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-  ArquebusSprite: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
+  BombSprite: {fileID: 21300000, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
+  BreadSprite: {fileID: 21300002, guid: 3a0c7ab9618ef5a45b7c85c8b034fcab, type: 3}
 --- !u!1001 &2114278741
 Prefab:
   m_ObjectHideFlags: 0
