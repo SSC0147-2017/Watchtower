@@ -5,29 +5,71 @@ using UnityEngine;
 public class Corvo : MonoBehaviour {
 
 	public Movement CorvoM;
-	public Movement HobbesM;
-	public Movement ArwinM;
-	public Movement JackieM;
+	public Collider C;
+	public float T;
+	public int cura;
 
-	public Transform HobbesT;
-	public Transform ArwinT;
-	public Transform JackieT;
-	
+	private Movement HobbesM=null;
+	private Movement ArwinM=null;
+	private Movement JackieM=null;
+
+	private Transform HobbesT=null;
+	private Transform ArwinT=null;
+	private Transform JackieT=null;
+
+	void Start() {
+		StartCoroutine(ColOff());
+		StartCoroutine(Cura());
+	}
+
+	IEnumerator ColOff() {
+		yield return new WaitForSeconds(1.0f);
+		C.enabled=false;
+	}
+
 	// Update is called once per frame
-	void Update () {
+	IEnumerator Cura () {
 		if(!CorvoM.isDead){
-			if(HobbesM!=null)
+			if(HobbesM!=null){
 				if(Vector3.Distance(HobbesT.position,transform.position)<=7.0f){
-					HobbesM.GainHP(1);
+					HobbesM.GainHP(cura);
 				}
-			if(ArwinM!=null)
+			}
+			if(ArwinM!=null) {
 				if(Vector3.Distance(ArwinT.position,transform.position)<=7.0f){
-					ArwinM.GainHP(1);
+					ArwinM.GainHP(cura);
 				}
-			if(JackieM!=null)
+			}
+			if(JackieM!=null){
 				if(Vector3.Distance(JackieT.position,transform.position)<=7.0f){
-					JackieM.GainHP(1);
+					JackieM.GainHP(cura);
 				}
+			}
+		}
+		yield return new WaitForSeconds(T);
+		StartCoroutine(Cura());
+	}
+
+	void OnTriggerEnter(Collider Col){
+		Movement G;
+		G=Col.gameObject.GetComponent<GetParentCol>().Get();
+		if(Col.gameObject.layer==9){
+			if(HobbesM==null){
+				HobbesM=G;
+				HobbesT=G.transform;
+			}
+		}
+		if(Col.gameObject.layer==10){
+			if(ArwinM==null){
+				ArwinM=G;
+				ArwinT=G.transform;
+			}
+		}
+		if(Col.gameObject.layer==11){
+			if(JackieM==null){
+				JackieM=G;
+				JackieT=G.transform;
+			}
 		}
 	}
 }
