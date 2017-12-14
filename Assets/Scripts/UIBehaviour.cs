@@ -12,7 +12,7 @@ public class UIBehaviour : MonoBehaviour {
 
     public Sprite BombSprite;
     public Sprite BreadSprite;
-    public Sprite ArquebusSprite;
+    //public Sprite ArquebusSprite;
 
 	// Use this for initialization
 	void Start () {
@@ -39,10 +39,10 @@ public class UIBehaviour : MonoBehaviour {
         {
             transform.Find("Item").GetComponent<Image>().sprite = BreadSprite;
         }
-        else if (CurrentItem == InventoryController.itemType.arquebus)
+        /*else if (CurrentItem == InventoryController.itemType.arquebus)
         {
             transform.Find("Item").GetComponent<Image>().sprite = ArquebusSprite;
-        }
+        }*/
     }
 
     /*void UseSkill()
