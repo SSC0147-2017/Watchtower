@@ -18,12 +18,6 @@ public class PauseMenuBehaviour : MonoBehaviour {
 
 	GameObject FirstButton;
 
-	void Start()
-    {
-		/*FirstButton = transform.Find("ResumeButton").gameObject;
-        SelectFirstButton();*/
-    }
-
 	void OnEnable(){
 		StartCoroutine( ButtonHighlightDelay ());
 	}
@@ -62,15 +56,9 @@ public class PauseMenuBehaviour : MonoBehaviour {
 		
 	public void setController(string str){
 		controller = str;
-	} 
-
-
-    public void SelectFirstButton()
-    {
-        StartCoroutine(ButtonHighlightDelay());
-    }
+	}
 	
-	public void MuteMusic(){
+	public void Mute(){
 
 		for (int i = 0; i < AudioList.Count; i++)
 		{
@@ -85,7 +73,6 @@ public class PauseMenuBehaviour : MonoBehaviour {
 	}
 	
 	public void Resume(){
-        print("resume");
 		GameManager.GM.UnPauseGame();
 	}
 	
@@ -93,6 +80,5 @@ public class PauseMenuBehaviour : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.2f);
 		btns[currentBtn].Select ();
-		//EventSys.SetSelectedGameObject(FirstButton.gameObject);
     }
 }
