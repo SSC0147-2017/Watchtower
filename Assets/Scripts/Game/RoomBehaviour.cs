@@ -8,14 +8,23 @@ public class RoomBehaviour : MonoBehaviour {
 
     WaveSpawner[] SpawnerList;
     int SpawnCount = 0;
-
     public float WaveDelay;
 
 	public float FlagRadius;
     public GameObject FlagPrefab;
-    bool FlagSpawned = false;
 
-    bool StartedWaves = false;
+	[Header("Item Spawn Variables")]
+	public GameObject BreadPickupPrefab;
+	public GameObject BombPickupPrefab;
+	[Tooltip("Maximum Range for spawning item pickups")]
+	public float itemSpawnRange = 5;
+
+	[Tooltip("% of bombSpawn chance on flag spawn")]
+	[Range(0,100)]
+	public int bombSpawnChance = 25;
+
+	bool FlagSpawned = false;
+	bool StartedWaves = false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +34,7 @@ public class RoomBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        int aux = 0;
+	    int aux = 0;
         for(int i = 0; i< SpawnerList.Length; i++)
         {
             if(SpawnerList[i].allDead == true)
@@ -78,7 +87,36 @@ public class RoomBehaviour : MonoBehaviour {
         obj.transform.Rotate(0, 180, 0);
 		obj.transform.GetChild(0).GetComponent<Light>().range = FlagRadius;
 		SoundManager.SM.PlayFlag();
+
+		SpawnItems();
     }
+
+	/**
+	 * Gets number of players. Spawn 1 bread for each player
+	 * Has a chance to spawn a bomb for each player
+	 */
+	void SpawnItems(){
+		int numPlayers = GameManager.GM.getNumPlayers ();
+
+		//Spawn Bread
+		for (int i = 0; i < numPlayers; i++) {
+			Vector3 pos = transform.position + new Vector3 (Random.Range (-itemSpawnRange/2, itemSpawnRange/2), transform.position.y, Random.Range (-itemSpawnRange/2, itemSpawnRange/2));
+			GameObject obj = Instantiate (BreadPickupPrefab,  pos, Quaternion.identity, transform.parent);
+			obj.transform.Rotate (new Vector3 (-90, 0, 0), Space.World);
+		}
+
+		//Spawn bombs... maybe
+		for (int i = 0; i < numPlayers; i++) {
+			int die = Random.Range (1, 100);
+			//print (die + "/" + bombSpawnChance);
+			if (die <= bombSpawnChance) {
+				Vector3 pos = transform.position + new Vector3 (Random.Range (-itemSpawnRange/2, itemSpawnRange/2), transform.position.y, Random.Range (-itemSpawnRange/2, itemSpawnRange/2));
+				GameObject obj = Instantiate (BombPickupPrefab,  pos, Quaternion.identity, transform.parent);
+				obj.transform.Rotate (new Vector3 (-90, 0, 0), Space.World);
+			}
+		}
+	}
+
 	
 	void OnDrawGizmosSelected() {
         Gizmos.color = Color.green;	

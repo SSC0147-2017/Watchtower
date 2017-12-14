@@ -283,4 +283,9 @@ public class GameManager : Utilities {
 		Canvas.transform.Find(name).gameObject.SetActive(true);
 	}
 	#endregion
+
+
+	public int getNumPlayers(){
+		return NumPlayers;
+	}
 }

@@ -65,9 +65,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3943205ca6b4a814cbdc65a5bd782d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicRef: {fileID: 0}
   WaveDelay: 0
   FlagRadius: 0
-  FlagPrefab: {fileID: 1890579438794206, guid: d407929e83de19644857068577b7e79d, type: 2}
+  FlagPrefab: {fileID: 1956719905918874, guid: faf9fd6771e2a144881b81351bc98eb7, type: 2}
+  BreadPickupPrefab: {fileID: 1405295509584090, guid: 72947f71bc4347c4993469c9a8233733,
+    type: 2}
+  BombPickupPrefab: {fileID: 1720806034021904, guid: f0781d022be9a2e4a996c56c462b3203,
+    type: 2}
+  itemSpawnRange: 5
+  bombSpawnChance: 30
 --- !u!114 &114489094134527742
 MonoBehaviour:
   m_ObjectHideFlags: 1

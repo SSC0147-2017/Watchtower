@@ -91,7 +91,7 @@ public class CharacterSelect : MonoBehaviour {
         else if (CurrentIndex == 1)
             return "Hobbes";
         else if (CurrentIndex == 2)
-            return "Arwin";
+            return "Arwen";
         else if (CurrentIndex == 3)
             return "Jackie";
         else
