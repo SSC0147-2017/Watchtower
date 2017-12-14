@@ -19,7 +19,7 @@ public class AchievementBehaviour : MonoBehaviour {
         SoundManager.SM.PlayAchievement();
 
         InitialPosition = transform.position;
-		TargetPosition = new Vector3(Screen.width/2, Screen.height/6, 0);
+		TargetPosition = new Vector3(Screen.width/2, Screen.height/8, 0);
 
         iTween.MoveTo(
             gameObject,
