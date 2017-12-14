@@ -26447,6 +26447,16 @@ MonoBehaviour:
   PlayerRefs: []
   TargetGroup: {fileID: 1451041635}
   Canvas: {fileID: 967213670}
+  BackIcons:
+  - {fileID: 21300000, guid: 5e34c0cd2ca624d45bd77d11598b8462, type: 3}
+  - {fileID: 21300000, guid: f9e9581571ee5204684c32cd53d11cd3, type: 3}
+  - {fileID: 21300000, guid: 09cf56983f12b464a81ec42f01e1bf1c, type: 3}
+  - {fileID: 21300000, guid: 29d6f3dc9a1a5cc438b964024d8756fb, type: 3}
+  FrontIcons:
+  - {fileID: 21300000, guid: 00692f809895d0d4799f3c25fed3a2c4, type: 3}
+  - {fileID: 21300000, guid: b08ccb18a9e047b4babf4d18d9ad8c83, type: 3}
+  - {fileID: 21300000, guid: d549a15cbb38edc4f8c2d0fa77408f06, type: 3}
+  - {fileID: 21300000, guid: 109c52a440a5f7a44b0696617effdada, type: 3}
 --- !u!4 &1702252778
 Transform:
   m_ObjectHideFlags: 0
