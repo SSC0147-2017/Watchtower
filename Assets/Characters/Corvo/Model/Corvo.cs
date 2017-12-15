@@ -52,21 +52,24 @@ public class Corvo : MonoBehaviour {
 
 	void OnTriggerEnter(Collider Col){
 		Movement G;
-		G=Col.gameObject.GetComponent<GetParentCol>().Get();
+		
 		if(Col.gameObject.layer==9){
-			if(HobbesM==null){
+            G = Col.gameObject.GetComponent<GetParentCol>().Get();
+            if (HobbesM==null){
 				HobbesM=G;
 				HobbesT=G.transform;
 			}
 		}
 		if(Col.gameObject.layer==10){
-			if(ArwinM==null){
+            G = Col.gameObject.GetComponent<GetParentCol>().Get();
+            if (ArwinM==null){
 				ArwinM=G;
 				ArwinT=G.transform;
 			}
 		}
 		if(Col.gameObject.layer==11){
-			if(JackieM==null){
+            G = Col.gameObject.GetComponent<GetParentCol>().Get();
+            if (JackieM==null){
 				JackieM=G;
 				JackieT=G.transform;
 			}
