@@ -75,7 +75,7 @@ public class Movement : MonoBehaviour {
 	void FixedUpdate () {
 		if(!isDead){
 			if(Input.GetButton(Controller+"Fire0")) {
-					anim.SetTrigger("Help",true);
+					anim.SetBool("Help",true);
 					anim.SetFloat("Speed",0.0f);
 					isMovable=false;
 					Range.enabled=true;
