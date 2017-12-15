@@ -59,7 +59,7 @@ public class RoomBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (StartedWaves == false && other.tag == "Player")
+        if (StartedWaves == false && other.tag == "Player" && other.GetType() != typeof(SphereCollider))
         {
             StartCoroutine(Wave());
             StartedWaves = true;
