@@ -61,10 +61,10 @@ public class InventoryController : MonoBehaviour
 			usingItem = false;
 		}
 
-		if (Input.GetAxis (playerBehav.Controller + "Triggers") < 0  && !usingItem) {
+		if (Input.GetAxis (playerBehav.Controller + "Triggers") < 0  && !usingItem && !playerBehav.isDead) {
 			useCurrentItem ();
 		}
-		if (Input.GetAxis (playerBehav.Controller + "Triggers") > 0  && !usingItem) {
+		if (Input.GetAxis (playerBehav.Controller + "Triggers") > 0  && !usingItem && !playerBehav.isDead) {
 			dropCurrentItem ();
 		}
 	}
