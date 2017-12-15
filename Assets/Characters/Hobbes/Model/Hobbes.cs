@@ -62,16 +62,18 @@ public class Hobbes : MonoBehaviour {
 
 	void OnTriggerEnter(Collider Col){
 		Movement M;
-		M=Col.GetComponent<GetParentCol>().Get();
+		
 		if(Col.gameObject.layer==9){
-			if(CorvoM==null){
+            M = Col.GetComponent<GetParentCol>().Get();
+            if (CorvoM==null){
 				CorvoM=M.gameObject.GetComponent<GetChildMelee>().GetD();
 				CorvoT=M.transform;
 				DC=CorvoM.Dano;
 			}
 		}
 		if(Col.gameObject.layer==10){
-			if(ArwinMD==null){
+            M = Col.GetComponent<GetParentCol>().Get();
+            if (ArwinMD==null){
 				ArwinMD=M.gameObject.GetComponent<GetChildMelee>().GetD();
 				ArwinT=M.transform;
 			}
@@ -81,7 +83,8 @@ public class Hobbes : MonoBehaviour {
 			}
 		}
 		if(Col.gameObject.layer==11){
-			if(JackieM==null){
+            M = Col.GetComponent<GetParentCol>().Get();
+            if (JackieM==null){
 				JackieM=M.gameObject.GetComponent<GetChildMelee>().GetD();
 				JackieT=M.transform;
 				DJ=JackieM.Dano;

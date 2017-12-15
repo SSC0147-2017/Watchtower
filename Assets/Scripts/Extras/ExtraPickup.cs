@@ -14,7 +14,7 @@ public class ExtraPickup : MonoBehaviour {
 
 	void OnTriggerStay (Collider col){
 		//Player pegou
-		if (col.tag == "Player") {
+		if (col.tag == "Player" && col.GetType() != typeof(SphereCollider)) {
 
 			bool saveResult = ExtrasManager.extrasManager.unlockExtra (type, index);
 
