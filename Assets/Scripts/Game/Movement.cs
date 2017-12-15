@@ -82,6 +82,7 @@ public class Movement : MonoBehaviour {
 			}
 			else{
 				Range.enabled=false;
+				isMovable=true;
 				anim.SetBool("Help",false);
 			}
 			if(Input.GetButtonDown(Controller+"Fire2")) {
