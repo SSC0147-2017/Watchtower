@@ -48,7 +48,12 @@ public class GameManager : Utilities {
 	// Use this for initialization
 	void Start () {
 
-		if (GameObject.Find ("Music") != null)
+        Physics.IgnoreLayerCollision(8, 13, false);
+        Physics.IgnoreLayerCollision(9, 13, false);
+        Physics.IgnoreLayerCollision(10, 13, false);
+        Physics.IgnoreLayerCollision(11, 13, false);
+
+        if (GameObject.Find ("Music") != null)
 			GameObject.Destroy (GameObject.Find ("Music"));
 
 		if (GameObject.Find ("RealMusic") != null)

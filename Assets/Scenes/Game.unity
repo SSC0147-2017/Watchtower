@@ -2515,7 +2515,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 156450525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 0, z: -65.2}
+  m_LocalPosition: {x: 6.01, y: 0, z: -63.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 643052264}
@@ -13868,6 +13868,11 @@ Prefab:
       propertyPath: index
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114143548986057434, guid: 8259497a9681aab4e8b5904468eb5e0a,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
@@ -19699,6 +19704,11 @@ Prefab:
       propertyPath: AchievementPanel
       value: 
       objectReference: {fileID: 148475971}
+    - target: {fileID: 114143548986057434, guid: 8259497a9681aab4e8b5904468eb5e0a,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
@@ -20599,6 +20609,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114143548986057434, guid: 8259497a9681aab4e8b5904468eb5e0a,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
@@ -20721,6 +20736,11 @@ Prefab:
       propertyPath: AchievementPanel
       value: 
       objectReference: {fileID: 148475971}
+    - target: {fileID: 114143548986057434, guid: 8259497a9681aab4e8b5904468eb5e0a,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
@@ -20781,6 +20801,11 @@ Prefab:
       propertyPath: AchievementPanel
       value: 
       objectReference: {fileID: 148475971}
+    - target: {fileID: 114143548986057434, guid: 8259497a9681aab4e8b5904468eb5e0a,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
@@ -22496,6 +22521,11 @@ Prefab:
       propertyPath: AchievementPanel
       value: 
       objectReference: {fileID: 148475971}
+    - target: {fileID: 114143548986057434, guid: 8259497a9681aab4e8b5904468eb5e0a,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
@@ -29167,6 +29197,11 @@ Prefab:
       propertyPath: AchievementPanel
       value: 
       objectReference: {fileID: 148475971}
+    - target: {fileID: 114143548986057434, guid: 8259497a9681aab4e8b5904468eb5e0a,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
@@ -30248,6 +30283,11 @@ Prefab:
       propertyPath: AchievementPanel
       value: 
       objectReference: {fileID: 148475971}
+    - target: {fileID: 114143548986057434, guid: 8259497a9681aab4e8b5904468eb5e0a,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
@@ -32158,7 +32198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints:
   - {x: 82.74814, y: -0.7200012, z: 30.235546}
-  - {x: 27.948135, y: -0.7200012, z: 34.53555}
+  - {x: 30.758133, y: -0.7200012, z: 36.525547}
   - {x: 29.648136, y: -0.7200012, z: 61.535545}
   - {x: 81.74814, y: -0.7200012, z: 58.135548}
 --- !u!1001 &1721637285
@@ -36934,6 +36974,11 @@ Prefab:
       propertyPath: AchievementPanel
       value: 
       objectReference: {fileID: 148475971}
+    - target: {fileID: 114143548986057434, guid: 8259497a9681aab4e8b5904468eb5e0a,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8259497a9681aab4e8b5904468eb5e0a, type: 2}
   m_IsPrefabParent: 0
