@@ -46,7 +46,7 @@ public class CharacterSelect : MonoBehaviour {
     void Update()
     {
         if (CSM.Available[CurrentIndex] == false) {
-            NextCharacter();
+            transform.GetChild(0).GetComponent<Text>().text = NextCharacter();
         }
         PlayerCamera.transform.position = Vector3.MoveTowards(PlayerCamera.transform.position, CameraPositions[CurrentIndex], Speed * Time.deltaTime);
 
@@ -133,7 +133,7 @@ public class CharacterSelect : MonoBehaviour {
         else if (CurrentIndex == 1)
             return "Hobbes";
         else if (CurrentIndex == 2)
-            return "Arwin";
+            return "Arwen";
         else if (CurrentIndex == 3)
             return "Jackie";
         else

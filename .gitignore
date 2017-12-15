@@ -36,3 +36,5 @@ sysinfo.txt
 Library/
 
 Assets/Scripts/SoundManager\.cs\.meta
+
+*.exe
