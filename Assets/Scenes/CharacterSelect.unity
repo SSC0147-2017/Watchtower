@@ -237,7 +237,7 @@ MonoBehaviour:
   str2: Hobbes
   str3: Arwin
   str4: Jackie
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 68336457}
 --- !u!114 &42185252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,7 +917,7 @@ MonoBehaviour:
   str2: Charges in a straight line knocking aside and damaging anyone in his path
   str3: Creates a shadow clone that distracts enemies and explodes after a brief delay
   str4: Fires a powerful shot from his powder pistol in a straight line
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 68336457}
 --- !u!114 &99998680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,7 +1486,7 @@ MonoBehaviour:
   str2: Smashes his slow but powerful hammer into anyone in front of him
   str3: Slashes quickly in front of her with her double daggers
   str4: Uses his cutlass to attack in an arc in front of him
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 68336457}
 --- !u!114 &178249944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2067,7 +2067,7 @@ MonoBehaviour:
   str2: Charges in a straight line knocking aside and damaging anyone in his path
   str3: Creates a shadow clone that distracts enemies and explodes after a brief delay
   str4: Fires a powerful shot from his powder pistol in a straight line
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 916565430}
 --- !u!114 &289870381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2249,7 +2249,7 @@ MonoBehaviour:
   str2: Charges in a straight line knocking aside and damaging anyone in his path
   str3: Creates a shadow clone that distracts enemies and explodes after a brief delay
   str4: Fires a powerful shot from his powder pistol in a straight line
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 1044709267}
 --- !u!114 &293548351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6975,7 +6975,7 @@ MonoBehaviour:
   str2: Hobbes
   str3: Arwin
   str4: Jackie
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 916565430}
 --- !u!114 &551064622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8511,7 +8511,7 @@ MonoBehaviour:
   str2: Hobbes
   str3: Arwin
   str4: Jackie
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 1044709267}
 --- !u!114 &752547334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9230,7 +9230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &826341963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10529,7 +10529,7 @@ MonoBehaviour:
   str2: Blocks a fraction of incoming damage
   str3: Blinks a short distance in any direction
   str4: Parries and evades incoming attacks, becoming immune for a very short duration
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 1044709267}
 --- !u!114 &1105947078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11516,6 +11516,18 @@ Prefab:
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: InitialModule.startSize.minScalar
@@ -14317,7 +14329,7 @@ MonoBehaviour:
   str2: Blocks a fraction of incoming damage
   str3: Blinks a short distance in any direction
   str4: Parries and evades incoming attacks, becoming immune for a very short duration
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 68336457}
 --- !u!114 &1497586675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15578,7 +15590,7 @@ MonoBehaviour:
   str2: Smashes his slow but powerful hammer into anyone in front of him
   str3: Slashes quickly in front of her with her double daggers
   str4: Uses his cutlass to attack in an arc in front of him
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 1044709267}
 --- !u!114 &1662693630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16393,7 +16405,7 @@ MonoBehaviour:
   str2: Smashes his slow but powerful hammer into anyone in front of him
   str3: Slashes quickly in front of her with her double daggers
   str4: Uses his cutlass to attack in an arc in front of him
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 916565430}
 --- !u!114 &1720028261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17604,6 +17616,18 @@ Prefab:
       propertyPath: InitialModule.startSize.minScalar
       value: 0.4500
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
   m_IsPrefabParent: 0
@@ -18369,7 +18393,7 @@ MonoBehaviour:
   str2: Blocks a fraction of incoming damage
   str3: Blinks a short distance in any direction
   str4: Parries and evades incoming attacks, becoming immune for a very short duration
-  CharacterSelectPanel: {fileID: 1878035742}
+  CharacterSelectPanel: {fileID: 916565430}
 --- !u!114 &2018413313
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,7 +40,8 @@ public class GameManager : Utilities {
 			Destroy(GM.gameObject);
 		}
 
-        StartCoroutine(FadeOut(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
+        StartCoroutine(StartTextDelay());
+        //StartCoroutine(FadeOut(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 
     }
 	
@@ -226,7 +227,12 @@ public class GameManager : Utilities {
 	#region Game Over / Victory methods
 	void GameOver()
 	{
-		//MusicRef.StopBattleMusic();
+        Physics.IgnoreLayerCollision(8, 13, true);
+        Physics.IgnoreLayerCollision(9, 13, true);
+        Physics.IgnoreLayerCollision(10, 13, true);
+        Physics.IgnoreLayerCollision(11, 13, true);
+
+        MusicRef.StopBattleMusic();
 		MusicRef.StartGameOverMusic();
 		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 		StartCoroutine(PanelDelay(2f, "GameOverPanel"));
@@ -249,7 +255,13 @@ public class GameManager : Utilities {
 	 * Função chamada quando os jogadores chegarem no Floofy
 	 */
 	public void Victory(){
-		StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
+
+        Physics.IgnoreLayerCollision(8, 13, true);
+        Physics.IgnoreLayerCollision(9, 13, true);
+        Physics.IgnoreLayerCollision(10, 13, true);
+        Physics.IgnoreLayerCollision(11, 13, true);
+
+        StartCoroutine(FadeIn(Canvas.transform.Find("BlackScreen").gameObject, 2f, 1f));
 		StartCoroutine(PanelDelay(2f, "VictoryPanel"));
 		isGameOver = true;
 
@@ -262,8 +274,8 @@ public class GameManager : Utilities {
 				ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, 2);
 			else if (PlayerRefs[i].layer==LayerMask.NameToLayer("Jackie"))
 				ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, 3);		
-			else
-				ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, 3);		
+			else if (PlayerRefs[i].layer == LayerMask.NameToLayer("Arwin"))
+                ExtrasManager.extrasManager.unlockExtra (ExtrasManager.extrasType.bios, 0);		
 		}
 	}
 
@@ -272,14 +284,18 @@ public class GameManager : Utilities {
 	#region delay methods
 	IEnumerator RestartDelay(float delay)
 	{
-		yield return new WaitForSeconds(delay);
+        print("entrou");
+        yield return new WaitForSeconds(delay);
+        print("saiu");
 		SceneManager.LoadScene("CharacterSelect");
 	}
 
 
 	IEnumerator BackToMenuDelay(float delay)
     {
+        print("entrou");
         yield return new WaitForSeconds(delay);
+        print("saiu");
         SceneManager.LoadScene("MainMenu");
     }
 	
@@ -287,6 +303,15 @@ public class GameManager : Utilities {
 		yield return new WaitForSeconds(delay);
 		Canvas.transform.Find(name).gameObject.SetActive(true);
 	}
+
+    IEnumerator StartTextDelay()
+    {
+        StartCoroutine(FadeInText(Canvas.transform.Find("StartText").gameObject, 2f, 1f));
+        yield return new WaitForSeconds(4f);
+        StartCoroutine(FadeOutText(Canvas.transform.Find("StartText").gameObject, 1f, 1f));
+        StartCoroutine(FadeOut(Canvas.transform.Find("BlackScreen").gameObject, 1f, 1f));
+
+    }
 	#endregion
 
 

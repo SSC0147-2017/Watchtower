@@ -34,10 +34,12 @@ public class UIBehaviour : MonoBehaviour {
         if (CurrentItem == InventoryController.itemType.bomb)
         {
             transform.Find("Item").GetComponent<Image>().sprite = BombSprite;
+            transform.Find("ItemCount").GetComponent<Text>().text = "x" + player.GetComponent<InventoryController>().currBombs;
         }
         else if (CurrentItem == InventoryController.itemType.bread)
         {
             transform.Find("Item").GetComponent<Image>().sprite = BreadSprite;
+            transform.Find("ItemCount").GetComponent<Text>().text = "x" + player.GetComponent<InventoryController>().currBread;
         }
         /*else if (CurrentItem == InventoryController.itemType.arquebus)
         {
