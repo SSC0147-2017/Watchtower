@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Corvo
   str2: Hobbes
-  str3: Arwin
+  str3: Arwen
   str4: Jackie
   CharacterSelectPanel: {fileID: 68336457}
 --- !u!114 &42185252
@@ -2195,7 +2195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Corvo
   str2: Hobbes
-  str3: Arwin
+  str3: Arwen
   str4: Jackie
   CharacterSelectPanel: {fileID: 1878035742}
 --- !u!1 &293548348
@@ -2797,8 +2797,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Dodge rolls in a direction and evades attacks
   str2: Blocks a fraction of incoming damage
-  str3: Blinks a short distance in any direction
-  str4: Parries and evades incoming attacks, becoming immune for a very short duration
+  str3: Rolls forward and dodges damage
+  str4: Evades attacks by rolling forward
   CharacterSelectPanel: {fileID: 1878035742}
 --- !u!1 &384315667
 GameObject:
@@ -6973,7 +6973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Corvo
   str2: Hobbes
-  str3: Arwin
+  str3: Arwen
   str4: Jackie
   CharacterSelectPanel: {fileID: 916565430}
 --- !u!114 &551064622
@@ -8509,7 +8509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Corvo
   str2: Hobbes
-  str3: Arwin
+  str3: Arwen
   str4: Jackie
   CharacterSelectPanel: {fileID: 1044709267}
 --- !u!114 &752547334
@@ -10005,7 +10005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Corvo
   str2: Hobbes
-  str3: Arwin
+  str3: Arwen
   str4: Jackie
   CharacterSelectPanel: {fileID: 68336457}
 --- !u!1 &1022475668
@@ -10527,8 +10527,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Dodge rolls in a direction and evades attacks
   str2: Blocks a fraction of incoming damage
-  str3: Blinks a short distance in any direction
-  str4: Parries and evades incoming attacks, becoming immune for a very short duration
+  str3: Rolls forward and dodges damage
+  str4: Evades attacks by rolling forward
   CharacterSelectPanel: {fileID: 1044709267}
 --- !u!114 &1105947078
 MonoBehaviour:
@@ -11761,6 +11761,10 @@ Prefab:
       propertyPath: InitialModule.startSize.minScalar
       value: 0.4500
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
   m_IsPrefabParent: 0
@@ -12157,7 +12161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Corvo
   str2: Hobbes
-  str3: Arwin
+  str3: Arwen
   str4: Jackie
   CharacterSelectPanel: {fileID: 1044709267}
 --- !u!1 &1252339212
@@ -12390,7 +12394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Corvo
   str2: Hobbes
-  str3: Arwin
+  str3: Arwen
   str4: Jackie
   CharacterSelectPanel: {fileID: 1878035742}
 --- !u!1 &1278119371
@@ -14327,8 +14331,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Dodge rolls in a direction and evades attacks
   str2: Blocks a fraction of incoming damage
-  str3: Blinks a short distance in any direction
-  str4: Parries and evades incoming attacks, becoming immune for a very short duration
+  str3: Rolls forward and dodges damage
+  str4: Evades attacks by rolling forward
   CharacterSelectPanel: {fileID: 68336457}
 --- !u!114 &1497586675
 MonoBehaviour:
@@ -17205,7 +17209,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Arwin
+  m_Text: Arwen
 --- !u!222 &1837697131
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17383,6 +17387,10 @@ Prefab:
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4500
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: InitialModule.startSize.minScalar
@@ -18391,8 +18399,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Dodge rolls in a direction and evades attacks
   str2: Blocks a fraction of incoming damage
-  str3: Blinks a short distance in any direction
-  str4: Parries and evades incoming attacks, becoming immune for a very short duration
+  str3: Rolls forward and dodges damage
+  str4: Evades attacks by rolling forward
   CharacterSelectPanel: {fileID: 916565430}
 --- !u!114 &2018413313
 MonoBehaviour:
@@ -18997,7 +19005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   str1: Corvo
   str2: Hobbes
-  str3: Arwin
+  str3: Arwen
   str4: Jackie
   CharacterSelectPanel: {fileID: 916565430}
 --- !u!1 &2108362666
