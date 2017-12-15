@@ -1249,7 +1249,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.99215686, g: 0.85882354, b: 0.5686275, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1554,7 +1554,7 @@ MonoBehaviour:
   rollTime: 1.13
   rollDmgRed: 0
   AttackTime: 1.83
-  RevivePts: 5
+  RevivePts: 3
   Range: {fileID: 135398820979036800}
   HealthCanvas: {fileID: 223369735253580706}
   outsiderAtk: 0
@@ -1574,7 +1574,6 @@ MonoBehaviour:
   playerBehav: {fileID: 114810921280883550}
   selectedItem: 0
   itemCooldownTime: 1
-  hpInc: 30
   maxBread: 3
   currBread: 3
   breadPickup: {fileID: 1405295509584090, guid: 72947f71bc4347c4993469c9a8233733,
