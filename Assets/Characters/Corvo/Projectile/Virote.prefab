@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e700f7ebaf5898e4f9102da629a9141c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dano: 50
+  Dano: 40
 --- !u!136 &136560790834179540
 CapsuleCollider:
   m_ObjectHideFlags: 1

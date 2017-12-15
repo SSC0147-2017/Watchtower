@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToBlow: 3
-  damage: 99
+  damage: 50
   Explosion: {fileID: 1297710035452182, guid: 4e574316d31ecb841ab86ff930f05141, type: 2}
 --- !u!135 &135566180804011632
 SphereCollider:

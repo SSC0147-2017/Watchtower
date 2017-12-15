@@ -15,8 +15,8 @@ public class InventoryController : MonoBehaviour
 	private bool usingItem = false;
 
 	[Header("Bread with lard")]
-	[Tooltip("HP increment per Bread")]
-	public int hpInc;
+	//[Tooltip("HP increment per Bread")]
+	int hpInc;
 	[Tooltip("Maximum number of Bread")]
 	public int maxBread;
 	[Tooltip("Current number of Bread")]
@@ -44,6 +44,7 @@ public class InventoryController : MonoBehaviour
 
 		if (playerBehav == null)
 			playerBehav = gameObject.GetComponent<Movement> ();
+        hpInc = playerBehav.MaxHP / 2;
 		selectedItem = itemType.bread;
 
 	}

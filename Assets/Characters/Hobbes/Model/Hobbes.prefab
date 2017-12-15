@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5190b98db3b085d4d92dbd61f50a0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dano: 200
+  Dano: 25
   P: {fileID: 114420385486182732}
 --- !u!114 &114373313271553724
 MonoBehaviour:
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bce93030225f66459385cf2cce8de6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 130
+  MaxHP: 250
   CurrentHP: 130
   isDead: 0
   invicibilityTime: 1.67
