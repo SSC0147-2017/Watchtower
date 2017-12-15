@@ -1554,7 +1554,7 @@ MonoBehaviour:
   rollTime: 1.13
   rollDmgRed: 0
   AttackTime: 1.83
-  RevivePts: 1
+  RevivePts: 5
   Range: {fileID: 135398820979036800}
   HealthCanvas: {fileID: 223369735253580706}
   outsiderAtk: 0
@@ -2594,7 +2594,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963493825991146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.394, z: 0.30937958}
+  m_LocalPosition: {x: 0, y: 0, z: 0.30937958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224971007772606968}
