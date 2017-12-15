@@ -74,13 +74,15 @@ public class Movement : MonoBehaviour {
 
 	void FixedUpdate () {
 		if(!isDead){
-			if(Input.GetButtonDown(Controller+"Fire0")) {
-				if(!isHelp){
-					anim.SetTrigger("Help");
+			if(Input.GetButton(Controller+"Fire0")) {
+					anim.SetTrigger("Help",true);
 					anim.SetFloat("Speed",0.0f);
+					isMovable=false;
 					Range.enabled=true;
-					StartCoroutine(waitHelpTime());
-				}
+			}
+			else{
+				Range.enabled=false;
+				anim.SetBool("Help",false);
 			}
 			if(Input.GetButtonDown(Controller+"Fire2")) {
 				if(!isAtk){
@@ -141,21 +143,6 @@ public class Movement : MonoBehaviour {
 				}
 			}
 		}
-	}
-
-	private IEnumerator waitHelpTime(){
-		isMovable=false;
-		isAtk=true;
-		isDog=true;
-		isSpe=true;
-		isHelp=true;
-		yield return new WaitForSeconds(2.0f);
-		isHelp=false;
-		isMovable=true;
-		isAtk=false;
-		isDog=false;
-		isSpe=false;
-		Range.enabled=false;
 	}
 
 	private IEnumerator waitAttackTime() {
